@@ -13,13 +13,13 @@ label cargo:
     #TEMP ACCESS TO ACTIONS WITHOUT IMG BUTTONS
     menu:
         "Talk to Hag":
-            call hagtalk
+            jump hagtalk
         "Crates":
-            call cargoCrates
+            jump cargoCrates
         "Dead bodies":
-            call cargoCrates
+            jump cargoCrates
         "Paraphenalia":
-            call cargoParaphenalia
+            jump cargoParaphenalia
         
 
 
@@ -36,16 +36,16 @@ screen cargoRoom:
         
         imagebutton: #for dead bodies
             pos (0,0) #where it appears on the screen
-            auto "_%s.png" action Call("cargoDeadBodies") 
+            auto "_%s.png" action Jump("cargoDeadBodies") 
         imagebutton: #for paraphenalia
             pos (0,0) #where it appears on the screen
-            auto "_%s.png" action Call("cargoParaphenalia")
+            auto "_%s.png" action Jump("cargoParaphenalia")
         imagebutton: #for crates
             pos (0,0) #where it appears on the screen
-            auto "_%s.png" action Call("cargoCrates")
+            auto "_%s.png" action Jump("cargoCrates")
         imagebutton: #for the Hag
             pos (0,0) #where it appears on the screen
-            auto "_%s.png" action Call("hagtalk")    
+            auto "_%s.png" action Jump("hagtalk")    
 
 screen paraphenalia:
     viewport id "paraphenalia":
@@ -57,16 +57,16 @@ screen paraphenalia:
         
         imagebutton: #for statuette
             pos (0,0) #where it appears on the screen
-            auto "_%s.png" action Call("cargoStatuette") 
+            auto "_%s.png" action Jump("cargoStatuette") 
         imagebutton: #for book
             pos (0,0) #where it appears on the screen
-            auto "_%s.png" action Call("cargoBook")
+            auto "_%s.png" action Jump("cargoBook")
         imagebutton: #for pendant
             pos (0,0) #where it appears on the screen
-            auto "_%s.png" action Call("cargoPendant")
+            auto "_%s.png" action Jump("cargoPendant")
         imagebutton: #for poster
             pos (0,0) #where it appears on the screen
-            auto "_%s.png" action Call("cargoPoster")    
+            auto "_%s.png" action Jump("cargoPoster")    
 
 
 #imagebutton: #make sure the image has normal and _hover 
@@ -77,43 +77,43 @@ screen paraphenalia:
 
 label cargoDeadBodies:
     "Disgusting. They smell far too awful to even consider getting closer than you already are, much less to consider what happened to them."
-    call cargo
+    jump cargo
 label cargoCrates:
     "They're bolted shut. There's no way to tell what might be in them."
-    call cargo
+    jump cargo
 
 label cargoParaphenalia:
     "At a glance, you thought someone had set up a Catholic gift shop in the corner. Upon further inspection, you realize nothing could be further from the truth. There are effigies and symbols the likes of which you have never seen."
     #TEMP MENU
     menu:
         "Statuette":
-            call cargoStatuette
+            jump cargoStatuette
         "Book":
-            call cargoBook
+            jump cargoBook
         "Pendant":
-            call cargoPendant
+            jump cargoPendant
         "Poster":
-            call cargoPoster
+            jump cargoPoster
         "(Leave)":
-            call cargo
+            jump cargo
 
 label cargoStatuette:
     "A small copper statue of what, at first glance, appears to be a robed man. Upon further inspection, the man seems to have a fish-like head and webbed fingers."
     "You wonder whether or not this is their god, and how such a form could be seen as worthy of worship."
-    call cargoParaphenalia
+    jump cargoParaphenalia
 
 label cargoBook:
     "The book is open to a torn and yellowed page with few words written on it. You don't have nearly enough time or interest for that matter to read through it."
     "The half of the page that remains bound to the rest of the book reads," 
     " -iver us, for we yearn to be entangled in your cold emabrace as the children of your new earth."
     p "You need the rest of this."
-    call cargoParaphenalia
+    jump cargoParaphenalia
 
 label cargoPendant:
     "A small silver pendant depicting multiple small tendrils."
     "Perhaps the god these people follow has tentacles or feelers."
-    call cargoParaphenalia
+    jump cargoParaphenalia
 label cargoPoster:
     "The worn, tattered poster reads \"GLORY TO THE ONE BELOW\" along the top. Along the bottom, it reads, \"AND MAY SHE RETURN ABOVE\"."
     "Maybe this is some sort of anachronism or call and response. You shudder to think what kind of being they might be referring to."
-    call cargoParaphenalia
+    jump cargoParaphenalia

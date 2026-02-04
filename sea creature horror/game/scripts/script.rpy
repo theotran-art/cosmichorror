@@ -24,10 +24,10 @@ label start: # The game starts here.
             "His reaching hand."
             "The boarding of a boat."
             "That is all you can glean for now. It may be best to attempt to remember more from your surroundings."
-            call cargo
+            jump cargo
         "Attempt to gain your bearings.":
             #Branching path/different dialogue triggered
-            call cargo
+            jump cargo
 
 return
 
