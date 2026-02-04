@@ -7,42 +7,33 @@ define mc = Character("You")
 define h = Character("Hag")
 define c = Character("Cannibal")
 define s = Character("Skeptic")
+define p = Character((None), what_color="BF1717")
 
 
-# The game starts here.
+label start: # The game starts here.
+    $hagsus = 0
+    #scene black image
 
-label start:
-
-    #BELOW IS DEFAULT TUTORIAL CODE
-
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-    #scene bg room
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    #show eileen happy
-
-    #These display lines of dialogue.
-
-    # This ends the game.
-    #return
-    menu:
-        "Question/Dialouge"
-        "Choice 1": #dont forget the colon
-            #Branching path/different dialogue triggered
-            "1"
-        "Choice 2":
-            #Branching path/different dialogue triggered
-            "2"
-label partone:
-    "I. The Cargo"
-    "In the room the player wakes up in, there is an old, eccentric hag."
-    "This eccentric elderly woman is an aspirant of the cult. She lived among commonfolk for the majority of her life, performing strange and unsettling rituals to gain the Cults attention. Finally, in her old age, she has been taken by them in order to become a full fledged member."
-    "The player must interact with her and solve puzzles within room 1 in order to obtain the Excerpt, the passage from the Cult's holy texts that the player must read during the ritual."
-    call minigametut
+    "Your head throbs. Your body shakes uncontrollably. You know not where you are or how you got here. Any attempt to rack your brain results in a surge of your already pounding headache."
     
+    menu:
+        "Attempt to search your memories once more.": #dont forget the colon
+            #Branching path/different dialogue triggered
+            "Against all instinct, you rage through your migraine-bordering headache. Single, isolated images drip into your consciousness like water from unserviced faucet."
+            "A masked man."
+            "His reaching hand."
+            "The boarding of a boat."
+            "That is all you can glean for now. It may be best to attempt to remember more from your surroundings."
+            call cargo
+        "Attempt to gain your bearings.":
+            #Branching path/different dialogue triggered
+            call cargo
+
 return
+
+#MENU/OPTION SELECT GUIDE because im gonna forget
+#menu:
+    #"INSERT A QUESTION/DIALOUGE SHOWN WITH OPTIONS"
+    #"Choice": DONT FORGET COLON
+    #"Choice": 
+        #Branching path/different dialogue triggered

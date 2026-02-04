@@ -1,7 +1,8 @@
-﻿label minigametut:
+label minigametut:
     scene bckgex
     "testing random things"
-    call screen clickables
+    
+    #call screen clickables
 
 screen clickables:
     imagebutton:
@@ -13,8 +14,6 @@ screen clickables:
     imagebutton:
         pos (1255,527)
         auto "laptop_%s.png" action Jump("clicked")
-        
-        hovered Show()
 
 label clicked:
     "you clicked on something!"
