@@ -39,6 +39,6 @@ label hagtalk:
             
         
         "(Leave)":
-            call cargo
+            jump cargo
 
         
