@@ -87,3 +87,8 @@ screen inventory_screen:
 
     textbutton "Close Inventory" action [Hide("inventory_screen"), Show"inventory_button", ToggleVariable("open_inventory", False)] xalign 1.0 yalign 0.0
 
+#label start
+    $persistent.choice = []
+    show screen inventory_button
+
+    
