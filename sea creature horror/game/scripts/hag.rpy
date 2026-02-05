@@ -4,9 +4,27 @@
 # name of the character.
 
 define mc = Character("You")
-define h = Character("Hag")
+define h = Character(None, screen='hag_screen')
 define c = Character("Cannibal")
 define s = Character("Skeptic") 
+define p = Character((None), what_color="BF1717")
+
+screen hag_screen(who, what):
+    style_prefix "say"
+
+    window id "window":
+        xpos 0.7
+        ypos 0.5
+        anchor (0.5, 0.5)
+        xsize 500
+        padding (15, 10)
+        if who is not None:
+            window id "namebox":
+                style "namebox"
+                text who id "who"
+
+        text what id "what":
+            xmaximum 480
 
 label hagtalk:
     
