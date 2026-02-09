@@ -11,7 +11,7 @@
         "Crates":
             jump cargoCrates
         "Dead bodies":
-            jump cargoCrates
+            jump cargoDeadBodies
         "Paraphenalia":
             jump cargoParaphenalia
         
@@ -70,14 +70,15 @@ screen paraphenalia:
 #CARGO CLICKABLE TEXT
 
 label cargoDeadBodies:
-    "Disgusting. They smell far too awful to even consider getting closer than you already are, much less to consider what happened to them."
+    t "Disgusting. They smell far too awful to even consider getting closer than you already are, much less to consider what happened to them."
     jump cargo
+
 label cargoCrates:
-    "They're bolted shut. There's no way to tell what might be in them."
+    t "They're bolted shut. There's no way to tell what might be in them."
     jump cargo
 
 label cargoParaphenalia:
-    "At a glance, you thought someone had set up a Catholic gift shop in the corner. Upon further inspection, you realize nothing could be further from the truth. There are effigies and symbols the likes of which you have never seen."
+    t "At a glance, you thought someone had set up a Catholic gift shop in the corner. Upon further inspection, you realize nothing could be further from the truth. There are effigies and symbols the likes of which you have never seen."
     #TEMP MENU
     menu:
         "Statuette":
@@ -88,26 +89,28 @@ label cargoParaphenalia:
             jump cargoPendant
         "Poster":
             jump cargoPoster
-        "(Leave)":
+        "Leave.":
             jump cargo
 
 label cargoStatuette:
-    "A small copper statue of what, at first glance, appears to be a robed man. Upon further inspection, the man seems to have a fish-like head and webbed fingers."
-    "You wonder whether or not this is their god, and how such a form could be seen as worthy of worship."
+    t "A small copper statue of what, at first glance, appears to be a robed man. Upon further inspection, the man seems to have a fish-like head and webbed fingers."
+    t "You wonder whether or not this is their god, and how such a form could be seen as worthy of worship."
     jump cargoParaphenalia
 
 label cargoBook:
-    "The book is open to a torn and yellowed page with few words written on it. You don't have nearly enough time or interest for that matter to read through it."
-    "The half of the page that remains bound to the rest of the book reads," 
-    " -iver us, for we yearn to be entangled in your cold emabrace as the children of your new earth."
+    $readbook = True
+    t "The book is open to a torn and yellowed page with few words written on it. You don't have nearly enough time or interest for that matter to read through it."
+    t "The half of the page that remains bound to the rest of the book reads," 
+    t " -iver us, for we yearn to be entangled in your cold emabrace as the children of your new earth."
     p "You need the rest of this."
     jump cargoParaphenalia
 
 label cargoPendant:
-    "A small silver pendant depicting multiple small tendrils."
-    "Perhaps the god these people follow has tentacles or feelers."
+    t "A small silver pendant depicting multiple small tendrils."
+    t "Perhaps the god these people follow has tentacles or feelers."
     jump cargoParaphenalia
+
 label cargoPoster:
-    "The worn, tattered poster reads \"GLORY TO THE ONE BELOW\" along the top. Along the bottom, it reads, \"AND MAY SHE RETURN ABOVE\"."
-    "Maybe this is some sort of anachronism or call and response. You shudder to think what kind of being they might be referring to."
+    t "The worn, tattered poster reads \"GLORY TO THE ONE BELOW\" along the top. Along the bottom, it reads, \"AND MAY SHE RETURN ABOVE\"."
+    t "Maybe this is some sort of anachronism or call and response. You shudder to think what kind of being they might be referring to."
     jump cargoParaphenalia

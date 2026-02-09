@@ -3,13 +3,18 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define mc = Character("You")
+define t = Character((None), what_italic=True) #thoughts
 define h = Character((None), screen='hag_screen')
 define c = Character("Cannibal")
 define s = Character("Skeptic")
 define p = Character((None), what_color="BF1717")
 
 define hagsus = 0
+define item_page = False
+define readbook = False
+
+define item_knife = False
+define item_lighter = False
 
 screen hag_screen(who, what):
     style_prefix "say"
