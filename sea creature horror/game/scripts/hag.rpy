@@ -1,46 +1,18 @@
-﻿# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define mc = Character("You")
-define h = Character(None, screen='hag_screen')
-define c = Character("Cannibal")
-define s = Character("Skeptic") 
-define p = Character((None), what_color="BF1717")
-
-screen hag_screen(who, what):
-    style_prefix "say"
-
-    window id "window":
-        xpos 0.7
-        ypos 0.5
-        anchor (0.5, 0.5)
-        xsize 500
-        padding (15, 10)
-        if who is not None:
-            window id "namebox":
-                style "namebox"
-                text who id "who"
-
-        text what id "what":
-            xmaximum 480
-
-label hagtalk:
+﻿label hagtalk:
     
     "An elderly woman seems to be reflecting, meditating, or praying in soem sort of way. She pays you no mind until you walk closer to her."
     
     menu:
         h "Ahh! Another young aspirant come to witness the birth of the new earth!"
-        
+
         "What are you talking about?":
             $hagsus += 1
             if hagsus == 2: 
                 jump death
             
             else:
-                "You clearly are no aspirant. Leave me."
-                return
+                h "You clearly are no aspirant. Leave me."
+                jump cargo
         
         "Well of course! Do you know where everyone went?":
             menu:

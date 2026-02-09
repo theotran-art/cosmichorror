@@ -4,31 +4,31 @@
 # name of the character.
 
 define mc = Character("You")
-define h = Character("Hag")
+define h = Character((None), screen='hag_screen')
 define c = Character("Cannibal")
 define s = Character("Skeptic")
 define p = Character((None), what_color="BF1717")
 
+define hagsus = 0
 
-label start: # The game starts here.
-    $hagsus = 0
-    #scene black image
+screen hag_screen(who, what):
+    style_prefix "say"
 
-    "Your head throbs. Your body shakes uncontrollably. You know not where you are or how you got here. Any attempt to rack your brain results in a surge of your already pounding headache."
-    
-    menu:
-        "Attempt to search your memories once more.": #dont forget the colon
-            #Branching path/different dialogue triggered
-            "Against all instinct, you rage through your migraine-bordering headache. Single, isolated images drip into your consciousness like water from unserviced faucet."
-            "A masked man."
-            "His reaching hand."
-            "The boarding of a boat."
-            "That is all you can glean for now. It may be best to attempt to remember more from your surroundings."
-            jump cargo
-        "Attempt to gain your bearings.":
-            #Branching path/different dialogue triggered
-            jump cargo
+    window id "window":
+        pos (250,800)
+        xsize 500
+        padding (15, 10)
+        if who is not None:
+            window id "namebox":
+                style "namebox"
+                text who id "who"
 
+        text what id "what":
+            #xmaximum 480
+            ymaximum 1
+
+label start: 
+    call intro
 return
 
 #MENU/OPTION SELECT GUIDE because im gonna forget
