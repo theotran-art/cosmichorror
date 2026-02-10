@@ -130,6 +130,7 @@ label cargoPendant:
     jump cargoParaphenalia
 
 label cargoPoster:
+    $lookposter = True
     t "The worn, tattered poster reads \"GLORY TO THE ONE BELOW\" along the top. Along the bottom, it reads, \"AND MAY SHE RETURN ABOVE\"."
     t "Maybe this is some sort of anachronism or call and response. You shudder to think what kind of being they might be referring to."
     jump cargoParaphenalia
