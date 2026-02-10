@@ -36,8 +36,59 @@
                                 menu:
                                     "Hold your hands together and bow softly.":
                                         h "\"Such a respectful aspirant you are.\""
-                                        h "\"Tell me, do you wish to carry this passage with you into The Deep?\""
-                                        #WIP
+                                        menu:
+                                            h "\"Tell me, do you wish to carry this passage with you into The Deep?\""
+
+                                            "\"I... think that I need it.\"":
+                                                $hagsus += 1
+                                                if hagsus == 2: 
+                                                    jump death
+            
+                                                else:
+                                                    h "\"What an unkind little rat you are. Leave me.\""
+                                                    jump cargo
+
+                                            "\"Would you truly give it to me?\"": #GOOD CHOICE
+                                                h "\"Oh dear, but this page is important to me!\""
+                                                h "\"It was the passage I would read my grandson before bed every night.\""
+                                                h "\"Of course, since he isn't coming with us, I suppose I could give it to you.\""
+                                                menu:
+                                                    h "\"But first, I must know if you are truly dedicated to following Her below.\""
+                                                
+                                                    "\"Of course I am! I have wished to be embraced in her ancient {i}arms{/i} for as long as I can remember.\"":
+                                                        "WIP"
+
+                                                    "\"Of course I am! I have wished to be embraced in her ancient {i}tendrils{/i} for as long as I can remember.\"": #GOOD CHOICE
+                                                        menu:
+                                                            h "\"And what do you make of her ascendants?\""
+
+                                                            "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
+                                                                h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
+                                                                t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
+                                                                $item_page = True
+                                                                t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
+                                                                jump cargo
+
+                                                            "\"Honestly, they creep me out a little bit.\"":
+                                                                $hagsus += 1
+                                                                if hagsus == 2: 
+                                                                    jump death
+                                        
+                                                                else:
+                                                                    jump cargo
+
+                                                            "\"Who?\"":
+                                                                $hagsus += 1
+                                                                if hagsus == 2: 
+                                                                    jump death
+                                        
+                                                                else:
+                                                                    jump cargo
+
+                                                    "\"Of course I am! I have wished to be embraced in her ancient {i}fins{/i} for as long as I can remember.\"":
+                                                        "WIP"
+
+                                        
 
                                     "\"What does that passage mean?\"":
                                         $hagsus += 1
@@ -117,7 +168,7 @@
                         if hagsus == 2: 
                             jump death 
                         else:
-                            "\"What an unkind little rat you are. Leave me.\""
+                            h "\"What an unkind little rat you are. Leave me.\""
                             jump cargo
 
                     "\"You seem to be stuck just as much as I am. Do you know a way out?\"":

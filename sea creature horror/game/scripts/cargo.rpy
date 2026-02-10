@@ -43,6 +43,9 @@ screen cargoRoom:
         imagebutton: #for the Hag
             pos (0,0) #where it appears on the screen
             auto "_%s.png" action Jump("hagtalk")    
+        imagebutton: #for the cargo door
+            pos (0,0)
+            auto "_%s.png" action Jump ("cargoDoor")
 
 screen paraphenalia:
     viewport id "paraphenalia":
@@ -85,8 +88,8 @@ label cargoDoor:
         t "You should probably try and gather what you can from this room first."
         jump cargo
     if item_page == True:
+        t "An inconspicuous door. Should you enter?"
         menu:
-            t "An inconspicuous door. Enter?"
             "Enter.":
                 jump kitchen
             "Turn away.":
