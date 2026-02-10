@@ -77,8 +77,32 @@
                                             "\"Of course I am! I have wished to be embraced in her ancient {i}arms{/i} for as long as I can remember.\"":
                                                 "WIP"
 
-                                            "\"Of course I am! I have wished to be embraced in her ancient {i}tendrils{/i} for as long as I can remember.\"":
-                                                "WIP"
+                                            "\"Of course I am! I have wished to be embraced in her ancient {i}tendrils{/i} for as long as I can remember.\"": #GOOD CHOICE
+                                                menu:
+                                                    h "\"And what do you make of her ascendants?\""
+
+                                                    "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
+                                                        h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
+                                                        t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
+                                                        $item_page = True
+                                                        t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
+                                                        jump cargo
+
+                                                    "\"Honestly, they creep me out a little bit.\"":
+                                                        $hagsus += 1
+                                                        if hagsus == 2: 
+                                                            jump death
+                                        
+                                                        else:
+                                                            jump cargo
+
+                                                    "\"Who?\"":
+                                                        $hagsus += 1
+                                                        if hagsus == 2: 
+                                                            jump death
+                                        
+                                                        else:
+                                                            jump cargo
 
                                             "\"Of course I am! I have wished to be embraced in her ancient {i}fins{/i} for as long as I can remember.\"":
                                                 "WIP"
@@ -110,3 +134,4 @@
 
     else:
         t "You already got what you needed from her. There's no need to talk to her further."
+        jump cargo

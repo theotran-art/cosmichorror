@@ -2,7 +2,8 @@
 
     #call screen cargoRoom
 
-    p1 "YOU NEED HER HOLY TEXT."
+    if item_page == False:
+        p1 "YOU NEED HER HOLY TEXT."
 
     #TEMP ACCESS TO ACTIONS WITHOUT IMG BUTTONS
     menu:
@@ -14,6 +15,8 @@
             jump cargoDeadBodies
         "Paraphenalia":
             jump cargoParaphenalia
+        "Door":
+            jump cargoDoor
         
 
 
@@ -76,6 +79,19 @@ label cargoDeadBodies:
 label cargoCrates:
     t "They're bolted shut. There's no way to tell what might be in them."
     jump cargo
+
+label cargoDoor:
+    if item_page == False:
+        t "You should probably try and gather what you can from this room first."
+        jump cargo
+    if item_page == True:
+        menu:
+            t "An inconspicuous door. Enter?"
+            "Enter.":
+                jump kitchen
+            "Turn away.":
+                jump cargo
+
 
 label cargoParaphenalia:
     t "At a glance, you thought someone had set up a Catholic gift shop in the corner. Upon further inspection, you realize nothing could be further from the truth. There are effigies and symbols the likes of which you have never seen."
