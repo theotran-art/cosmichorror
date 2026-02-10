@@ -7,7 +7,10 @@ define t = Character((None), what_italic=True) #thoughts
 define h = Character((None), screen='hag_screen')
 define c = Character("Cannibal")
 define s = Character("Skeptic")
-define p = Character((None), what_color="BF1717")
+define p1 = Character((None), what_color="FCC7C7")
+define p2 = Character((None), what_color="B54545")
+define p3 = Character((None), what_color="BF1717")
+
 
 define hagsus = 0
 define item_page = False

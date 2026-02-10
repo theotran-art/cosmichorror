@@ -2,7 +2,7 @@
 
     #call screen cargoRoom
 
-    p "YOU NEED HER HOLY TEXT."
+    p1 "YOU NEED HER HOLY TEXT."
 
     #TEMP ACCESS TO ACTIONS WITHOUT IMG BUTTONS
     menu:
@@ -102,7 +102,7 @@ label cargoBook:
     t "The book is open to a torn and yellowed page with few words written on it. You don't have nearly enough time or interest for that matter to read through it."
     t "The half of the page that remains bound to the rest of the book reads," 
     t " -iver us, for we yearn to be entangled in your cold emabrace as the children of your new earth."
-    p "You need the rest of this."
+    p1 "You need the rest of this."
     jump cargoParaphenalia
 
 label cargoPendant:
