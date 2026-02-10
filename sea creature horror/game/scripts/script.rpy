@@ -15,6 +15,7 @@ define p3 = Character((None), what_color="BF1717")
 define hagsus = 0
 define item_page = False
 define readbook = False
+define lookposter = False
 
 define item_knife = False
 define item_lighter = False
