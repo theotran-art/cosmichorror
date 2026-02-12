@@ -1,0 +1,263 @@
+:: StoryTitle
+IGD Script
+
+
+:: StoryData
+{
+  "ifid": "3485FB10-BB01-4E39-9148-633E89979554",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Start",
+  "zoom": 0.6
+}
+
+
+:: \ \[EDITED(Routing)\]No thank you. I have other things to worry about. (+1sus) {"position":"1350,475","size":"100,100"}
+""At this time, what could possibly be your priority over our holy rapture?! We must stay here and worship, as ordered by our most holy ascendants!""
+
+[["Really, I must be going"|Step away. (+1 sus)]]
+[[[EDITED(new)] "You're right - I'll stay."]]
+
+
+:: "Yes, that's it! I have such a hard time remembering the beginning. Is there any way I can trouble you for that page of yours? {"position":"1700,875","size":"100,100"}
+"Oh dear, but this page is important to me! It was the passage I would read my grandson before bed every night. Of course, since he isn't coming with us, I suppose I could give it to you. But first, I must know if you are truly dedicated to following Her below."
+
+[[[EDITED(Routing)] Of course I am! I have wished to be embraced in her ancient arms for as long as I can remember. (+1sus)]]
+[[Of course I am! I have wished to be embraced in her ancient tendrils for as long as I can remember.]]
+[[[EDITED (Routing)] Of course I am! I have wished to be embraced in her ancient fins for as long as I can remember.(+1sus)]]
+
+
+:: *Hold your hands together and bow softly. {"position":"1550,875","size":"100,100"}
+"Such a respectful aspirant you are. Tell me, do you wish to carry this passage with you into The Deep?"
+
+[[I... think that I need it. (+1sus)|Okay... do you seriously not know where everyone went? (+1 sus)]]
+[[Would you truly give it to me?|"Yes, that's it! I have such a hard time remembering the beginning. Is there any way I can trouble you for that page of yours?]]
+
+
+:: And may she return above! {"position":"1650,600","size":"100,100"}
+"Ahhhhhhhh! You are a true aspirant! It brings me great comfort to know I will not be embraced by my lonesome. Tell me, would you care to join me in a reading of The Cephalonomicon?"
+
+[[Of Course.]]
+(Only if player has read the book) [[[EDITED(sus level)] Of Course! I have a passage in mind that I can't quite remember. It ends with, "for we yearn to be entangled in your cold emabrace as the children of your new earth.", Or something like that. (-1sus)]]
+[[ [EDITED(Routing)]No thank you. I have other things to worry about. (+1sus)]]
+
+
+:: Attempt to gain your bearings. {"position":"750,500","size":"100,100"}
+(Room fades into view)
+
+((parasite speaking, red text) "YOU NEED HER HOLY TEXT.")
+[[Click on dead bodies]]
+[[Click on paraphenalia]]
+[[Click on crates]]
+[[[EDITED (Typos)] Click on The Hag]] (only if the player does not yet have the page)
+[[Click on the door]]
+
+
+:: Attempt to search your memories once more. {"position":"550,400","size":"100,100"}
+Against all instinct, you rage through your migraine-bordering headache. Single, isolated images drip into your consciousness like water from unserviced faucet.
+
+A masked man.
+His reaching hand.
+The boarding of a boat.
+
+That is all you can glean for now. It may be best to attempt to remember more from your surroundings.
+
+[[Open your eyes. |Attempt to gain your bearings.]]
+
+
+:: Click on book {"position":"975,775","size":"100,100"}
+The book is open to a torn and yellowed page with few words written on it. You don't have nearly enough time or interest for that matter to read through it. 
+
+The half of the page that remains bound to the rest of the book reads, " -iver us, for we yearn to be entangled in your cold emabrace as the children of your new earth."
+
+((Red text, parasite speaking) You need the rest of this."
+
+
+:: Click on crates {"position":"625,625","size":"100,100"}
+They're bolted shut. There's no way to tell what might be in them.
+
+
+:: Click on dead bodies {"position":"500,625","size":"100,100"}
+Disgusting. They smell far too awful to even consider getting closer than you already are, much less to consider what happened to them.
+
+
+:: Click on paraphenalia {"position":"850,625","size":"100,100"}
+At a glance, you thought someone had set up a Catholic gift shop in the corner. Upon further inspection, you realize nothing could be further from the truth. There are effigies and symbols the likes of which you have never seen.
+
+[[Click on statuette]]
+[[Click on book]]
+[[Click on pendant]]
+[[Click on poster]]
+
+
+:: Click on pendant {"position":"600,775","size":"100,100"}
+A small silver pendant depicting multiple small tendrils.
+
+Perhaps the god these people follow has tentacles or feelers.
+
+
+:: Click on poster {"position":"725,775","size":"100,100"}
+The worn, tattered poster reads "GLORY TO THE ONE BELOW" along the top. Along the bottom, it reads, "AND MAY SHE RETURN ABOVE".
+
+
+Maybe this is some sort of anachronism or call and response. You shudder to think what kind of being they might be referring to.
+
+
+:: Click on statuette {"position":"850,775","size":"100,100"}
+A small copper statue of what, at first glance, appears to be a robed man. Upon further inspection, the man seems to have a fish-like head and webbed fingers.
+
+You wonder whether this is their god or one of them, and how such a form could be seen as worthy of worship.
+
+
+:: Click on the door {"position":"750,900","size":"100,100"}
+(If player does not yet have the page)
+
+(Inner monologue) "I should probably try and gather what I can from this room first."
+
+(If the player has the page)
+
+An inconspicuous door. Enter?
+
+[[Enter.]]
+[[Turn away.|Attempt to gain your bearings.]]
+
+
+:: Enter. {"position":"750,1100","size":"100,100"}
+
+
+
+:: Hag - Death Line {"position":"1650,300","size":"100,100"}
+"\"You scheming little traitor. You don't even deserve to lay your heretic eyes upon her...\"" 
+
+
+:: Of Course. {"position":"1550,750","size":"100,100"}
+She begins to read immediately after you accept.
+-
+She holds one of her arms out to the side, holding a small torn piece of paper in front of her face with the other, reciting,
+
+"O Mother of the Great Deep, we sever our love to our flesh to offer it to you alone, flaying our imperfect forms as penance for the circumstances of our births. Accept our immaciated bodies and deliver us, for we yearn to be entangled in your cold embrace as the children of your new earth."
+
+[[*Hold your hands together and bow softly.]]
+[[What does that passage mean? (+1sus)]]
+[[Slowly inch away as she reads to inspect the room once more. (+1sus)|Attempt to gain your bearings.]]
+
+
+
+:: Of course I am! I have wished to be embraced in her ancient tendrils for as long as I can remember. {"position":"1700,1000","size":"100,100"}
+(Hag)"And what do you make of her ascendants?"
+
+[[[EDITED(Condition)] They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.]]
+[[[EDITED(Routing)] Honestly, they creep me out a little bit. (+1sus)]]
+[[[EDITED(Routing)] Who? (+1sus)]]
+
+
+:: Okay... do you seriously not know where everyone went? (+1 sus) {"position":"1800,450","size":"100,100"}
+"What an unkind little rat you are. Leave me."
+
+[[Leave.|Attempt to gain your bearings.]]
+
+
+:: Start {"position":"650,250","size":"100,100"}
+(Black Screen)
+Your head throbs. Your body shakes uncontrollably. You know not where you are or how you got here. Any attempt to rack your brain results in a surge of your already pounding headache.
+
+[[Attempt to search your memories once more.]]
+[[Attempt to gain your bearings.]]
+
+
+:: Step away. (+1 sus) {"position":"2050,1000","size":"100,100"}
+(Parasite speaking) YOU ARE NOT FIT TO CARRY ME.
+
+(Insert death scene. Getting to this dialogue incurs one sus, and if that doesn't kill the player picking this option will)
+
+
+:: Well of course! Do you know where everyone went? {"position":"1650,450","size":"100,100"}
+"It matters not dear one! We shall all be her children in her cold embrace. Glory to the One Below!"
+
+[[And may she return above!]]
+[[Okay... do you seriously not know where everyone went? (+1 sus)]]
+[[You seem to be stuck just as much as I am. Do you know a way out? |[EDITED(Typo)] What are you talking about? (+1 sus)]]
+
+
+:: What does that passage mean? (+1sus) {"position":"1375,750","size":"100,100"}
+"If you were truly an aspirant, I would have to do no explaining. Leave me."
+
+[[Leave.|Attempt to gain your bearings.]]
+
+
+
+:: \[EDITED (Routing)\] Of course I am! I have wished to be embraced in her ancient fins for as long as I can remember.(+1sus) {"position":"1850,825","size":"100,100"}
+""She would not dirty herself with the imperfect forms of her scions. You are no aspirant. You are more fit to be her food than to be her child.''
+
+[["I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me."|Of course I am! I have wished to be embraced in her ancient tendrils for as long as I can remember.]]
+[[Step away. (+1 sus)]]
+
+
+
+:: \[EDITED (Typos)\] Click on The Hag {"position":"1500,350","size":"100,100"}
+An elderly woman seems to be reflecting, meditating, or praying in some sort of way. She pays you no mind until you walk closer to her.
+
+"Ahh! Another young aspirant come to witness the birth of the new earth!"
+
+[[[EDITED(Typo)] What are you talking about? (+1 sus)]]
+[[Well of course! Do you know where everyone went?]]
+[[Leave.|Attempt to gain your bearings.]]
+
+
+:: \[EDITED(Condition)\] They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so. {"position":"1700,1275","size":"100,100"}
+"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more desrving."
+-
+The old woman reaches her frail hand towards you, holding the old decrepit page. You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time.
+
+(Add page to inventory)
+
+[[Leave|Attempt to gain your bearings.]]
+
+
+:: \[EDITED(Routing)\] Honestly, they creep me out a little bit. (+1sus) {"position":"1850,1050","size":"100,100"}
+""They are our most holy guides you insolent brat! I ought to flay you where you stand!""
+
+You feel like you've never offended someone so harshly. The look on her face is a mixture of sadness and anger.
+
+[["I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward."|[EDITED(Condition)] They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.]]
+[[Step back to gain some distance from her. (+1sus)|Step away. (+1 sus)]]
+
+
+:: \[EDITED(Routing)\] Of course I am! I have wished to be embraced in her ancient arms for as long as I can remember. (+1sus) {"position":"1850,925","size":"100,100"}
+""She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth. Leave me foul vermin!""
+
+[["I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me."|Of course I am! I have wished to be embraced in her ancient tendrils for as long as I can remember.]]
+[[Step away. (+1 sus)]]
+
+
+:: \[EDITED(Routing)\] Who? (+1sus) {"position":"1850,1150","size":"100,100"}
+""There exists no aspirant that is not guided by their ascedant. You are no aspirant, but a vile deciever!""
+
+The mix of emotions on her face makes you think she might get violent.
+
+[["My apologies, ma'am! Of course I know of our most holy guides. We call them by a different name where I come from.|[EDITED(Condition)] They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.]]
+[[Step back to gain some distance from her. (+1sus)|Step away. (+1 sus)]]
+
+
+:: \[EDITED(Typo)\] What are you talking about? (+1 sus) {"position":"1200,250","size":"100,100"}
+"You clearly are no aspirant. Leave me."
+
+[[Leave.|Attempt to gain your bearings.]]
+
+
+:: \[EDITED(new)\] "You're right - I'll stay." {"position":"1350,600","size":"100,100"}
+""Ahhhh, wonderful! Please, sit with me and let us worship together!""
+
+[[Of Course.]]
+(Only if player has read the book) [[[EDITED(sus level)] Of Course! I have a passage in mind that I can't quite remember. It ends with, "for we yearn to be entangled in your cold emabrace as the children of your new earth.", Or something like that. (-1sus)]]
+
+
+:: \[EDITED(sus level)\] Of Course! I have a passage in mind that I can't quite remember. It ends with, "for we yearn to be entangled in your cold emabrace as the children of your new earth.", Or something like that. (-1sus) {"position":"1700,750","size":"100,100"}
+"I know exactly of which passage you speak!"
+-
+She holds one of her arms out to the side, holding a small torn piece of paper in front of her face with the other, reciting,
+
+"O Mother of the Great Deep, we sever our love to our flesh to offer it to you alone, flaying our imperfect forms as penance for the circumstances of our births. Accept our immaciated bodies and deliver us, for we yearn to be entangled in your cold embrace as the children of your new earth."
+
+[["Yes, that's it! I have such a hard time remembering the beginning. Is there any way I can trouble you for that page of yours?]]
+
