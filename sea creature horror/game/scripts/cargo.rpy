@@ -113,7 +113,7 @@ label cargoParaphenalia:
 
 label cargoStatuette:
     t "A small copper statue of what, at first glance, appears to be a robed man. Upon further inspection, the man seems to have a fish-like head and webbed fingers."
-    t "You wonder whether or not this is their god, and how such a form could be seen as worthy of worship."
+    t "You wonder whether this is their god or one of them, and how such a form could be seen as worthy of worship."
     jump cargoParaphenalia
 
 label cargoBook:
