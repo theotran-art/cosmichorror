@@ -5,6 +5,8 @@
     if item_page == False:
         p1 "YOU NEED HER HOLY TEXT."
 
+    show screen inventory 
+    
     #TEMP ACCESS TO ACTIONS WITHOUT IMG BUTTONS
     menu:
         "Talk to Hag":

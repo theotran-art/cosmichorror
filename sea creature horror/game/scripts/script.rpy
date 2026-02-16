@@ -12,13 +12,13 @@ define p2 = Character((None), what_color="B54545")
 define p3 = Character((None), what_color="BF1717")
 
 
-define hagsus = 0
-define item_page = False
-define readbook = False
-define lookposter = False
+default hagsus = 0
+default item_page = False
+default readbook = False
+default lookposter = False
 
-define item_knife = False
-define item_lighter = False
+default item_knife = False
+default item_lighter = False
 
 screen hag_screen(who, what):
     style_prefix "say"
