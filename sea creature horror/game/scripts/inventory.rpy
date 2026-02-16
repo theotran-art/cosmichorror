@@ -15,13 +15,30 @@ screen inventoryView():
             spacing 15
             text "Inventory"
 
-            # KEY
+            #page
             if item_page == True:
                 textbutton "Page":
                     action Jump("examinePage")
+            #knife
+            if item_knife == True:
+                textbutton "Knife":
+                    action Jump("examineKnife")
+
+            #lighter
+            if item_lighter == True:
+                textbutton "Lighter":
+                    action Jump("examineLighter")
             textbutton "Close":
                 action Hide("inventoryView"), Show("inventory")
 
 label examinePage:
+    "You have the page."
+    jump cargo
+
+label examineKnife:
+    "You have the knife."
+    jump cargo
+
+label examineLighter:
     "You have the page."
     jump cargo
