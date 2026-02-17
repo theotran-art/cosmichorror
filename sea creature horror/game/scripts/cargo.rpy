@@ -2,11 +2,13 @@
 
     #call screen cargoRoom
 
+    scene cargo
+
     if item_page == False:
         p1 "YOU NEED HER HOLY TEXT."
 
     show screen inventory 
-    
+
     #TEMP ACCESS TO ACTIONS WITHOUT IMG BUTTONS
     menu:
         "Talk to Hag":
@@ -28,26 +30,26 @@ screen cargoRoom:
     #pannable view of room
     viewport id "cargoScene":
         area (0, 0, 1920, 1080) #size of screen (leave the same)
-        child_size (0, 1080) #change based on image size
+        child_size (5497, 1080) #change based on image size
         edgescroll (150, 1400) #how fast the scrolling is (horizontal_speed, vertical_speed)
  
-        #add ".png" #name of the background image
+        add "images/backgrounds/cargo.png" #name of the background image
         
-        imagebutton: #for dead bodies
-            pos (0,0) #where it appears on the screen
-            auto "_%s.png" action Jump("cargoDeadBodies") 
-        imagebutton: #for paraphenalia
-            pos (0,0) #where it appears on the screen
-            auto "_%s.png" action Jump("cargoParaphenalia")
-        imagebutton: #for crates
-            pos (0,0) #where it appears on the screen
-            auto "_%s.png" action Jump("cargoCrates")
-        imagebutton: #for the Hag
-            pos (0,0) #where it appears on the screen
-            auto "_%s.png" action Jump("hagtalk")    
-        imagebutton: #for the cargo door
-            pos (0,0)
-            auto "_%s.png" action Jump ("cargoDoor")
+        #imagebutton: #for dead bodies
+            #pos (0,0) #where it appears on the screen
+            #auto "_%s.png" action Jump("cargoDeadBodies") 
+        #imagebutton: #for paraphenalia
+            #pos (0,0) #where it appears on the screen
+            #auto "_%s.png" action Jump("cargoParaphenalia")
+        #imagebutton: #for crates
+            #pos (0,0) #where it appears on the screen
+            #auto "_%s.png" action Jump("cargoCrates")
+        #imagebutton: #for the Hag
+            #pos (0,0) #where it appears on the screen
+            #auto "_%s.png" action Jump("hagtalk")    
+        #imagebutton: #for the cargo door
+            #pos (0,0)
+            #auto "_%s.png" action Jump ("cargoDoor")
 
 screen paraphenalia:
     viewport id "paraphenalia":
