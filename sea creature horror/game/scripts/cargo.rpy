@@ -1,8 +1,8 @@
 ﻿label cargo:
 
-    #call screen cargoRoom
+    show screen cargoRoom
 
-    scene cargo
+    #scene cargo
 
     if item_page == False:
         p1 "YOU NEED HER HOLY TEXT."
@@ -30,7 +30,7 @@ screen cargoRoom:
     #pannable view of room
     viewport id "cargoScene":
         area (0, 0, 1920, 1080) #size of screen (leave the same)
-        child_size (5497, 1080) #change based on image size
+        child_size (5497, 1620) #change based on image size
         edgescroll (150, 1400) #how fast the scrolling is (horizontal_speed, vertical_speed)
  
         add "images/backgrounds/cargo.png" #name of the background image
@@ -45,8 +45,8 @@ screen cargoRoom:
             #pos (0,0) #where it appears on the screen
             #auto "_%s.png" action Jump("cargoCrates")
         #imagebutton: #for the Hag
-            #pos (0,0) #where it appears on the screen
-            #auto "_%s.png" action Jump("hagtalk")    
+            #pos (4500,400) #where it appears on the screen
+            #auto "images/sprites/hag_%s.png" action Jump("hagtalk")    
         #imagebutton: #for the cargo door
             #pos (0,0)
             #auto "_%s.png" action Jump ("cargoDoor")
