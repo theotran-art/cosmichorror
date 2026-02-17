@@ -22,11 +22,16 @@ default item_lighter = False
 
 screen hag_screen(who, what):
 
-    style_prefix "hag"
+    #window id "window":
+        #xalign 0.5
+        #yalign 0.65
 
-    window id "hag_window":
+    frame:
+        background "#00000099"
+        xsize 1800
+        ysize 90
         xalign 0.5
-        yalign 0.65
+        yalign 0.66
 
     text what id "what":
         layout "nobreak"

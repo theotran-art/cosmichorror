@@ -250,8 +250,8 @@ style choice_vbox:
     spacing gui.choice_spacing
 
 style choice_button is button:
-    background Frame("gui/button/choice_idle_background.png", 12, 12)
-    hover_background Frame("gui/button/choice_hover_background.png", 12, 12)
+    background Frame("gui/button/choice_idle_background.png", 12, 50)
+    hover_background Frame("gui/button/choice_hover_background.png", 12, 50)
     xminimum 600
     xalign 0.5
     #ysize 100
@@ -1650,15 +1650,6 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
-
-
-#EDIT TO SAY DIALOGUE
-style hag_window:
-    background Solid("#00000080")
-    padding (3, 3)
-    xminimum 0
-    xmaximum 9999
-    xfill False
 
 #style hag_what:
     #text_align 0.5
