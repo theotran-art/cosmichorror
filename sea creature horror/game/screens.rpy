@@ -250,9 +250,10 @@ style choice_vbox:
     spacing gui.choice_spacing
 
 style choice_button is button:
-    background Frame("gui/button/choice_idle_background.png", 12, 50)
-    hover_background Frame("gui/button/choice_hover_background.png", 12, 50)
-    xminimum 600
+    background Frame("gui/button/choice_idle_background.png", 10, 75)
+    hover_background Frame("gui/button/choice_hover_background.png", 10, 75)
+    padding (70, 15, 70, 15)
+    #xminimum 600
     xalign 0.5
     #ysize 100
     #properties gui.button_properties("choice_button")
