@@ -4,9 +4,9 @@
 # name of the character.
 
 define t = Character((None), what_italic=True) #thoughts
-define h = Character((None), screen='hag_screen')
-define c = Character("Cannibal")
-define s = Character("Skeptic")
+define h = Character((None), screen='hag_screen', what_font="fonts/fonts_hag/Funnel_Display_Lacquer/Lacquer/Lacquer-Regular.ttf", what_size=36) #hag
+define c = Character((None)) #cannibal
+define s = Character((None)) #skeptic
 define p1 = Character((None), what_color="FCC7C7")
 define p2 = Character((None), what_color="B54545")
 define p3 = Character((None), what_color="BF1717")
@@ -21,20 +21,18 @@ default item_knife = False
 default item_lighter = False
 
 screen hag_screen(who, what):
-    style_prefix "say"
 
-    window id "window":
-        pos (250,800)
-        xsize 500
-        padding (15, 10)
-        if who is not None:
-            window id "namebox":
-                style "namebox"
-                text who id "who"
+    style_prefix "hag"
 
-        text what id "what":
-            #xmaximum 480
-            ymaximum 1
+    window id "hag_window":
+        xalign 0.5
+        yalign 0.65
+
+    text what id "what":
+        layout "nobreak"
+        text_align 0.5
+        xalign 0.5
+        yalign 0.65
 
 label start: 
     call intro
