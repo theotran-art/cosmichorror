@@ -20,6 +20,8 @@ default lookposter = False
 default item_knife = False
 default item_lighter = False
 
+default cargo_scroll_enabled = True
+
 screen hag_screen(who, what):
 
     #window id "window":
