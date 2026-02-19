@@ -6,8 +6,6 @@
     
     scene cargo
 
-    show hag_idle
-
     if item_page == False:
         t "An elderly woman seems to be reflecting, meditating, or praying in some sort of way. She pays you no mind until you walk closer to her."
     
