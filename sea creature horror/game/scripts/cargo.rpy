@@ -21,6 +21,8 @@
             jump cargoDeadBodies
         "Paraphenalia":
             jump cargoParaphenalia
+        "Window":
+            jump cargoWindow
         "Door":
             jump cargoDoor
         
@@ -52,7 +54,10 @@ screen cargoRoom:
             #auto "_%s.png" action Jump("cargoCrates")
         #imagebutton: #for the Hag
             #pos (4500,400) #where it appears on the screen
-            #auto "images/sprites/hag_%s.png" action Jump("hagtalk")    
+            #auto "images/sprites/hag_%s.png" action Jump("hagtalk")
+        #imagebutton: #for the window
+            #pos (0,0)
+            #auto "_%s.png" action Jump("cargoWindow")    
         #imagebutton: #for the cargo door
             #pos (0,0)
             #auto "_%s.png" action Jump ("cargoDoor")
@@ -94,6 +99,19 @@ label cargoCrates:
     $cargo_scroll_enabled = False
     t "They're bolted shut. There's no way to tell what might be in them."
     jump cargo
+
+label cargoWindow:
+    $cargo_scroll_enabled = False
+    hide screen cargoRoom
+
+    #scene window
+    menu:
+        "Examine outside.":
+            "You look out the window."
+            jump cargoWindow
+        "Step away.":
+            jump cargo
+
 
 label cargoDoor:
     $cargo_scroll_enabled = False
