@@ -21,6 +21,7 @@ default item_knife = False
 default item_lighter = False
 
 default cargo_scroll_enabled = True
+default cargo_buttons_enabled = True
 
 screen hag_screen(who, what):
 
