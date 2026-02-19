@@ -1,6 +1,6 @@
 ﻿label hagtalk:
 
-    hide screen cargoRoom
+    $cargo_scroll_enabled = False
 
     hide screen inventory
     
