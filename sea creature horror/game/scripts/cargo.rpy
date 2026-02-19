@@ -104,7 +104,9 @@ label cargoDoor:
         t "An inconspicuous door. Should you enter?"
         menu:
             "Enter.":
-                jump kitchen
+                "(You have finished the first room - End of playtest.)"
+                return
+                #jump kitchen
             "Turn away.":
                 jump cargo
 
