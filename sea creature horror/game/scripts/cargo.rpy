@@ -1,13 +1,14 @@
 ﻿label cargo:
 
     $cargo_scroll_enabled = True
-    $cargo_buttons_enabled = True
 
     show screen cargoRoom
 
     if item_page == False:
         p1 "YOU NEED HER HOLY TEXT."
 
+    $cargo_buttons_enabled = True
+    
     label pauseCargo:
         window hide 
         pause
