@@ -4,14 +4,16 @@
 
     show screen cargoRoom
 
-    #scene cargo
-
     if item_page == False:
         p1 "YOU NEED HER HOLY TEXT."
 
-    show screen inventory 
+    label pauseCargo:
+        window hide 
+        pause
+        jump pauseCargo
+    window auto
 
-    pause
+    show screen inventory 
 
 #CARGO SCREENS/IMAGE BUTTONS
 
@@ -29,35 +31,35 @@ screen cargoRoom:
         add "images/backgrounds/cargo.png" #name of the background image
         
         imagebutton: #for dead bodies
-            pos (1000,600) #where it appears on the screen
+            pos (340,945) #where it appears on the screen
             auto "images/items/cargo/bodies_%s.png" action Jump("cargoDeadBodies") 
-        imagebutton: #for crates
-            pos (3000,600) #where it appears on the screen
-            auto "images/items/cargo/crates_%s.png" #action Jump("cargoCrates")
+        #imagebutton: #for crates
+            #pos (3000,600) #where it appears on the screen
+            #auto "images/items/cargo/crates_%s.png" action Jump("cargoCrates")
         imagebutton: #for the Hag
-            pos (4500,400) #where it appears on the screen
-            auto "images/sprites/cargo/hag_%s.png" #action Jump("hagtalk")
+            pos (4080,750) #where it appears on the screen
+            auto "images/sprites/hag_%s.png" action Jump("hagtalk")
         imagebutton: #for the window
-            pos (5000,600)
-            auto "images/items/cargo/window_%s.png" #action Jump("cargoWindow")    
+            pos (874,371)
+            auto "images/items/cargo/window_%s.png" action Jump("cargoWindow")    
         imagebutton: #for the cargo door
-            pos (2000,600)
-            auto "images/items/cargo/door_%s.png" #action Jump ("cargoDoor")
+            pos (4700,130)
+            auto "images/items/cargo/door_%s.png" action Jump ("cargoDoor")
         imagebutton: #for statuette
-            pos (4000,600) #where it appears on the screen
-            auto "images/items/cargo/figurine_%s.png" #action Jump("cargoStatuette")
+            pos (2352,994) #where it appears on the screen
+            auto "images/items/cargo/figurine_%s.png" action Jump("cargoStatuette")
         imagebutton: #for book
-            pos (5000,600) #where it appears on the screen
-            auto "images/items/cargo/book_%s.png" #action Jump("cargoBook")
+            pos (2937,800) #where it appears on the screen
+            auto "images/items/cargo/book_%s.png" action Jump("cargoBook")
         #imagebutton: #for pendant
             #pos (0,0) #where it appears on the screen
             #auto "images/items/_%s.png" action Jump("cargoPendant")
         imagebutton: #for poster
-            pos (2000,600) #where it appears on the screen
-            auto "images/items/cargo/poster1_%s.png" #action Jump("cargoPoster")
+            pos (2375,190) #where it appears on the screen
+            auto "images/items/cargo/poster1_%s.png" action Jump("cargoPoster")
         imagebutton: #for poster2
-            pos (1000,600) #where it appears on the screen
-            auto "images/items/cargo/poster2_%s.png" #action Jump("cargoPoster") 
+            pos (1729,226) #where it appears on the screen
+            auto "images/items/cargo/poster2_%s.png" action Jump("cargoPoster") 
 
 
 #imagebutton: #make sure the image has normal and _hover 
