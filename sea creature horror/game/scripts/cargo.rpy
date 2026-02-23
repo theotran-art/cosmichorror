@@ -1,21 +1,22 @@
-﻿label cargo:
+﻿label cargoEnter:
+    play music "music/bgm.wav" fadein 3.0
 
+label cargo:
     $cargo_scroll_enabled = True
+    $cargo_buttons_enabled = False
 
     show screen cargoRoom
 
     if item_page == False:
         p1 "YOU NEED HER HOLY TEXT."
-
-    $cargo_buttons_enabled = True
     
     label pauseCargo:
-        window hide 
+        window hide
+        $cargo_buttons_enabled = True
+        show screen inventory 
         pause
         jump pauseCargo
-    window auto
-
-    show screen inventory 
+    window auto 
 
 #CARGO SCREENS/IMAGE BUTTONS
 

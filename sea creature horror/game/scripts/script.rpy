@@ -23,7 +23,7 @@ default item_lighter = False
 default cargo_scroll_enabled = True
 default cargo_buttons_enabled = True
 
-define music.bgm = "music/bgm.mp3"
+define music.bgm = "music/bgm.wav"
 
 screen hag_screen(who, what):
 
