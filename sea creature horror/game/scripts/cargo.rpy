@@ -74,6 +74,14 @@ screen cargoRoom:
             xalign 0.5
             yalign 0.5
 
+    if showItemPage:
+        add Solid("#00000088")
+
+        # Centered image
+        add "images/items/cargo/page.png":
+            xalign 0.5
+            yalign 0.5
+
 #imagebutton: #make sure the image has normal and _hover 
             #pos (0,0) #where it appears on the screen
             #auto "_%s.png" action Jump("") #auto "IMAGE NAME OF CLICKABLE_%s.png" action Jump("WHAT HAPPENS WHEN CLICKED") // make sure that it jumps to a label!

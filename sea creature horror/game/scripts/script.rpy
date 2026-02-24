@@ -12,17 +12,20 @@ define p2 = Character((None), what_color="B54545")
 define p3 = Character((None), what_color="BF1717")
 
 
-default hagsus = 0
+#inventory items
 default item_page = False
-default readbook = False
-default lookposter = False
-
+default showItemPage = False
 default item_knife = False
 default item_lighter = False
 
+#cargo/hag related variables
 default cargo_scroll_enabled = True
 default cargo_buttons_enabled = True
 default showCargoBook = False
+default hagsus = 0
+default readbook = False
+default lookposter = False
+
 
 define music.bgm = "music/bgm.wav"
 

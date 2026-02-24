@@ -1,6 +1,6 @@
 ﻿screen inventory():
     textbutton "Inventory":
-        action Show("inventoryView"), Hide("inventory")
+        action Show("inventoryView"), Hide("inventory"), SetVariable("cargo_buttons_enabled", False), SetVariable("cargo_scroll_enabled", False)
 
 screen inventoryView():
     tag menu  # prevents stacking with other menus
@@ -8,7 +8,7 @@ screen inventoryView():
     modal True
 
     frame:
-        align (0.5, 0.5)
+        align (0.01, 0.01)
         padding (30, 30)
 
         vbox:
@@ -28,12 +28,14 @@ screen inventoryView():
                 textbutton "Lighter":
                     action Hide("inventoryView"), Show("inventory"), Jump("examineLighter")
             textbutton "Close":
-                action Hide("inventoryView"), Show("inventory")
+                action Hide("inventoryView"), Show("inventory"), SetVariable("cargo_buttons_enabled", True), SetVariable("cargo_scroll_enabled", True)
 
 label examinePage:
+    $showItemPage = True
     t "You have a page that reads out the passage:"
     "\"O Mother of the Great Deep, we sever our love to our flesh to offer it to you alone, flaying our imperfect forms as penance for the circumstances of our births.\""
     "\"Accept our emaciated bodies and deliver us, for we yearn to be entangled in your cold embrace as the children of your new earth.\""
+    $showItemPage = False
     jump cargo
 
 label examineKnife:
