@@ -65,6 +65,15 @@ screen cargoRoom:
                 pos (1729,226) #where it appears on the screen
                 auto "images/items/cargo/poster2_%s.png" action Jump("cargoPoster") 
 
+    #IMAGES THAT SHOW UP AFTER CLICKING AN ITEM (CLOSE UP)
+    if showCargoBook:
+        add Solid("#00000088")
+
+        # Centered image
+        add "images/items/cargo/book.png":
+            xalign 0.5
+            yalign 0.5
+
 #imagebutton: #make sure the image has normal and _hover 
             #pos (0,0) #where it appears on the screen
             #auto "_%s.png" action Jump("") #auto "IMAGE NAME OF CLICKABLE_%s.png" action Jump("WHAT HAPPENS WHEN CLICKED") // make sure that it jumps to a label!
@@ -121,11 +130,13 @@ label cargoStatuette:
 label cargoBook:
     $cargo_scroll_enabled = False
     $cargo_buttons_enabled = False
+    $showCargoBook = True
     $readbook = True
     t "The book is open to a torn and yellowed page with few words written on it. You don't have nearly enough time or interest for that matter to read through it."
     t "The half of the page that remains bound to the rest of the book reads," 
     t " -iver us, for we yearn to be entangled in your cold emabrace as the children of your new earth."
     p1 "You need the rest of this."
+    $showCargoBook = False
     jump cargo
 
 label cargoPendant:

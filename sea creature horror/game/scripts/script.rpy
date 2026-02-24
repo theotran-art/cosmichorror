@@ -22,6 +22,7 @@ default item_lighter = False
 
 default cargo_scroll_enabled = True
 default cargo_buttons_enabled = True
+default showCargoBook = False
 
 define music.bgm = "music/bgm.wav"
 

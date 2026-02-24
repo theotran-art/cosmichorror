@@ -38,7 +38,7 @@
                                 h "\"O Mother of the Great Deep,\""
                                 h "\"we sever our love to our flesh to offer it to you alone,\""
                                 h "\"flaying our imperfect forms as penance for the circumstances of our births.\""
-                                h "\"Accept our immaciated bodies and deliver us,\"" 
+                                h "\"Accept our emaciated bodies and deliver us,\"" 
                                 h "\"for we yearn to be entangled in your cold embrace as the children of your new earth.\""
                                 menu:
                                     "Hold your hands together and bow softly.":
@@ -301,7 +301,7 @@
                                 h "\"O Mother of the Great Deep,\""
                                 h "\"we sever our love to our flesh to offer it to you alone,\""
                                 h "\"flaying our imperfect forms as penance for the circumstances of our births.\""
-                                h "\"Accept our immaciated bodies and deliver us,\"" 
+                                h "\"Accept our emaciated bodies and deliver us,\"" 
                                 menu:
                                     h "\"for we yearn to be entangled in your cold embrace as the children of your new earth.\""
                                     
@@ -553,7 +553,7 @@
                                                     h "\"O Mother of the Great Deep,\""
                                                     h "\"we sever our love to our flesh to offer it to you alone,\""
                                                     h "\"flaying our imperfect forms as penance for the circumstances of our births.\""
-                                                    h "\"Accept our immaciated bodies and deliver us,\"" 
+                                                    h "\"Accept our emaciated bodies and deliver us,\"" 
                                                     h "\"for we yearn to be entangled in your cold embrace as the children of your new earth.\""
                                                     menu:
                                                         "Hold your hands together and bow softly.":
@@ -816,7 +816,7 @@
                                                     h "\"O Mother of the Great Deep,\""
                                                     h "\"we sever our love to our flesh to offer it to you alone,\""
                                                     h "\"flaying our imperfect forms as penance for the circumstances of our births.\""
-                                                    h "\"Accept our immaciated bodies and deliver us,\"" 
+                                                    h "\"Accept our emaciated bodies and deliver us,\"" 
                                                     menu:
                                                         h "\"for we yearn to be entangled in your cold embrace as the children of your new earth.\""
                                                         
