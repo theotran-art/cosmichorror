@@ -15,6 +15,8 @@
 
             "\"What are you talking about?\"":
                 $hagsus += 1
+                if hagsus >= 1:
+                    show screen suspicion_overlay
                 if hagsus == 2: 
                     jump death
             
@@ -48,6 +50,8 @@
 
                                             "\"I... think that I need it.\"":
                                                 $hagsus += 1
+                                                if hagsus >= 1:
+                                                    show screen suspicion_overlay
                                                 if hagsus == 2: 
                                                     jump death
             
@@ -64,6 +68,8 @@
                                                 
                                                     "\"Of course I am! I have wished to be embraced in her ancient {i}arms{/i} for as long as I can remember.\"":
                                                         $hagsus += 1
+                                                        if hagsus >= 1:
+                                                            show screen suspicion_overlay
                                                         if hagsus == 2:
                                                             jump death
                                                         else:
@@ -83,6 +89,8 @@
                                                                         
                                                                         "\"Honestly, they creep me out a little bit.\"":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2:
                                                                                 jump death
                                                                             else:
@@ -97,6 +105,8 @@
                                                                                         jump cargo
                                                                                     "Step back to gain some distance from her.":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                             jump death
@@ -106,6 +116,8 @@
                                                                         
                                                                         "\"Who?\"":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2:
                                                                                 jump death
                                                                             else:
@@ -124,6 +136,8 @@
                                                                         
                                                                                     "Step back to gain some distance from her.":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                             jump death
@@ -132,6 +146,8 @@
 
                                                                 "Step away.":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                         jump death
@@ -152,6 +168,8 @@
 
                                                             "\"Honestly, they creep me out a little bit.\"":
                                                                 $hagsus += 1
+                                                                if hagsus >= 1:
+                                                                    show screen suspicion_overlay
                                                                 if hagsus == 2: 
                                                                     jump death
                                         
@@ -167,6 +185,8 @@
                                                                             jump cargo
                                                                         "Step back to gain some distance from her.":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2:
                                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                 jump death
@@ -175,6 +195,8 @@
 
                                                             "\"Who?\"":
                                                                 $hagsus += 1
+                                                                if hagsus >= 1:
+                                                                    show screen suspicion_overlay
                                                                 if hagsus == 2: 
                                                                     jump death
                                         
@@ -193,6 +215,8 @@
 
                                                                         "Step back to gain some distance from her.":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2: 
                                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                 jump death
@@ -201,6 +225,8 @@
 
                                                     "\"Of course I am! I have wished to be embraced in her ancient {i}fins{/i} for as long as I can remember.\"":
                                                         $hagsus += 1
+                                                        if hagsus >= 1:
+                                                            show screen suspicion_overlay
                                                         if hagsus == 2:
                                                             jump death
                                                         else:
@@ -220,6 +246,8 @@
 
                                                                         "\"Honestly, they creep me out a little bit.\"":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2: 
                                                                                 jump death
                                                     
@@ -235,6 +263,8 @@
                                                                                         jump cargo
                                                                                     "Step back to gain some distance from her.":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                             jump death
@@ -243,6 +273,8 @@
 
                                                                         "\"Who?\"":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2: 
                                                                                 jump death
                                                     
@@ -261,6 +293,8 @@
 
                                                                                     "Step back to gain some distance from her.":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2: 
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                             jump death
@@ -269,6 +303,8 @@
 
                                                                 "Step away.":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2: 
                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                         jump death
@@ -278,6 +314,8 @@
 
                                     "\"What does that passage mean?\"":
                                         $hagsus += 1
+                                        if hagsus >= 1:
+                                            show screen suspicion_overlay
                                         if hagsus == 2: 
                                             jump death
             
@@ -287,6 +325,8 @@
 
                                     "Slowly inch away as she reads to inspect the room once more.":
                                         $hagsus += 1
+                                        if hagsus >= 1:
+                                            show screen suspicion_overlay
                                         if hagsus == 2: 
                                             jump death
                                         
@@ -314,6 +354,8 @@
                                                 
                                             "\"Of course I am! I have wished to be embraced in her ancient {i}arms{/i} for as long as I can remember.\"":
                                                 $hagsus += 1
+                                                if hagsus >= 1:
+                                                    show screen suspicion_overlay
                                                 if hagsus == 2:
                                                     jump death
                                                 else:
@@ -333,6 +375,8 @@
                                                                 
                                                                 "\"Honestly, they creep me out a little bit.\"":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         jump death
                                                                     else:
@@ -347,6 +391,8 @@
                                                                                 jump cargo
                                                                             "Step back to gain some distance from her.":
                                                                                 $hagsus += 1
+                                                                                if hagsus >= 1:
+                                                                                    show screen suspicion_overlay
                                                                                 if hagsus == 2:
                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                     jump death
@@ -356,6 +402,8 @@
                                                                 
                                                                 "\"Who?\"":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         jump death
                                                                     else:
@@ -374,6 +422,8 @@
                                                                 
                                                                             "Step back to gain some distance from her.":
                                                                                 $hagsus += 1
+                                                                                if hagsus >= 1:
+                                                                                    show screen suspicion_overlay
                                                                                 if hagsus == 2:
                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                     jump death
@@ -382,6 +432,8 @@
 
                                                         "Step away.":
                                                             $hagsus += 1
+                                                            if hagsus >= 1:
+                                                                show screen suspicion_overlay
                                                             if hagsus == 2:
                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                 jump death
@@ -401,6 +453,8 @@
 
                                                     "\"Honestly, they creep me out a little bit.\"":
                                                         $hagsus += 1
+                                                        if hagsus >= 1:
+                                                            show screen suspicion_overlay
                                                         if hagsus == 2: 
                                                             jump death
                                         
@@ -416,6 +470,8 @@
                                                                     jump cargo
                                                                 "Step back to gain some distance from her.":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                         jump death
@@ -424,6 +480,8 @@
 
                                                     "\"Who?\"":
                                                         $hagsus += 1
+                                                        if hagsus >= 1:
+                                                            show screen suspicion_overlay
                                                         if hagsus == 2: 
                                                             jump death
                                         
@@ -443,6 +501,8 @@
                                                     
                                                                 "Step back to gain some distance from her.":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                         jump death
@@ -451,6 +511,8 @@
 
                                             "\"Of course I am! I have wished to be embraced in her ancient {i}fins{/i} for as long as I can remember.\"":
                                                 $hagsus += 1
+                                                if hagsus >= 1:
+                                                    show screen suspicion_overlay
                                                 if hagsus == 2: 
                                                     jump death 
                                                 else:
@@ -470,6 +532,8 @@
                                                                         
                                                                 "\"Honestly, they creep me out a little bit.\"":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         jump death
                                                                     else:
@@ -484,6 +548,8 @@
                                                                                 jump cargo
                                                                             "Step back to gain some distance from her.":
                                                                                 $hagsus += 1
+                                                                                if hagsus >= 1:
+                                                                                    show screen suspicion_overlay
                                                                                 if hagsus == 2:
                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                     jump death
@@ -493,6 +559,8 @@
                                                                 
                                                                 "\"Who?\"":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         jump death
                                                                     else:
@@ -511,6 +579,8 @@
                                                                 
                                                                             "Step back to gain some distance from her.":
                                                                                 $hagsus += 1
+                                                                                if hagsus >= 1:
+                                                                                    show screen suspicion_overlay
                                                                                 if hagsus == 2:
                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                     jump death
@@ -529,6 +599,8 @@
 
                             "\"No thank you. I have other things to worry about.\"":
                                 $hagsus += 1
+                                if hagsus >= 1:
+                                    show screen suspicion_overlay
                                 if hagsus == 2:
                                     jump death
                                 else:
@@ -538,6 +610,8 @@
 
                                         "\"Really, I must be going.\"":
                                             $hagsus += 1
+                                            if hagsus >= 1:
+                                                show screen suspicion_overlay
                                             if hagsus == 2:
                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
                                                 jump death
@@ -563,6 +637,8 @@
 
                                                                 "\"I... think that I need it.\"":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2: 
                                                                         jump death
                                 
@@ -579,6 +655,8 @@
                                                                     
                                                                         "\"Of course I am! I have wished to be embraced in her ancient {i}arms{/i} for as long as I can remember.\"":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2:
                                                                                 jump death
                                                                             else:
@@ -598,6 +676,8 @@
                                                                                             
                                                                                             "\"Honestly, they creep me out a little bit.\"":
                                                                                                 $hagsus += 1
+                                                                                                if hagsus >= 1:
+                                                                                                    show screen suspicion_overlay
                                                                                                 if hagsus == 2:
                                                                                                     jump death
                                                                                                 else:
@@ -612,6 +692,8 @@
                                                                                                             jump cargo
                                                                                                         "Step back to gain some distance from her.":
                                                                                                             $hagsus += 1
+                                                                                                            if hagsus >= 1:
+                                                                                                                show screen suspicion_overlay
                                                                                                             if hagsus == 2:
                                                                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                                                 jump death
@@ -621,6 +703,8 @@
                                                                                             
                                                                                             "\"Who?\"":
                                                                                                 $hagsus += 1
+                                                                                                if hagsus >= 1:
+                                                                                                    show screen suspicion_overlay
                                                                                                 if hagsus == 2:
                                                                                                     jump death
                                                                                                 else:
@@ -639,6 +723,8 @@
                                                                                             
                                                                                                         "Step back to gain some distance from her.":
                                                                                                             $hagsus += 1
+                                                                                                            if hagsus >= 1:
+                                                                                                                show screen suspicion_overlay
                                                                                                             if hagsus == 2:
                                                                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                                                 jump death
@@ -647,6 +733,8 @@
 
                                                                                     "Step away.":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                             jump death
@@ -667,6 +755,8 @@
 
                                                                                 "\"Honestly, they creep me out a little bit.\"":
                                                                                     $hagsus += 1
+                                                                                    if hagsus >= 1:
+                                                                                        show screen suspicion_overlay
                                                                                     if hagsus == 2: 
                                                                                         jump death
                                                             
@@ -682,6 +772,8 @@
                                                                                                 jump cargo
                                                                                             "Step back to gain some distance from her.":
                                                                                                 $hagsus += 1
+                                                                                                if hagsus >= 1:
+                                                                                                    show screen suspicion_overlay
                                                                                                 if hagsus == 2:
                                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                                     jump death
@@ -690,6 +782,8 @@
 
                                                                                 "\"Who?\"":
                                                                                     $hagsus += 1
+                                                                                    if hagsus >= 1:
+                                                                                        show screen suspicion_overlay
                                                                                     if hagsus == 2: 
                                                                                         jump death
                                                             
@@ -708,6 +802,8 @@
 
                                                                                             "Step back to gain some distance from her.":
                                                                                                 $hagsus += 1
+                                                                                                if hagsus >= 1:
+                                                                                                    show screen suspicion_overlay
                                                                                                 if hagsus == 2: 
                                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                                     jump death
@@ -716,6 +812,8 @@
 
                                                                         "\"Of course I am! I have wished to be embraced in her ancient {i}fins{/i} for as long as I can remember.\"":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2:
                                                                                 jump death
                                                                             else:
@@ -735,6 +833,8 @@
 
                                                                                             "\"Honestly, they creep me out a little bit.\"":
                                                                                                 $hagsus += 1
+                                                                                                if hagsus >= 1:
+                                                                                                    show screen suspicion_overlay
                                                                                                 if hagsus == 2: 
                                                                                                     jump death
                                                                         
@@ -750,6 +850,8 @@
                                                                                                             jump cargo
                                                                                                         "Step back to gain some distance from her.":
                                                                                                             $hagsus += 1
+                                                                                                            if hagsus >= 1:
+                                                                                                                show screen suspicion_overlay
                                                                                                             if hagsus == 2:
                                                                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                                                 jump death
@@ -758,6 +860,8 @@
 
                                                                                             "\"Who?\"":
                                                                                                 $hagsus += 1
+                                                                                                if hagsus >= 1:
+                                                                                                    show screen suspicion_overlay
                                                                                                 if hagsus == 2: 
                                                                                                     jump death
                                                                         
@@ -776,6 +880,8 @@
 
                                                                                                         "Step back to gain some distance from her.":
                                                                                                             $hagsus += 1
+                                                                                                            if hagsus >= 1:
+                                                                                                                show screen suspicion_overlay
                                                                                                             if hagsus == 2: 
                                                                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                                                 jump death
@@ -784,6 +890,8 @@
 
                                                                                     "Step away.":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2: 
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                             jump death
@@ -793,6 +901,8 @@
 
                                                         "\"What does that passage mean?\"":
                                                             $hagsus += 1
+                                                            if hagsus >= 1:
+                                                                show screen suspicion_overlay
                                                             if hagsus == 2: 
                                                                 jump death
                                 
@@ -802,6 +912,8 @@
 
                                                         "Slowly inch away as she reads to inspect the room once more.":
                                                             $hagsus += 1
+                                                            if hagsus >= 1:
+                                                                show screen suspicion_overlay
                                                             if hagsus == 2: 
                                                                 jump death
                                                             
@@ -829,6 +941,8 @@
                                                                     
                                                                 "\"Of course I am! I have wished to be embraced in her ancient {i}arms{/i} for as long as I can remember.\"":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         jump death
                                                                     else:
@@ -848,6 +962,8 @@
                                                                                     
                                                                                     "\"Honestly, they creep me out a little bit.\"":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             jump death
                                                                                         else:
@@ -862,6 +978,8 @@
                                                                                                     jump cargo
                                                                                                 "Step back to gain some distance from her.":
                                                                                                     $hagsus += 1
+                                                                                                    if hagsus >= 1:
+                                                                                                        show screen suspicion_overlay
                                                                                                     if hagsus == 2:
                                                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                                         jump death
@@ -871,6 +989,8 @@
                                                                                     
                                                                                     "\"Who?\"":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             jump death
                                                                                         else:
@@ -889,6 +1009,8 @@
                                                                                     
                                                                                                 "Step back to gain some distance from her.":
                                                                                                     $hagsus += 1
+                                                                                                    if hagsus >= 1:
+                                                                                                        show screen suspicion_overlay
                                                                                                     if hagsus == 2:
                                                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                                         jump death
@@ -897,6 +1019,8 @@
 
                                                                             "Step away.":
                                                                                 $hagsus += 1
+                                                                                if hagsus >= 1:
+                                                                                    show screen suspicion_overlay
                                                                                 if hagsus == 2:
                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                     jump death
@@ -916,6 +1040,8 @@
 
                                                                         "\"Honestly, they creep me out a little bit.\"":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2: 
                                                                                 jump death
                                                             
@@ -931,6 +1057,8 @@
                                                                                         jump cargo
                                                                                     "Step back to gain some distance from her.":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                             jump death
@@ -939,6 +1067,8 @@
 
                                                                         "\"Who?\"":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2: 
                                                                                 jump death
                                                             
@@ -958,6 +1088,8 @@
                                                                         
                                                                                     "Step back to gain some distance from her.":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                             jump death
@@ -966,6 +1098,8 @@
 
                                                                 "\"Of course I am! I have wished to be embraced in her ancient {i}fins{/i} for as long as I can remember.\"":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2: 
                                                                         jump death 
                                                                     else:
@@ -985,6 +1119,8 @@
                                                                                             
                                                                                     "\"Honestly, they creep me out a little bit.\"":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             jump death
                                                                                         else:
@@ -999,6 +1135,8 @@
                                                                                                     jump cargo
                                                                                                 "Step back to gain some distance from her.":
                                                                                                     $hagsus += 1
+                                                                                                    if hagsus >= 1:
+                                                                                                        show screen suspicion_overlay
                                                                                                     if hagsus == 2:
                                                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                                         jump death
@@ -1008,6 +1146,8 @@
                                                                                     
                                                                                     "\"Who?\"":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             jump death
                                                                                         else:
@@ -1026,6 +1166,8 @@
                                                                                     
                                                                                                 "Step back to gain some distance from her.":
                                                                                                     $hagsus += 1
+                                                                                                    if hagsus >= 1:
+                                                                                                        show screen suspicion_overlay
                                                                                                     if hagsus == 2:
                                                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
                                                                                                         jump death
@@ -1044,6 +1186,8 @@
     
                     "\"Okay... Do you seriously not know where everyone went?\"":
                         $hagsus += 1
+                        if hagsus >= 1:
+                            show screen suspicion_overlay
                         if hagsus == 2: 
                             jump death 
                         else:
@@ -1052,6 +1196,8 @@
 
                     "\"You seem to be stuck just as much as I am. Do you know a way out?\"":
                         $hagsus += 1
+                        if hagsus >= 1:
+                            show screen suspicion_overlay
                         if hagsus == 2: 
                             jump death
                         else:
