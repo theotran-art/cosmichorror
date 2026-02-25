@@ -25,7 +25,8 @@ default showCargoBook = False
 default hagsus = 0
 default readbook = False
 default lookposter = False
-
+image windowCargoCloseup = "images/backgrounds/windowCargoCloseup.png"
+image windowCargo = "images/backgrounds/windowCargo.png"
 
 define music.bgm = "music/bgm.wav"
 

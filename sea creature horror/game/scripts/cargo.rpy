@@ -2,14 +2,14 @@
     play music "music/bgm.wav" fadein 3.0
 
 label cargo:
-    $cargo_scroll_enabled = True
     $cargo_buttons_enabled = False
 
     show screen cargoRoom
 
     if item_page == False:
         p1 "YOU NEED HER HOLY TEXT."
-    
+        
+    $cargo_scroll_enabled = True
     label pauseCargo:
         window hide
         $cargo_buttons_enabled = True
@@ -105,12 +105,16 @@ label cargoWindow:
     $cargo_buttons_enabled = False
     hide screen cargoRoom
 
-    #scene window
+    hide windowCargo
+    scene windowCargoCloseup
     menu:
         "Examine outside.":
+            hide windowCargoCloseup
+            scene windowCargo
             "You look out the window."
             jump cargoWindow
         "Step away.":
+            hide windowCargoCloseup
             jump cargo
 
 
