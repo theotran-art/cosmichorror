@@ -4,7 +4,7 @@
 # name of the character.
 
 define t = Character((None), what_italic=True) #thoughts
-define h = Character((None), screen='hag_screen', what_font="fonts/fonts_hag/Funnel_Display_Lacquer/Lacquer/Lacquer-Regular.ttf", what_size=36) #hag
+define h = Character((None), screen='hag_screen', what_font="fonts/fonts_hag/Funnel_Display_Lacquer/Lacquer/Lacquer-Regular.ttf", what_size=30) #hag
 define c = Character((None)) #cannibal
 define s = Character((None)) #skeptic
 define p1 = Character((None), what_color="FCC7C7")
@@ -18,11 +18,15 @@ default showItemPage = False
 default item_knife = False
 default item_lighter = False
 
+#general things
+image black bckgd = "images/backgrounds/blackbckgd.jpg" 
+
 #cargo/hag related variables
 default cargo_scroll_enabled = True
 default cargo_buttons_enabled = True
 default showCargoBook = False
 default hagsus = 0
+default phag = False
 default readbook = False
 default lookposter = False
 image windowCargoCloseup = "images/backgrounds/windowCargoCloseup.png"

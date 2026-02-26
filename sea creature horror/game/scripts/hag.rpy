@@ -107,6 +107,7 @@
                                                                                             show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                            $phag = True
                                                                                             jump death
                                                                                         else:
                                                                                             jump cargo
@@ -138,6 +139,7 @@
                                                                                             show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                            $phag = True
                                                                                             jump death
                                                                                         else:
                                                                                             jump cargo
@@ -148,6 +150,7 @@
                                                                         show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                        $phag = True
                                                                         jump death
                                                                     else:
                                                                         jump cargo
@@ -187,6 +190,7 @@
                                                                                 show screen suspicion_overlay
                                                                             if hagsus == 2:
                                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                $phag = True
                                                                                 jump death
                                                                             else: 
                                                                                 jump cargo
@@ -217,6 +221,7 @@
                                                                                 show screen suspicion_overlay
                                                                             if hagsus == 2: 
                                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                $phag = True
                                                                                 jump death
                                                                             else:
                                                                                 jump cargo
@@ -265,6 +270,7 @@
                                                                                             show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                            $phag = True
                                                                                             jump death
                                                                                         else: 
                                                                                             jump cargo
@@ -295,6 +301,7 @@
                                                                                             show screen suspicion_overlay
                                                                                         if hagsus == 2: 
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                            $phag = True
                                                                                             jump death
                                                                                         else:
                                                                                             jump cargo
@@ -305,6 +312,7 @@
                                                                         show screen suspicion_overlay
                                                                     if hagsus == 2: 
                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                        $phag = True
                                                                         jump death
                                                                     else:
                                                                         jump cargo
@@ -393,6 +401,7 @@
                                                                                     show screen suspicion_overlay
                                                                                 if hagsus == 2:
                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                    $phag = True
                                                                                     jump death
                                                                                 else:
                                                                                     jump cargo
@@ -424,6 +433,7 @@
                                                                                     show screen suspicion_overlay
                                                                                 if hagsus == 2:
                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                    $phag = True
                                                                                     jump death
                                                                                 else:
                                                                                     jump cargo
@@ -434,6 +444,7 @@
                                                                 show screen suspicion_overlay
                                                             if hagsus == 2:
                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                $phag = True
                                                                 jump death
                                                             else:
                                                                 jump cargo
@@ -472,6 +483,7 @@
                                                                         show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                        $phag = True
                                                                         jump death
                                                                     else:
                                                                         jump cargo
@@ -503,6 +515,7 @@
                                                                         show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                        $phag = True
                                                                         jump death
                                                                     else:
                                                                         jump cargo
@@ -550,6 +563,7 @@
                                                                                     show screen suspicion_overlay
                                                                                 if hagsus == 2:
                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                    $phag = True
                                                                                     jump death
                                                                                 else:
                                                                                     jump cargo
@@ -581,6 +595,7 @@
                                                                                     show screen suspicion_overlay
                                                                                 if hagsus == 2:
                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                    $phag = True
                                                                                     jump death
                                                                                 else:
                                                                                     jump cargo
@@ -589,6 +604,7 @@
                                                             $hagsus +=1
                                                             if hagsus == 2:
                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                $phag = True
                                                                 jump death
                                                             else:
                                                                 jump cargo
@@ -612,6 +628,7 @@
                                                 show screen suspicion_overlay
                                             if hagsus == 2:
                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                $phag = True
                                                 jump death
                                             else:
                                                 jump cargo
@@ -659,7 +676,7 @@
                                                                                 jump death
                                                                             else:
                                                                                 menu:
-                                                                                    h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth. Leave me foul vermin!\""
+                                                                                    h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth.\" Leave me foul vermin!\""
 
                                                                                     "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
                                                                                         menu:
@@ -694,6 +711,7 @@
                                                                                                                 show screen suspicion_overlay
                                                                                                             if hagsus == 2:
                                                                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                                $phag = True
                                                                                                                 jump death
                                                                                                             else:
                                                                                                                 jump cargo
@@ -725,6 +743,7 @@
                                                                                                                 show screen suspicion_overlay
                                                                                                             if hagsus == 2:
                                                                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                                $phag = True
                                                                                                                 jump death
                                                                                                             else:
                                                                                                                 jump cargo
@@ -735,6 +754,7 @@
                                                                                             show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                            $phag = True
                                                                                             jump death
                                                                                         else:
                                                                                             jump cargo
@@ -774,6 +794,7 @@
                                                                                                     show screen suspicion_overlay
                                                                                                 if hagsus == 2:
                                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                    $phag = True
                                                                                                     jump death
                                                                                                 else: 
                                                                                                     jump cargo
@@ -804,6 +825,7 @@
                                                                                                     show screen suspicion_overlay
                                                                                                 if hagsus == 2: 
                                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                    $phag = True
                                                                                                     jump death
                                                                                                 else:
                                                                                                     jump cargo
@@ -852,6 +874,7 @@
                                                                                                                 show screen suspicion_overlay
                                                                                                             if hagsus == 2:
                                                                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                                $phag = True
                                                                                                                 jump death
                                                                                                             else: 
                                                                                                                 jump cargo
@@ -882,6 +905,7 @@
                                                                                                                 show screen suspicion_overlay
                                                                                                             if hagsus == 2: 
                                                                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                                $phag = True
                                                                                                                 jump death
                                                                                                             else:
                                                                                                                 jump cargo
@@ -892,6 +916,7 @@
                                                                                             show screen suspicion_overlay
                                                                                         if hagsus == 2: 
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                            $phag = True
                                                                                             jump death
                                                                                         else:
                                                                                             jump cargo
@@ -980,6 +1005,7 @@
                                                                                                         show screen suspicion_overlay
                                                                                                     if hagsus == 2:
                                                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                        $phag = True
                                                                                                         jump death
                                                                                                     else:
                                                                                                         jump cargo
@@ -1011,6 +1037,7 @@
                                                                                                         show screen suspicion_overlay
                                                                                                     if hagsus == 2:
                                                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                        $phag = True
                                                                                                         jump death
                                                                                                     else:
                                                                                                         jump cargo
@@ -1021,6 +1048,7 @@
                                                                                     show screen suspicion_overlay
                                                                                 if hagsus == 2:
                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                    $phag = True
                                                                                     jump death
                                                                                 else:
                                                                                     jump cargo
@@ -1059,6 +1087,7 @@
                                                                                             show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                            $phag = True
                                                                                             jump death
                                                                                         else:
                                                                                             jump cargo
@@ -1090,6 +1119,7 @@
                                                                                             show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                            $phag = True
                                                                                             jump death
                                                                                         else:
                                                                                             jump cargo
@@ -1137,6 +1167,7 @@
                                                                                                         show screen suspicion_overlay
                                                                                                     if hagsus == 2:
                                                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                        $phag = True
                                                                                                         jump death
                                                                                                     else:
                                                                                                         jump cargo
@@ -1168,6 +1199,7 @@
                                                                                                         show screen suspicion_overlay
                                                                                                     if hagsus == 2:
                                                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                        $phag = True
                                                                                                         jump death
                                                                                                     else:
                                                                                                         jump cargo
@@ -1176,6 +1208,7 @@
                                                                                 $hagsus +=1
                                                                                 if hagsus == 2:
                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                    $phag = True
                                                                                     jump death
                                                                                 else:
                                                                                     jump cargo
