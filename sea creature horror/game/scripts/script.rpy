@@ -4,7 +4,7 @@
 # name of the character.
 
 define t = Character((None), what_italic=True) #thoughts
-define h = Character((None), screen='hag_screen', what_font="fonts/fonts_hag/Funnel_Display_Lacquer/Lacquer/Lacquer-Regular.ttf", what_size=30) #hag
+define h = Character((None), screen='hag_screen', what_font="fonts/fonts_hag/Funnel_Display_Lacquer/Lacquer/Lacquer-Regular.ttf", what_size=32) #hag
 define c = Character((None)) #cannibal
 define s = Character((None)) #skeptic
 define p1 = Character((None), what_color="FCC7C7")

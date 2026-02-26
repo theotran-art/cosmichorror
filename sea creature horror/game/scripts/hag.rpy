@@ -71,8 +71,9 @@
                                                         if hagsus == 2:
                                                             jump death
                                                         else:
-                                                            menu:
-                                                                h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth. Leave me foul vermin!\""
+                                                            h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth.\""
+                                                            menu: 
+                                                                h "\"Leave me foul vermin!\""
 
                                                                 "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
                                                                     menu:
@@ -233,8 +234,9 @@
                                                         if hagsus == 2:
                                                             jump death
                                                         else:
+                                                            h "\"She would not dirty herself with the imperfect forms of her scions.\"" 
                                                             menu:
-                                                                h "\"She would not dirty herself with the imperfect forms of her scions. You are no aspirant. You are more fit to be her food than to be her child.\""
+                                                                h "\"You are no aspirant. You are more fit to be her food than to be her child.\""
 
                                                                 "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
                                                                     menu:
@@ -365,8 +367,9 @@
                                                 if hagsus == 2:
                                                     jump death
                                                 else:
+                                                    h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth.\""
                                                     menu:
-                                                        h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth. Leave me foul vermin!\""
+                                                        h "\"Leave me foul vermin!\""
 
                                                         "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
                                                             menu:
@@ -527,8 +530,9 @@
                                                 if hagsus == 2: 
                                                     jump death 
                                                 else:
-                                                    menu:
-                                                        h "\"She would not dirty herself with the imperfect forms of her scions. You are no aspirant. You are more fit to be her food than to be her child.\""
+                                                    h "\"She would not dirty herself with the imperfect forms of her scions.\""
+                                                    menu: 
+                                                        h "\"You are no aspirant. You are more fit to be her food than to be her child.\""
 
                                                         "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
                                                             menu:
@@ -675,8 +679,9 @@
                                                                             if hagsus == 2:
                                                                                 jump death
                                                                             else:
+                                                                                h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth.\""
                                                                                 menu:
-                                                                                    h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth.\" Leave me foul vermin!\""
+                                                                                    h "\"Leave me foul vermin!\""
 
                                                                                     "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
                                                                                         menu:
@@ -837,8 +842,9 @@
                                                                             if hagsus == 2:
                                                                                 jump death
                                                                             else:
+                                                                                h "\"She would not dirty herself with the imperfect forms of her scions.\"" 
                                                                                 menu:
-                                                                                    h "\"She would not dirty herself with the imperfect forms of her scions. You are no aspirant. You are more fit to be her food than to be her child.\""
+                                                                                    h "\"You are no aspirant. You are more fit to be her food than to be her child.\""
 
                                                                                     "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
                                                                                         menu:
@@ -969,8 +975,9 @@
                                                                     if hagsus == 2:
                                                                         jump death
                                                                     else:
-                                                                        menu:
-                                                                            h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth. Leave me foul vermin!\""
+                                                                        h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth.\""
+                                                                        menu: 
+                                                                            h "\"Leave me foul vermin!\""
 
                                                                             "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
                                                                                 menu:
@@ -1131,8 +1138,9 @@
                                                                     if hagsus == 2: 
                                                                         jump death 
                                                                     else:
+                                                                        h "\"She would not dirty herself with the imperfect forms of her scions.\""
                                                                         menu:
-                                                                            h "\"She would not dirty herself with the imperfect forms of her scions. You are no aspirant. You are more fit to be her food than to be her child.\""
+                                                                            h "\"You are no aspirant. You are more fit to be her food than to be her child.\""
 
                                                                             "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
                                                                                 menu:
