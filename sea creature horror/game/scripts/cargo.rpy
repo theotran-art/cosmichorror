@@ -121,10 +121,13 @@ label cargoWindow:
 label cargoDoor:
     $cargo_scroll_enabled = False
     $cargo_buttons_enabled = False
-    if item_page == False:
+    if page_combined == False and item_page_1 == False or item_page_2 == False:
         t "You should probably try and gather what you can from this room first."
         jump cargo
-    if item_page == True:
+    if page_combined == False and item_page_1 == True and item_page_2 == True:
+        t "You have what you need, but you should repair the page first."
+        jump cargo
+    if page_combined == True:
         t "An inconspicuous door. Should you enter?"
         menu:
             "Enter.":
@@ -148,6 +151,8 @@ label cargoBook:
     t "The half of the page that remains bound to the rest of the book reads," 
     t " -iver us, for we yearn to be entangled in your cold emabrace as the children of your new earth."
     p1 "You need the rest of this."
+    t "You find yourself tearing off the page and tucking it away." #theo wrote this, replace if aidan writes smth
+    $item_page_1 = True
     $showCargoBook = False
     jump cargo
 

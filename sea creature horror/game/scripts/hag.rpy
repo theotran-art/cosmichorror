@@ -5,7 +5,7 @@
 
     hide screen inventory
 
-    if item_page == False:
+    if item_page_2 == False:
         t "An elderly woman seems to be reflecting, meditating, or praying in some sort of way. She pays you no mind until you walk closer to her."
     
         menu:
@@ -82,7 +82,7 @@
                                                                         "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                            $item_page = True
+                                                                            $item_page_2 = True
                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                             jump cargo
                                                                         
@@ -99,7 +99,7 @@
                                                                                     "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                         h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                         t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                        $item_page = True
+                                                                                        $item_page_2 = True
                                                                                         t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                         jump cargo
                                                                                     "Step back to gain some distance from her.":
@@ -130,7 +130,7 @@
                                                                                         h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                         
                                                                                         t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                        $item_page = True
+                                                                                        $item_page_2 = True
                                                                                         t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                         jump cargo
                                                                         
@@ -164,7 +164,7 @@
                                                             "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                $item_page = True
+                                                                $item_page_2 = True
                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                 jump cargo
 
@@ -182,7 +182,7 @@
                                                                         "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                            $item_page = True
+                                                                            $item_page_2 = True
                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                             jump cargo
                                                                         "Step back to gain some distance from her.":
@@ -212,7 +212,7 @@
                                                                         "\"My apologies, ma'am! Of course I know of our most holy guides. We call them by a different name where I come from.\"":
                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                            $item_page = True
+                                                                            $item_page_2 = True
                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                             jump cargo
 
@@ -245,7 +245,7 @@
                                                                         "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                            $item_page = True
+                                                                            $item_page_2 = True
                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                             jump cargo
 
@@ -263,7 +263,7 @@
                                                                                     "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                         h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                         t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                        $item_page = True
+                                                                                        $item_page_2 = True
                                                                                         t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                         jump cargo
                                                                                     "Step back to gain some distance from her.":
@@ -293,7 +293,7 @@
                                                                                     "\"My apologies, ma'am! Of course I know of our most holy guides. We call them by a different name where I come from.\"":
                                                                                         h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                         t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                        $item_page = True
+                                                                                        $item_page_2 = True
                                                                                         t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                         jump cargo
 
@@ -378,7 +378,7 @@
                                                                 "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                     h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                     t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                    $item_page = True
+                                                                    $item_page_2 = True
                                                                     t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                     jump cargo
                                                                 
@@ -395,7 +395,7 @@
                                                                             "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                $item_page = True
+                                                                                $item_page_2 = True
                                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                 jump cargo
                                                                             "Step back to gain some distance from her.":
@@ -426,7 +426,7 @@
                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                 
                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                $item_page = True
+                                                                                $item_page_2 = True
                                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                 jump cargo
                                                                 
@@ -459,7 +459,7 @@
                                                     "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                         h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                         t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                        $item_page = True
+                                                        $item_page_2 = True
                                                         t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                         jump cargo
 
@@ -477,7 +477,7 @@
                                                                 "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                     h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                     t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                    $item_page = True
+                                                                    $item_page_2 = True
                                                                     t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                     jump cargo
                                                                 "Step back to gain some distance from her.":
@@ -508,7 +508,7 @@
                                                                     h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                     
                                                                     t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                    $item_page = True
+                                                                    $item_page_2 = True
                                                                     t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                     jump cargo
                                                     
@@ -541,7 +541,7 @@
                                                                 "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                            $item_page = True
+                                                                            $item_page_2 = True
                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                             jump cargo
                                                                         
@@ -558,7 +558,7 @@
                                                                             "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                $item_page = True
+                                                                                $item_page_2 = True
                                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                 jump cargo
                                                                             "Step back to gain some distance from her.":
@@ -589,7 +589,7 @@
                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                 
                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                $item_page = True
+                                                                                $item_page_2 = True
                                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                 jump cargo
                                                                 
@@ -690,7 +690,7 @@
                                                                                             "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                                $item_page = True
+                                                                                                $item_page_2 = True
                                                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                 jump cargo
                                                                                             
@@ -707,7 +707,7 @@
                                                                                                         "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                                            $item_page = True
+                                                                                                            $item_page_2 = True
                                                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                             jump cargo
                                                                                                         "Step back to gain some distance from her.":
@@ -738,7 +738,7 @@
                                                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                             
                                                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                                            $item_page = True
+                                                                                                            $item_page_2 = True
                                                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                             jump cargo
                                                                                             
@@ -772,7 +772,7 @@
                                                                                 "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                                     h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                     t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                    $item_page = True
+                                                                                    $item_page_2 = True
                                                                                     t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                     jump cargo
 
@@ -790,7 +790,7 @@
                                                                                             "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                                $item_page = True
+                                                                                                $item_page_2 = True
                                                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                 jump cargo
                                                                                             "Step back to gain some distance from her.":
@@ -820,7 +820,7 @@
                                                                                             "\"My apologies, ma'am! Of course I know of our most holy guides. We call them by a different name where I come from.\"":
                                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                                $item_page = True
+                                                                                                $item_page_2 = True
                                                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                 jump cargo
 
@@ -853,7 +853,7 @@
                                                                                             "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                                $item_page = True
+                                                                                                $item_page_2 = True
                                                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                 jump cargo
 
@@ -871,7 +871,7 @@
                                                                                                         "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                                            $item_page = True
+                                                                                                            $item_page_2 = True
                                                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                             jump cargo
                                                                                                         "Step back to gain some distance from her.":
@@ -901,7 +901,7 @@
                                                                                                         "\"My apologies, ma'am! Of course I know of our most holy guides. We call them by a different name where I come from.\"":
                                                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                                            $item_page = True
+                                                                                                            $item_page_2 = True
                                                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                             jump cargo
 
@@ -986,7 +986,7 @@
                                                                                     "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                                         h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                         t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                        $item_page = True
+                                                                                        $item_page_2 = True
                                                                                         t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                         jump cargo
                                                                                     
@@ -1003,7 +1003,7 @@
                                                                                                 "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                                     h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                     t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                                    $item_page = True
+                                                                                                    $item_page_2 = True
                                                                                                     t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                     jump cargo
                                                                                                 "Step back to gain some distance from her.":
@@ -1034,7 +1034,7 @@
                                                                                                     h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                     
                                                                                                     t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                                    $item_page = True
+                                                                                                    $item_page_2 = True
                                                                                                     t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                     jump cargo
                                                                                     
@@ -1067,7 +1067,7 @@
                                                                         "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                            $item_page = True
+                                                                            $item_page_2 = True
                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                             jump cargo
 
@@ -1085,7 +1085,7 @@
                                                                                     "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                         h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                         t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                        $item_page = True
+                                                                                        $item_page_2 = True
                                                                                         t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                         jump cargo
                                                                                     "Step back to gain some distance from her.":
@@ -1116,7 +1116,7 @@
                                                                                         h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                         
                                                                                         t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                        $item_page = True
+                                                                                        $item_page_2 = True
                                                                                         t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                         jump cargo
                                                                         
@@ -1149,7 +1149,7 @@
                                                                                     "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                                $item_page = True
+                                                                                                $item_page_2 = True
                                                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                 jump cargo
                                                                                             
@@ -1166,7 +1166,7 @@
                                                                                                 "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                                     h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                     t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                                    $item_page = True
+                                                                                                    $item_page_2 = True
                                                                                                     t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                     jump cargo
                                                                                                 "Step back to gain some distance from her.":
@@ -1197,7 +1197,7 @@
                                                                                                     h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                     
                                                                                                     t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                                    $item_page = True
+                                                                                                    $item_page_2 = True
                                                                                                     t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                     jump cargo
                                                                                     
