@@ -24,7 +24,7 @@
         
             "\"Well of course! Do you know where everyone went?\"":
                 menu:
-                    h "\"It matters not dear one! We shall all be her children in her cold embrace. Glory to the One Below!\""
+                    h "\"It matters not, dear one! We shall all be her children in her cold embrace. Glory to the One Below!\""
 
                     "\"And may she return above!\"" if lookposter == True: #GOOD CHOICE ROUTE PT1
                         h "\"Ahhhhhhhh! You are a true aspirant!\"" 
