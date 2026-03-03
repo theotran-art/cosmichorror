@@ -15,6 +15,8 @@ define p3 = Character((None), what_color="BF1717")
 #inventory items
 default item_page = False
 default showItemPage = False
+default showItemPage1 = False
+default showItemPage2 = False
 default item_knife = False
 default item_lighter = False
 

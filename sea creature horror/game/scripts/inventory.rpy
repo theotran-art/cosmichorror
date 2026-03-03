@@ -45,7 +45,7 @@ label examinePage: #THIS IS COMPLETED PAGE
     jump cargo
 
 label examinePage1: 
-    $showItemPage = True
+    $showItemPage1 = True
     t "You have a ripped page that reads out the passage:"
     "\"-iver us, for we yearn to be entangled in your cold emabrace as the children of your new earth.\""
     if item_page_2 == True:
@@ -54,11 +54,11 @@ label examinePage1:
                 $item_page = True
                 "You piece the two sections together."
                 $page_combined = True
-    $showItemPage = False
+    $showItemPage1 = False
     jump cargo
 
 label examinePage2: 
-    $showItemPage = True
+    $showItemPage2 = True
     t "You have a ripped page that reads out the passage:"
     "\"O Mother of the Great Deep, we sever our love to our flesh to offer it to you alone, flaying our imperfect forms as penance for the circumstances of our births.\""
     "\"Accept our emaciated bodies and del-\""
@@ -68,7 +68,7 @@ label examinePage2:
                 $item_page = True
                 "You piece the two sections together."
                 $page_combined = True
-    $showItemPage = False
+    $showItemPage2 = False
     jump cargo
 
 label examineKnife:
