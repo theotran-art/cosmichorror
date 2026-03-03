@@ -47,7 +47,7 @@ label examinePage: #THIS IS COMPLETED PAGE
 label examinePage1: 
     $showItemPage = True
     t "You have a ripped page that reads out the passage:"
-    " -iver us, for we yearn to be entangled in your cold emabrace as the children of your new earth."
+    "\"-iver us, for we yearn to be entangled in your cold emabrace as the children of your new earth.\""
     if item_page_2 == True:
         menu:
             "Combine the ripped pages.":
