@@ -51,9 +51,14 @@ label examinePage1:
     if item_page_2 == True:
         menu:
             "Combine the ripped pages.":
-                $item_page = True
-                "You piece the two sections together."
-                $page_combined = True
+                $showItemPage1 = False
+                $cargo_buttons_enabled = False 
+                $cargo_scroll_enabled = False
+                #show screen combine_pages
+                $ result = renpy.call_screen("combine_pages")
+                if result:
+                    jump combinePagesFinished
+                $ renpy.pause()
     $showItemPage1 = False
     jump cargo
 
@@ -65,9 +70,14 @@ label examinePage2:
     if item_page_1 == True:
         menu:
             "Combine the ripped pages.":
-                $item_page = True
-                "You piece the two sections together."
-                $page_combined = True
+                $showItemPage2 = False
+                $cargo_buttons_enabled = False 
+                $cargo_scroll_enabled = False
+                #show screen combine_pages
+                $ result = renpy.call_screen("combine_pages")
+                if result:
+                    jump combinePagesFinished
+                $ renpy.pause()
     $showItemPage2 = False
     jump cargo
 
