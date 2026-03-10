@@ -40,9 +40,6 @@ screen cargoRoom:
             #imagebutton: #for crates
                 #pos (3000,600) #where it appears on the screen
                 #auto "images/items/cargo/crates_%s.png" action Jump("cargoCrates")
-            imagebutton: #for the Hag
-                pos (4080,750) #where it appears on the screen
-                auto "images/sprites/hag_%s.png" action Hide("inventory"), Jump("hagtalk")
             imagebutton: #for the window
                 pos (874,371)
                 auto "images/items/cargo/window_%s.png" action Hide("inventory"), Jump("cargoWindow")    
@@ -64,6 +61,9 @@ screen cargoRoom:
             imagebutton: #for poster2
                 pos (1729,226) #where it appears on the screen
                 auto "images/items/cargo/poster2_%s.png" action Hide("inventory"), Jump("cargoPoster") 
+            imagebutton: #for the Hag
+                pos (4080,750) #where it appears on the screen
+                auto "images/sprites/hag_%s.png" action Hide("inventory"), Jump("hagtalk")
 
     #IMAGES THAT SHOW UP AFTER CLICKING AN ITEM (CLOSE UP)
     if showCargoBook:
