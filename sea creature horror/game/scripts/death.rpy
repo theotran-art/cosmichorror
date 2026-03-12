@@ -18,5 +18,7 @@ label death:
         show screen pdeathhagscreen
         t "You feel a sharp pain in your head."
         "You died."
+    if cann_lose == True:
+        "cannibal killed u"
 
         

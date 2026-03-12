@@ -5,12 +5,17 @@
 
 define t = Character((None), what_italic=True) #thoughts
 define h = Character((None), screen='hag_screen', what_font="fonts/fonts_hag/Funnel_Display_Lacquer/Lacquer/Lacquer-Regular.ttf", what_size=32) #hag
-define c = Character((None)) #cannibal
+define c = Character((None), screen='cannibal_screen', what_size=32) #cannibal
 define s = Character((None)) #skeptic
 define p1 = Character((None), what_color="FCC7C7")
 define p2 = Character((None), what_color="B54545")
 define p3 = Character((None), what_color="BF1717")
 
+
+
+#general things
+image black bckgd = "images/backgrounds/blackbckgd.jpg" 
+define music.bgm = "music/bgm.wav"
 
 #inventory items
 default item_page = False
@@ -19,9 +24,6 @@ default showItemPage1 = False
 default showItemPage2 = False
 default item_knife = False
 default item_lighter = False
-
-#general things
-image black bckgd = "images/backgrounds/blackbckgd.jpg" 
 
 #cargo/hag related variables
 default cargo_scroll_enabled = True
@@ -37,9 +39,33 @@ default lookposter = False
 image windowCargoCloseup = "images/backgrounds/windowCargoCloseup.png"
 image windowCargo = "images/backgrounds/windowCargo.png"
 
-define music.bgm = "music/bgm.wav"
+#kitchen/cannibal related variables
+default kitchen_scroll_enabled = True
+default kitchen_buttons_enabled = True
+default cansus = 0
+default pcan = False
+
 
 screen hag_screen(who, what):
+
+    #window id "window":
+        #xalign 0.5
+        #yalign 0.65
+
+    frame:
+        background "#00000099"
+        xsize 1800
+        ysize 90
+        xalign 0.5
+        yalign 0.66
+
+    text what id "what":
+        layout "nobreak"
+        text_align 0.5
+        xalign 0.5
+        yalign 0.65
+
+screen cannibal_screen(who, what):
 
     #window id "window":
         #xalign 0.5
