@@ -4,7 +4,7 @@ init python:
 
         global slider_x
         global slider_direction
-        speed = 3 #change this line to make it faster/slower ex: 1.5 slow, 5 fast
+        speed = 10 #change this line to make it faster/slower ex: 1.5 slow, 5 fast
         max_x = slider_bar_size[0] - slider_size[0]
 
         if slider_direction == "right": #boundary of the slider
@@ -101,7 +101,12 @@ screen mg_cannibal_attack:
                 zoom 0.5
             if not stop_slider:
                 timer 0.016 repeat True action Function(slider_update)
-    
+    if cann_hits == 1:
+        frame:
+            background "#00000088"
+            padding (5,5)
+            align (0.5, 0.15)
+            text "You missed, and he stabs you. You need to take him down now!" size 30 color "#FF0000"
     if cann_lose: #what happens if you lose
         timer 0.01 action [Hide("mg_cannibal_attack"), Jump("death")]
     #else:
@@ -124,7 +129,7 @@ label mg_canatt:
     $kitchen_scroll_enabled = False
 
     # Safe zone variables
-    $ safe_zone_size = (int(149 / 2), int(70 / 2))
+    $ safe_zone_size = (int(149 / 2), int(70 / 2)) #(int(149 / 2), int(70 / 2))
 
     # Slider variables
     $ slider_bar_size = (int(545 / 2), int(70 / 2))
