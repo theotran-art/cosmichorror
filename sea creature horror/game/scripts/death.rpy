@@ -12,13 +12,19 @@ label death:
         hide screen cargoRoom
         show black bckgd
         "You died."
+        $hagsus = 0
+        jump cargo
     if hagsus == 2 and phag == True:
         hide screen cargoRoom
         show black bckgd
         show screen pdeathhagscreen
         t "You feel a sharp pain in your head."
         "You died."
+        $hagsus = 0
+        jump cargo
     if cann_lose == True:
+        show black bckgd
         "cannibal killed u"
+        jump kitchen
 
         

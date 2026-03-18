@@ -147,6 +147,7 @@ label cargoDoor:
         t "An inconspicuous door. Should you enter?"
         menu:
             "Enter.":
+                hide screen cargoRoom
                 jump kitchenEnter
             "Turn away.":
                 jump cargo
