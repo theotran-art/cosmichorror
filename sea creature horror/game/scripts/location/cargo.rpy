@@ -10,6 +10,7 @@ label cargo:
         p1 "YOU NEED HER HOLY TEXT."
         
     $cargo_scroll_enabled = True
+    show screen uiWindow
     label pauseCargo:
         window hide
         $cargo_buttons_enabled = True
@@ -25,13 +26,12 @@ screen cargoRoom:
     viewport id "cargoScene":
         area (0, 0, 1920, 1080) #size of screen (leave the same)
         child_size (5497, 1620) #change based on image size
+        add "images/backgrounds/cargo.png" #name of the background image
 
-        if cargo_scroll_enabled:
+        if cargo_scroll_enabled and allow_edge_scroll():
             edgescroll (150, 1400) #how fast the scrolling is (horizontal_speed, vertical_speed)
         else: 
             edgescroll (0,0)
- 
-        add "images/backgrounds/cargo.png" #name of the background image
         
         if cargo_buttons_enabled == True:
             imagebutton: #for dead bodies
