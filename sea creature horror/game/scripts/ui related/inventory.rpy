@@ -1,40 +1,46 @@
-﻿screen inventory():
-    textbutton "Inventory":
-        action Show("inventoryView"), Hide("inventory"), SetVariable("cargo_buttons_enabled", False), SetVariable("cargo_scroll_enabled", False)
-
-screen inventoryView():
+﻿screen inventoryView():
+    layer "ui"
     tag menu  # prevents stacking with other menus
 
     modal True
 
-    frame:
-        align (0.01, 0.01)
-        padding (30, 30)
+    fixed:
+        xalign 1.0
+        yalign 0.0
+        xoffset -10
+        yoffset 175
+
+        add "gui/customui/inventory.png":
+            xalign 1.0
+            yalign 0.0
 
         vbox:
-            spacing 15
-            text "Inventory"
+            xalign 0.985
+            yalign 0.025
+            spacing 8
+            xmaximum 140
+            text "Inventory" size 28
 
             #page
             if item_page == True: #THIS IS COMPLETED PAGE
-                textbutton "Page":
-                    action Hide("inventoryView"), Show("inventory"), Jump("examinePage")
+                textbutton "{size=20}Page":
+                    action Hide("inventoryView"), SetVariable("inventory_open", False), Jump("examinePage")
             if item_page_1 == True and page_combined == False:
-                textbutton "Ripped page from book":
-                    action Hide("inventoryView"), Show("inventory"), Jump("examinePage1")
+                textbutton "{size=20}Ripped page from book":
+                    action Hide("inventoryView"), SetVariable("inventory_open", False), Jump("examinePage1")
             if item_page_2 == True and page_combined == False:
-                textbutton "Ripped page from cultist":
-                    action Hide("inventoryView"), Show("inventory"), Jump("examinePage2")
+                textbutton "{size=20}Ripped page from cultist":
+                    action Hide("inventoryView"), SetVariable("inventory_open", False), Jump("examinePage2")
             #knife
             if item_knife == True:
-                textbutton "Knife":
-                    action Hide("inventoryView"), Show("inventory"), Jump("examineKnife")
+                textbutton "{size=20}Knife":
+                    action Hide("inventoryView"), SetVariable("inventory_open", False), Jump("examineKnife")
             #lighter
             if item_lighter == True:
-                textbutton "Lighter":
-                    action Hide("inventoryView"), Show("inventory"), Jump("examineLighter")
-            textbutton "Close":
-                action Hide("inventoryView"), Show("inventory"), SetVariable("cargo_buttons_enabled", True), SetVariable("cargo_scroll_enabled", True)
+                textbutton "{size=20}Lighter":
+                    action Hide("inventoryView"), SetVariable("inventory_open", False), Jump("examineLighter")
+            textbutton "{size=22}Close":
+                action Hide("inventoryView"), SetVariable("inventory_open", False), SetVariable("cargo_buttons_enabled", True), SetVariable("cargo_scroll_enabled", True)
 
 label examinePage: #THIS IS COMPLETED PAGE
     $showItemPage = True

@@ -10,11 +10,10 @@ label cargo:
         p1 "YOU NEED HER HOLY TEXT."
         
     $cargo_scroll_enabled = True
-    show screen uiWindow
+    show screen uiWindow with fade
     label pauseCargo:
         window hide
         $cargo_buttons_enabled = True
-        show screen inventory 
         pause
         jump pauseCargo
     window auto 
@@ -36,34 +35,34 @@ screen cargoRoom:
         if cargo_buttons_enabled == True:
             imagebutton: #for dead bodies
                 pos (340,945) #where it appears on the screen
-                auto "images/items/cargo/bodies_%s.png" action Hide("inventory"), Jump("cargoDeadBodies")
+                auto "images/items/cargo/bodies_%s.png" action Hide("uiWindow", transition=fade), Jump("cargoDeadBodies")
             #imagebutton: #for crates
                 #pos (3000,600) #where it appears on the screen
                 #auto "images/items/cargo/crates_%s.png" action Jump("cargoCrates")
             imagebutton: #for the window
                 pos (874,371)
-                auto "images/items/cargo/window_%s.png" action Hide("inventory"), Jump("cargoWindow")    
+                auto "images/items/cargo/window_%s.png" action Hide("uiWindow", transition=fade), Jump("cargoWindow")    
             imagebutton: #for the cargo door
                 pos (4700,130)
-                auto "images/items/cargo/door_%s.png" action Hide("inventory"), Jump ("cargoDoor")
+                auto "images/items/cargo/door_%s.png" action Hide("uiWindow", transition=fade), Jump ("cargoDoor")
             imagebutton: #for statuette
                 pos (2352,994) #where it appears on the screen
-                auto "images/items/cargo/figurine_%s.png" action Hide("inventory"), Jump("cargoStatuette")
+                auto "images/items/cargo/figurine_%s.png" action Hide("uiWindow", transition=fade), Jump("cargoStatuette")
             imagebutton: #for book
                 pos (2937,800) #where it appears on the screen
-                auto "images/items/cargo/book_%s.png" action Hide("inventory"), Jump("cargoBook")
+                auto "images/items/cargo/book_%s.png" action Hide("uiWindow", transition=fade), Jump("cargoBook")
             #imagebutton: #for pendant
                 #pos (0,0) #where it appears on the screen
                 #auto "images/items/_%s.png" action Jump("cargoPendant")
             imagebutton: #for poster
                 pos (2375,190) #where it appears on the screen
-                auto "images/items/cargo/poster1_%s.png" action Hide("inventory"), Jump("cargoPoster")
+                auto "images/items/cargo/poster1_%s.png" action Hide("uiWindow", transition=fade), Jump("cargoPoster")
             imagebutton: #for poster2
                 pos (1729,226) #where it appears on the screen
-                auto "images/items/cargo/poster2_%s.png" action Hide("inventory"), Jump("cargoPoster") 
+                auto "images/items/cargo/poster2_%s.png" action Hide("uiWindow", transition=fade), Jump("cargoPoster") 
             imagebutton: #for the Hag
                 pos (4080,750) #where it appears on the screen
-                auto "images/sprites/hag_%s.png" action Hide("inventory"), Jump("hagtalk")
+                auto "images/sprites/hag_%s.png" action Hide("uiWindow", transition=fade), Jump("hagtalk")
 
     #IMAGES THAT SHOW UP AFTER CLICKING AN ITEM (CLOSE UP)
     if showCargoBook:

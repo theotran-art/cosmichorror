@@ -3,6 +3,16 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+init python:
+    config.layers = [
+        'background',
+        'master',
+        'ui',
+        'transient',
+        'screens',
+        'overlay',
+    ]
+
 define t = Character((None), what_italic=True) #thoughts
 define h = Character((None), screen='hag_screen', what_font="fonts/fonts_hag/Funnel_Display_Lacquer/Lacquer/Lacquer-Regular.ttf", what_size=32) #hag
 define c = Character((None), screen='cannibal_screen', what_size=32) #cannibal
@@ -18,6 +28,7 @@ image black bckgd = "images/backgrounds/blackbckgd.jpg"
 define music.bgm = "music/bgm.wav"
 
 #inventory items
+default inventory_open = False
 default item_page = False
 default showItemPage = False
 default showItemPage1 = False
