@@ -3,7 +3,8 @@
     $cargo_scroll_enabled = False
     $cargo_buttons_enabled = False
 
-    hide screen uiWindow with fade
+    $hide_inventory = True
+    $characterTalk = True
 
     if item_page_2 == False:
         t "An elderly woman seems to be reflecting, meditating, or praying in some sort of way. She pays you no mind until you walk closer to her."

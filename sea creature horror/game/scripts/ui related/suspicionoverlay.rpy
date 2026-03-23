@@ -16,7 +16,7 @@
     "images/susframes/frame8.png" 
     pause 0.125
     repeat #optional
-
+    
 screen suspicion_overlay:
     add "sus_overlay"
 

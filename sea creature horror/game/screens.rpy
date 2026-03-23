@@ -96,18 +96,21 @@ style frame:
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
 screen say(who, what):
-    layer "overlay"
-    window:
-        id "window"
+    if not renpy.context()._menu:
+        window:
+            id "window"
 
-        if who is not None:
+            if who is not None:
 
-            window:
-                id "namebox"
-                style "namebox"
-                text who id "who"
+                window:
+                    id "namebox"
+                    style "namebox"
+                    text who id "who"
 
-        text what id "what"
+            text what id "what":
+                text_align 0
+                xalign 0.48
+                yalign 0.1
 
 
     ## If there's a side image, display it above the text. Do not display on the
@@ -231,7 +234,6 @@ style input:
     #properties gui.text_properties("choice_button")
 
 screen choice(items):
-    layer "overlay"
     style_prefix "choice"
 
     vbox:
@@ -270,8 +272,8 @@ style choice_button_text is default:
 
 screen quick_menu():
 
-    ## Ensure this appears on top of other screens.
-    zorder 100
+    # Ensure this appears on top of other screens.
+    zorder 500
 
     if quick_menu:
 
@@ -279,7 +281,7 @@ screen quick_menu():
             style_prefix "quick"
             style "quick_menu"
 
-            textbutton _("Back") action Rollback()
+            #textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
@@ -449,11 +451,11 @@ style main_menu_version:
 ## transcluded (placed) inside it.
 
 screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
-
+    
     style_prefix "game_menu"
 
     if main_menu:
-        add gui.main_menu_background
+        add gui.main_menu_background 
     else:
         add gui.game_menu_background
 

@@ -33,6 +33,8 @@ screen combine_pages:
 
 label combinePagesFinished:
     hide screen combine_pages
+    $showItemPage1 = False
+    $showItemPage2 = False
     $showItemPage = True
     $item_page = True
     "You piece the two sections together."
