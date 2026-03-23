@@ -600,6 +600,12 @@ screen about():
             if gui.about:
                 text "[gui.about!t]\n"
 
+            text _("Made for GAA 3040, Spring 2026 at the University of Cincinnati, taught by Justin Bortnick.\n")
+
+            text _("In collaboration with: Aidan Blasi, Kieran Powell, Lily Runk, Theo Tran, and Asya Williams.\n")
+
+            text _("{a=https://blasiad.myportfolio.com/}Aidan Blasi{/a} (Scriptwriting + Audio),\n{a=https://www.willowwispart.com/}Kieran Powell{/a} (Character Designs + Sprites),\n{a=https://lillianrunk.wixsite.com/lilyrunk}Lily Runk{/a} (Backgrounds + UI),\n{a=https://www.theotran.art/}Theo Tran{/a} (Programming),\n{a=https://www.artstation.com/crypticclaws}Asya Williams{/a} (Items/Props + Creature Design)\n")
+
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
