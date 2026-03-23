@@ -96,7 +96,7 @@ style frame:
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
 screen say(who, what):
-    layer "ui"
+    layer "overlay"
     window:
         id "window"
 
@@ -231,6 +231,7 @@ style input:
     #properties gui.text_properties("choice_button")
 
 screen choice(items):
+    layer "overlay"
     style_prefix "choice"
 
     vbox:
@@ -250,8 +251,8 @@ style choice_vbox:
     spacing gui.choice_spacing
 
 style choice_button is button:
-    background Frame("gui/button/choice_idle_background.png", 10, 75)
-    hover_background Frame("gui/button/choice_hover_background.png", 10, 75)
+    background Frame("gui/button/choice_idle_background.png")
+    hover_background Frame("gui/button/choice_hover_background.png")
     padding (70, 15, 70, 15)
     #xminimum 600
     xalign 0.5

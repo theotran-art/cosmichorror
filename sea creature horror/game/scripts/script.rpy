@@ -7,11 +7,20 @@ init python:
     config.layers = [
         'background',
         'master',
-        'ui',
         'transient',
         'screens',
+        'ui',
         'overlay',
     ]
+
+screen window(): #for textbox
+    layer "overlay"
+    window:
+        style "window"
+        xalign 0.5
+        yalign 1.0
+
+        text what id "what" 
 
 define t = Character((None), what_italic=True) #thoughts
 define h = Character((None), screen='hag_screen', what_font="fonts/fonts_hag/Funnel_Display_Lacquer/Lacquer/Lacquer-Regular.ttf", what_size=32) #hag
@@ -29,6 +38,7 @@ define music.bgm = "music/bgm.wav"
 
 #inventory items
 default inventory_open = False
+default hide_inventory = False
 default item_page = False
 default showItemPage = False
 default showItemPage1 = False
@@ -64,7 +74,7 @@ screen hag_screen(who, what):
         #yalign 0.65
 
     frame:
-        background "#00000099"
+        background "gui/customui/textbox2.png"
         xsize 1800
         ysize 90
         xalign 0.5

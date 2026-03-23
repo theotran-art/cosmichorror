@@ -7,7 +7,7 @@
     fixed:
         xalign 1.0
         yalign 0.0
-        xoffset -10
+        xoffset 6
         yoffset 175
 
         add "gui/customui/inventory.png":
@@ -15,7 +15,7 @@
             yalign 0.0
 
         vbox:
-            xalign 0.985
+            xalign 0.9755
             yalign 0.025
             spacing 8
             xmaximum 140
