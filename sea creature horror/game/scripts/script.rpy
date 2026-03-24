@@ -8,6 +8,8 @@ define config.say_layer = "text"
 init python:
     config.layers = ['background', 'master', 'ui', 'transient', 'screens', 'text', 'overlay', 'top']
 
+    #config.rollback_enabled = False #disable going back
+
 define t = Character((None), what_italic=True) #thoughts
 define h = Character((None), screen='character_screen', what_font="fonts/fonts_hag/Funnel_Display_Lacquer/Lacquer/Lacquer-Regular.ttf", what_size=32) #hag
 define c = Character((None), screen='cannibal_screen', what_size=32) #cannibal
