@@ -96,18 +96,21 @@ style frame:
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
 screen say(who, what):
+    if not renpy.context()._menu:
+        window:
+            id "window"
 
-    window:
-        id "window"
+            if who is not None:
 
-        if who is not None:
+                window:
+                    id "namebox"
+                    style "namebox"
+                    text who id "who"
 
-            window:
-                id "namebox"
-                style "namebox"
-                text who id "who"
-
-        text what id "what"
+            text what id "what":
+                text_align 0
+                xalign 0.48
+                yalign 0.1
 
 
     ## If there's a side image, display it above the text. Do not display on the
@@ -250,8 +253,8 @@ style choice_vbox:
     spacing gui.choice_spacing
 
 style choice_button is button:
-    background Frame("gui/button/choice_idle_background.png", 10, 75)
-    hover_background Frame("gui/button/choice_hover_background.png", 10, 75)
+    background Frame("gui/button/choice_idle_background.png")
+    hover_background Frame("gui/button/choice_hover_background.png")
     padding (70, 15, 70, 15)
     #xminimum 600
     xalign 0.5
@@ -269,8 +272,8 @@ style choice_button_text is default:
 
 screen quick_menu():
 
-    ## Ensure this appears on top of other screens.
-    zorder 100
+    # Ensure this appears on top of other screens.
+    zorder 500
 
     if quick_menu:
 
@@ -278,7 +281,7 @@ screen quick_menu():
             style_prefix "quick"
             style "quick_menu"
 
-            textbutton _("Back") action Rollback()
+            #textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
@@ -448,11 +451,11 @@ style main_menu_version:
 ## transcluded (placed) inside it.
 
 screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
-
+    
     style_prefix "game_menu"
 
     if main_menu:
-        add gui.main_menu_background
+        add gui.main_menu_background 
     else:
         add gui.game_menu_background
 
@@ -596,6 +599,12 @@ screen about():
             ## gui.about is usually set in options.rpy.
             if gui.about:
                 text "[gui.about!t]\n"
+
+            text _("Made for GAA 3040, Spring 2026 at the University of Cincinnati, taught by Justin Bortnick.\n")
+
+            text _("In collaboration with: Aidan Blasi, Kieran Powell, Lily Runk, Theo Tran, and Asya Williams.\n")
+
+            text _("{a=https://blasiad.myportfolio.com/}Aidan Blasi{/a} (Scriptwriting + Audio),\n{a=https://www.willowwispart.com/}Kieran Powell{/a} (Character Designs + Sprites),\n{a=https://lillianrunk.wixsite.com/lilyrunk}Lily Runk{/a} (Backgrounds + UI),\n{a=https://www.theotran.art/}Theo Tran{/a} (Programming),\n{a=https://www.artstation.com/crypticclaws}Asya Williams{/a} (Items/Props + Creature Design)\n")
 
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 

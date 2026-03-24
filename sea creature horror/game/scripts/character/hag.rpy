@@ -3,11 +3,10 @@
     $cargo_scroll_enabled = False
     $cargo_buttons_enabled = False
 
-    hide screen inventory
-    
-    scene cargo
+    $hide_inventory = True
+    $characterTalk = True
 
-    if item_page == False:
+    if item_page_2 == False:
         t "An elderly woman seems to be reflecting, meditating, or praying in some sort of way. She pays you no mind until you walk closer to her."
     
         menu:
@@ -15,6 +14,8 @@
 
             "\"What are you talking about?\"":
                 $hagsus += 1
+                if hagsus >= 1:
+                    show screen suspicion_overlay
                 if hagsus == 2: 
                     jump death
             
@@ -24,7 +25,7 @@
         
             "\"Well of course! Do you know where everyone went?\"":
                 menu:
-                    h "\"It matters not dear one! We shall all be her children in her cold embrace. Glory to the One Below!\""
+                    h "\"It matters not, dear one! We shall all be her children in her cold embrace. Glory to the One Below!\""
 
                     "\"And may she return above!\"" if lookposter == True: #GOOD CHOICE ROUTE PT1
                         h "\"Ahhhhhhhh! You are a true aspirant!\"" 
@@ -38,7 +39,7 @@
                                 h "\"O Mother of the Great Deep,\""
                                 h "\"we sever our love to our flesh to offer it to you alone,\""
                                 h "\"flaying our imperfect forms as penance for the circumstances of our births.\""
-                                h "\"Accept our immaciated bodies and deliver us,\"" 
+                                h "\"Accept our emaciated bodies and deliver us,\"" 
                                 h "\"for we yearn to be entangled in your cold embrace as the children of your new earth.\""
                                 menu:
                                     "Hold your hands together and bow softly.":
@@ -48,6 +49,8 @@
 
                                             "\"I... think that I need it.\"":
                                                 $hagsus += 1
+                                                if hagsus >= 1:
+                                                    show screen suspicion_overlay
                                                 if hagsus == 2: 
                                                     jump death
             
@@ -64,11 +67,14 @@
                                                 
                                                     "\"Of course I am! I have wished to be embraced in her ancient {i}arms{/i} for as long as I can remember.\"":
                                                         $hagsus += 1
+                                                        if hagsus >= 1:
+                                                            show screen suspicion_overlay
                                                         if hagsus == 2:
                                                             jump death
                                                         else:
-                                                            menu:
-                                                                h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth. Leave me foul vermin!\""
+                                                            h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth.\""
+                                                            menu: 
+                                                                h "\"Leave me foul vermin!\""
 
                                                                 "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
                                                                     menu:
@@ -77,12 +83,14 @@
                                                                         "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                            $item_page = True
+                                                                            $item_page_2 = True
                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                             jump cargo
                                                                         
                                                                         "\"Honestly, they creep me out a little bit.\"":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2:
                                                                                 jump death
                                                                             else:
@@ -92,13 +100,16 @@
                                                                                     "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                         h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                         t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                        $item_page = True
+                                                                                        $item_page_2 = True
                                                                                         t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                         jump cargo
                                                                                     "Step back to gain some distance from her.":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                            $phag = True
                                                                                             jump death
                                                                                         else:
                                                                                             jump cargo
@@ -106,6 +117,8 @@
                                                                         
                                                                         "\"Who?\"":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2:
                                                                                 jump death
                                                                             else:
@@ -118,22 +131,28 @@
                                                                                         h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                         
                                                                                         t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                        $item_page = True
+                                                                                        $item_page_2 = True
                                                                                         t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                         jump cargo
                                                                         
                                                                                     "Step back to gain some distance from her.":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                            $phag = True
                                                                                             jump death
                                                                                         else:
                                                                                             jump cargo
 
                                                                 "Step away.":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                        $phag = True
                                                                         jump death
                                                                     else:
                                                                         jump cargo
@@ -146,12 +165,14 @@
                                                             "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                $item_page = True
+                                                                $item_page_2 = True
                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                 jump cargo
 
                                                             "\"Honestly, they creep me out a little bit.\"":
                                                                 $hagsus += 1
+                                                                if hagsus >= 1:
+                                                                    show screen suspicion_overlay
                                                                 if hagsus == 2: 
                                                                     jump death
                                         
@@ -162,19 +183,24 @@
                                                                         "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                            $item_page = True
+                                                                            $item_page_2 = True
                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                             jump cargo
                                                                         "Step back to gain some distance from her.":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2:
                                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                $phag = True
                                                                                 jump death
                                                                             else: 
                                                                                 jump cargo
 
                                                             "\"Who?\"":
                                                                 $hagsus += 1
+                                                                if hagsus >= 1:
+                                                                    show screen suspicion_overlay
                                                                 if hagsus == 2: 
                                                                     jump death
                                         
@@ -187,25 +213,31 @@
                                                                         "\"My apologies, ma'am! Of course I know of our most holy guides. We call them by a different name where I come from.\"":
                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                            $item_page = True
+                                                                            $item_page_2 = True
                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                             jump cargo
 
                                                                         "Step back to gain some distance from her.":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2: 
                                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                $phag = True
                                                                                 jump death
                                                                             else:
                                                                                 jump cargo
 
                                                     "\"Of course I am! I have wished to be embraced in her ancient {i}fins{/i} for as long as I can remember.\"":
                                                         $hagsus += 1
+                                                        if hagsus >= 1:
+                                                            show screen suspicion_overlay
                                                         if hagsus == 2:
                                                             jump death
                                                         else:
+                                                            h "\"She would not dirty herself with the imperfect forms of her scions.\"" 
                                                             menu:
-                                                                h "\"She would not dirty herself with the imperfect forms of her scions. You are no aspirant. You are more fit to be her food than to be her child.\""
+                                                                h "\"You are no aspirant. You are more fit to be her food than to be her child.\""
 
                                                                 "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
                                                                     menu:
@@ -214,12 +246,14 @@
                                                                         "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                            $item_page = True
+                                                                            $item_page_2 = True
                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                             jump cargo
 
                                                                         "\"Honestly, they creep me out a little bit.\"":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2: 
                                                                                 jump death
                                                     
@@ -230,19 +264,24 @@
                                                                                     "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                         h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                         t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                        $item_page = True
+                                                                                        $item_page_2 = True
                                                                                         t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                         jump cargo
                                                                                     "Step back to gain some distance from her.":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                            $phag = True
                                                                                             jump death
                                                                                         else: 
                                                                                             jump cargo
 
                                                                         "\"Who?\"":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2: 
                                                                                 jump death
                                                     
@@ -255,22 +294,28 @@
                                                                                     "\"My apologies, ma'am! Of course I know of our most holy guides. We call them by a different name where I come from.\"":
                                                                                         h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                         t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                        $item_page = True
+                                                                                        $item_page_2 = True
                                                                                         t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                         jump cargo
 
                                                                                     "Step back to gain some distance from her.":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2: 
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                            $phag = True
                                                                                             jump death
                                                                                         else:
                                                                                             jump cargo
 
                                                                 "Step away.":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2: 
                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                        $phag = True
                                                                         jump death
                                                                     else:
                                                                         jump cargo
@@ -278,6 +323,8 @@
 
                                     "\"What does that passage mean?\"":
                                         $hagsus += 1
+                                        if hagsus >= 1:
+                                            show screen suspicion_overlay
                                         if hagsus == 2: 
                                             jump death
             
@@ -287,6 +334,8 @@
 
                                     "Slowly inch away as she reads to inspect the room once more.":
                                         $hagsus += 1
+                                        if hagsus >= 1:
+                                            show screen suspicion_overlay
                                         if hagsus == 2: 
                                             jump death
                                         
@@ -301,7 +350,7 @@
                                 h "\"O Mother of the Great Deep,\""
                                 h "\"we sever our love to our flesh to offer it to you alone,\""
                                 h "\"flaying our imperfect forms as penance for the circumstances of our births.\""
-                                h "\"Accept our immaciated bodies and deliver us,\"" 
+                                h "\"Accept our emaciated bodies and deliver us,\"" 
                                 menu:
                                     h "\"for we yearn to be entangled in your cold embrace as the children of your new earth.\""
                                     
@@ -314,11 +363,14 @@
                                                 
                                             "\"Of course I am! I have wished to be embraced in her ancient {i}arms{/i} for as long as I can remember.\"":
                                                 $hagsus += 1
+                                                if hagsus >= 1:
+                                                    show screen suspicion_overlay
                                                 if hagsus == 2:
                                                     jump death
                                                 else:
+                                                    h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth.\""
                                                     menu:
-                                                        h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth. Leave me foul vermin!\""
+                                                        h "\"Leave me foul vermin!\""
 
                                                         "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
                                                             menu:
@@ -327,12 +379,14 @@
                                                                 "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                     h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                     t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                    $item_page = True
+                                                                    $item_page_2 = True
                                                                     t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                     jump cargo
                                                                 
                                                                 "\"Honestly, they creep me out a little bit.\"":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         jump death
                                                                     else:
@@ -342,13 +396,16 @@
                                                                             "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                $item_page = True
+                                                                                $item_page_2 = True
                                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                 jump cargo
                                                                             "Step back to gain some distance from her.":
                                                                                 $hagsus += 1
+                                                                                if hagsus >= 1:
+                                                                                    show screen suspicion_overlay
                                                                                 if hagsus == 2:
                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                    $phag = True
                                                                                     jump death
                                                                                 else:
                                                                                     jump cargo
@@ -356,6 +413,8 @@
                                                                 
                                                                 "\"Who?\"":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         jump death
                                                                     else:
@@ -368,22 +427,28 @@
                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                 
                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                $item_page = True
+                                                                                $item_page_2 = True
                                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                 jump cargo
                                                                 
                                                                             "Step back to gain some distance from her.":
                                                                                 $hagsus += 1
+                                                                                if hagsus >= 1:
+                                                                                    show screen suspicion_overlay
                                                                                 if hagsus == 2:
                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                    $phag = True
                                                                                     jump death
                                                                                 else:
                                                                                     jump cargo
 
                                                         "Step away.":
                                                             $hagsus += 1
+                                                            if hagsus >= 1:
+                                                                show screen suspicion_overlay
                                                             if hagsus == 2:
                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                $phag = True
                                                                 jump death
                                                             else:
                                                                 jump cargo
@@ -395,12 +460,14 @@
                                                     "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                         h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                         t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                        $item_page = True
+                                                        $item_page_2 = True
                                                         t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                         jump cargo
 
                                                     "\"Honestly, they creep me out a little bit.\"":
                                                         $hagsus += 1
+                                                        if hagsus >= 1:
+                                                            show screen suspicion_overlay
                                                         if hagsus == 2: 
                                                             jump death
                                         
@@ -411,19 +478,24 @@
                                                                 "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                     h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                     t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                    $item_page = True
+                                                                    $item_page_2 = True
                                                                     t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                     jump cargo
                                                                 "Step back to gain some distance from her.":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                        $phag = True
                                                                         jump death
                                                                     else:
                                                                         jump cargo
 
                                                     "\"Who?\"":
                                                         $hagsus += 1
+                                                        if hagsus >= 1:
+                                                            show screen suspicion_overlay
                                                         if hagsus == 2: 
                                                             jump death
                                         
@@ -437,25 +509,31 @@
                                                                     h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                     
                                                                     t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                    $item_page = True
+                                                                    $item_page_2 = True
                                                                     t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                     jump cargo
                                                     
                                                                 "Step back to gain some distance from her.":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                        $phag = True
                                                                         jump death
                                                                     else:
                                                                         jump cargo
 
                                             "\"Of course I am! I have wished to be embraced in her ancient {i}fins{/i} for as long as I can remember.\"":
                                                 $hagsus += 1
+                                                if hagsus >= 1:
+                                                    show screen suspicion_overlay
                                                 if hagsus == 2: 
                                                     jump death 
                                                 else:
-                                                    menu:
-                                                        h "\"She would not dirty herself with the imperfect forms of her scions. You are no aspirant. You are more fit to be her food than to be her child.\""
+                                                    h "\"She would not dirty herself with the imperfect forms of her scions.\""
+                                                    menu: 
+                                                        h "\"You are no aspirant. You are more fit to be her food than to be her child.\""
 
                                                         "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
                                                             menu:
@@ -464,12 +542,14 @@
                                                                 "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                            $item_page = True
+                                                                            $item_page_2 = True
                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                             jump cargo
                                                                         
                                                                 "\"Honestly, they creep me out a little bit.\"":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         jump death
                                                                     else:
@@ -479,13 +559,16 @@
                                                                             "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                $item_page = True
+                                                                                $item_page_2 = True
                                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                 jump cargo
                                                                             "Step back to gain some distance from her.":
                                                                                 $hagsus += 1
+                                                                                if hagsus >= 1:
+                                                                                    show screen suspicion_overlay
                                                                                 if hagsus == 2:
                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                    $phag = True
                                                                                     jump death
                                                                                 else:
                                                                                     jump cargo
@@ -493,6 +576,8 @@
                                                                 
                                                                 "\"Who?\"":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         jump death
                                                                     else:
@@ -505,14 +590,17 @@
                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                 
                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                $item_page = True
+                                                                                $item_page_2 = True
                                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                 jump cargo
                                                                 
                                                                             "Step back to gain some distance from her.":
                                                                                 $hagsus += 1
+                                                                                if hagsus >= 1:
+                                                                                    show screen suspicion_overlay
                                                                                 if hagsus == 2:
                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                    $phag = True
                                                                                     jump death
                                                                                 else:
                                                                                     jump cargo
@@ -521,6 +609,7 @@
                                                             $hagsus +=1
                                                             if hagsus == 2:
                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                $phag = True
                                                                 jump death
                                                             else:
                                                                 jump cargo
@@ -529,6 +618,8 @@
 
                             "\"No thank you. I have other things to worry about.\"":
                                 $hagsus += 1
+                                if hagsus >= 1:
+                                    show screen suspicion_overlay
                                 if hagsus == 2:
                                     jump death
                                 else:
@@ -538,8 +629,11 @@
 
                                         "\"Really, I must be going.\"":
                                             $hagsus += 1
+                                            if hagsus >= 1:
+                                                show screen suspicion_overlay
                                             if hagsus == 2:
                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                $phag = True
                                                 jump death
                                             else:
                                                 jump cargo
@@ -553,7 +647,7 @@
                                                     h "\"O Mother of the Great Deep,\""
                                                     h "\"we sever our love to our flesh to offer it to you alone,\""
                                                     h "\"flaying our imperfect forms as penance for the circumstances of our births.\""
-                                                    h "\"Accept our immaciated bodies and deliver us,\"" 
+                                                    h "\"Accept our emaciated bodies and deliver us,\"" 
                                                     h "\"for we yearn to be entangled in your cold embrace as the children of your new earth.\""
                                                     menu:
                                                         "Hold your hands together and bow softly.":
@@ -563,6 +657,8 @@
 
                                                                 "\"I... think that I need it.\"":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2: 
                                                                         jump death
                                 
@@ -579,11 +675,14 @@
                                                                     
                                                                         "\"Of course I am! I have wished to be embraced in her ancient {i}arms{/i} for as long as I can remember.\"":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2:
                                                                                 jump death
                                                                             else:
+                                                                                h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth.\""
                                                                                 menu:
-                                                                                    h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth. Leave me foul vermin!\""
+                                                                                    h "\"Leave me foul vermin!\""
 
                                                                                     "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
                                                                                         menu:
@@ -592,12 +691,14 @@
                                                                                             "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                                $item_page = True
+                                                                                                $item_page_2 = True
                                                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                 jump cargo
                                                                                             
                                                                                             "\"Honestly, they creep me out a little bit.\"":
                                                                                                 $hagsus += 1
+                                                                                                if hagsus >= 1:
+                                                                                                    show screen suspicion_overlay
                                                                                                 if hagsus == 2:
                                                                                                     jump death
                                                                                                 else:
@@ -607,13 +708,16 @@
                                                                                                         "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                                            $item_page = True
+                                                                                                            $item_page_2 = True
                                                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                             jump cargo
                                                                                                         "Step back to gain some distance from her.":
                                                                                                             $hagsus += 1
+                                                                                                            if hagsus >= 1:
+                                                                                                                show screen suspicion_overlay
                                                                                                             if hagsus == 2:
                                                                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                                $phag = True
                                                                                                                 jump death
                                                                                                             else:
                                                                                                                 jump cargo
@@ -621,6 +725,8 @@
                                                                                             
                                                                                             "\"Who?\"":
                                                                                                 $hagsus += 1
+                                                                                                if hagsus >= 1:
+                                                                                                    show screen suspicion_overlay
                                                                                                 if hagsus == 2:
                                                                                                     jump death
                                                                                                 else:
@@ -633,22 +739,28 @@
                                                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                             
                                                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                                            $item_page = True
+                                                                                                            $item_page_2 = True
                                                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                             jump cargo
                                                                                             
                                                                                                         "Step back to gain some distance from her.":
                                                                                                             $hagsus += 1
+                                                                                                            if hagsus >= 1:
+                                                                                                                show screen suspicion_overlay
                                                                                                             if hagsus == 2:
                                                                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                                $phag = True
                                                                                                                 jump death
                                                                                                             else:
                                                                                                                 jump cargo
 
                                                                                     "Step away.":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                            $phag = True
                                                                                             jump death
                                                                                         else:
                                                                                             jump cargo
@@ -661,12 +773,14 @@
                                                                                 "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                                     h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                     t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                    $item_page = True
+                                                                                    $item_page_2 = True
                                                                                     t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                     jump cargo
 
                                                                                 "\"Honestly, they creep me out a little bit.\"":
                                                                                     $hagsus += 1
+                                                                                    if hagsus >= 1:
+                                                                                        show screen suspicion_overlay
                                                                                     if hagsus == 2: 
                                                                                         jump death
                                                             
@@ -677,19 +791,24 @@
                                                                                             "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                                $item_page = True
+                                                                                                $item_page_2 = True
                                                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                 jump cargo
                                                                                             "Step back to gain some distance from her.":
                                                                                                 $hagsus += 1
+                                                                                                if hagsus >= 1:
+                                                                                                    show screen suspicion_overlay
                                                                                                 if hagsus == 2:
                                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                    $phag = True
                                                                                                     jump death
                                                                                                 else: 
                                                                                                     jump cargo
 
                                                                                 "\"Who?\"":
                                                                                     $hagsus += 1
+                                                                                    if hagsus >= 1:
+                                                                                        show screen suspicion_overlay
                                                                                     if hagsus == 2: 
                                                                                         jump death
                                                             
@@ -702,25 +821,31 @@
                                                                                             "\"My apologies, ma'am! Of course I know of our most holy guides. We call them by a different name where I come from.\"":
                                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                                $item_page = True
+                                                                                                $item_page_2 = True
                                                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                 jump cargo
 
                                                                                             "Step back to gain some distance from her.":
                                                                                                 $hagsus += 1
+                                                                                                if hagsus >= 1:
+                                                                                                    show screen suspicion_overlay
                                                                                                 if hagsus == 2: 
                                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                    $phag = True
                                                                                                     jump death
                                                                                                 else:
                                                                                                     jump cargo
 
                                                                         "\"Of course I am! I have wished to be embraced in her ancient {i}fins{/i} for as long as I can remember.\"":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2:
                                                                                 jump death
                                                                             else:
+                                                                                h "\"She would not dirty herself with the imperfect forms of her scions.\"" 
                                                                                 menu:
-                                                                                    h "\"She would not dirty herself with the imperfect forms of her scions. You are no aspirant. You are more fit to be her food than to be her child.\""
+                                                                                    h "\"You are no aspirant. You are more fit to be her food than to be her child.\""
 
                                                                                     "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
                                                                                         menu:
@@ -729,12 +854,14 @@
                                                                                             "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                                $item_page = True
+                                                                                                $item_page_2 = True
                                                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                 jump cargo
 
                                                                                             "\"Honestly, they creep me out a little bit.\"":
                                                                                                 $hagsus += 1
+                                                                                                if hagsus >= 1:
+                                                                                                    show screen suspicion_overlay
                                                                                                 if hagsus == 2: 
                                                                                                     jump death
                                                                         
@@ -745,19 +872,24 @@
                                                                                                         "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                                            $item_page = True
+                                                                                                            $item_page_2 = True
                                                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                             jump cargo
                                                                                                         "Step back to gain some distance from her.":
                                                                                                             $hagsus += 1
+                                                                                                            if hagsus >= 1:
+                                                                                                                show screen suspicion_overlay
                                                                                                             if hagsus == 2:
                                                                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                                $phag = True
                                                                                                                 jump death
                                                                                                             else: 
                                                                                                                 jump cargo
 
                                                                                             "\"Who?\"":
                                                                                                 $hagsus += 1
+                                                                                                if hagsus >= 1:
+                                                                                                    show screen suspicion_overlay
                                                                                                 if hagsus == 2: 
                                                                                                     jump death
                                                                         
@@ -770,22 +902,28 @@
                                                                                                         "\"My apologies, ma'am! Of course I know of our most holy guides. We call them by a different name where I come from.\"":
                                                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                                            $item_page = True
+                                                                                                            $item_page_2 = True
                                                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                             jump cargo
 
                                                                                                         "Step back to gain some distance from her.":
                                                                                                             $hagsus += 1
+                                                                                                            if hagsus >= 1:
+                                                                                                                show screen suspicion_overlay
                                                                                                             if hagsus == 2: 
                                                                                                                 p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                                $phag = True
                                                                                                                 jump death
                                                                                                             else:
                                                                                                                 jump cargo
 
                                                                                     "Step away.":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2: 
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                            $phag = True
                                                                                             jump death
                                                                                         else:
                                                                                             jump cargo
@@ -793,6 +931,8 @@
 
                                                         "\"What does that passage mean?\"":
                                                             $hagsus += 1
+                                                            if hagsus >= 1:
+                                                                show screen suspicion_overlay
                                                             if hagsus == 2: 
                                                                 jump death
                                 
@@ -802,6 +942,8 @@
 
                                                         "Slowly inch away as she reads to inspect the room once more.":
                                                             $hagsus += 1
+                                                            if hagsus >= 1:
+                                                                show screen suspicion_overlay
                                                             if hagsus == 2: 
                                                                 jump death
                                                             
@@ -816,7 +958,7 @@
                                                     h "\"O Mother of the Great Deep,\""
                                                     h "\"we sever our love to our flesh to offer it to you alone,\""
                                                     h "\"flaying our imperfect forms as penance for the circumstances of our births.\""
-                                                    h "\"Accept our immaciated bodies and deliver us,\"" 
+                                                    h "\"Accept our emaciated bodies and deliver us,\"" 
                                                     menu:
                                                         h "\"for we yearn to be entangled in your cold embrace as the children of your new earth.\""
                                                         
@@ -829,11 +971,14 @@
                                                                     
                                                                 "\"Of course I am! I have wished to be embraced in her ancient {i}arms{/i} for as long as I can remember.\"":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2:
                                                                         jump death
                                                                     else:
-                                                                        menu:
-                                                                            h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth. Leave me foul vermin!\""
+                                                                        h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth.\""
+                                                                        menu: 
+                                                                            h "\"Leave me foul vermin!\""
 
                                                                             "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
                                                                                 menu:
@@ -842,12 +987,14 @@
                                                                                     "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                                         h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                         t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                        $item_page = True
+                                                                                        $item_page_2 = True
                                                                                         t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                         jump cargo
                                                                                     
                                                                                     "\"Honestly, they creep me out a little bit.\"":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             jump death
                                                                                         else:
@@ -857,13 +1004,16 @@
                                                                                                 "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                                     h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                     t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                                    $item_page = True
+                                                                                                    $item_page_2 = True
                                                                                                     t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                     jump cargo
                                                                                                 "Step back to gain some distance from her.":
                                                                                                     $hagsus += 1
+                                                                                                    if hagsus >= 1:
+                                                                                                        show screen suspicion_overlay
                                                                                                     if hagsus == 2:
                                                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                        $phag = True
                                                                                                         jump death
                                                                                                     else:
                                                                                                         jump cargo
@@ -871,6 +1021,8 @@
                                                                                     
                                                                                     "\"Who?\"":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             jump death
                                                                                         else:
@@ -883,22 +1035,28 @@
                                                                                                     h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                     
                                                                                                     t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                                    $item_page = True
+                                                                                                    $item_page_2 = True
                                                                                                     t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                     jump cargo
                                                                                     
                                                                                                 "Step back to gain some distance from her.":
                                                                                                     $hagsus += 1
+                                                                                                    if hagsus >= 1:
+                                                                                                        show screen suspicion_overlay
                                                                                                     if hagsus == 2:
                                                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                        $phag = True
                                                                                                         jump death
                                                                                                     else:
                                                                                                         jump cargo
 
                                                                             "Step away.":
                                                                                 $hagsus += 1
+                                                                                if hagsus >= 1:
+                                                                                    show screen suspicion_overlay
                                                                                 if hagsus == 2:
                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                    $phag = True
                                                                                     jump death
                                                                                 else:
                                                                                     jump cargo
@@ -910,12 +1068,14 @@
                                                                         "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                            $item_page = True
+                                                                            $item_page_2 = True
                                                                             t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                             jump cargo
 
                                                                         "\"Honestly, they creep me out a little bit.\"":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2: 
                                                                                 jump death
                                                             
@@ -926,19 +1086,24 @@
                                                                                     "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                         h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                         t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                        $item_page = True
+                                                                                        $item_page_2 = True
                                                                                         t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                         jump cargo
                                                                                     "Step back to gain some distance from her.":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                            $phag = True
                                                                                             jump death
                                                                                         else:
                                                                                             jump cargo
 
                                                                         "\"Who?\"":
                                                                             $hagsus += 1
+                                                                            if hagsus >= 1:
+                                                                                show screen suspicion_overlay
                                                                             if hagsus == 2: 
                                                                                 jump death
                                                             
@@ -952,25 +1117,31 @@
                                                                                         h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                         
                                                                                         t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                        $item_page = True
+                                                                                        $item_page_2 = True
                                                                                         t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                         jump cargo
                                                                         
                                                                                     "Step back to gain some distance from her.":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                            $phag = True
                                                                                             jump death
                                                                                         else:
                                                                                             jump cargo
 
                                                                 "\"Of course I am! I have wished to be embraced in her ancient {i}fins{/i} for as long as I can remember.\"":
                                                                     $hagsus += 1
+                                                                    if hagsus >= 1:
+                                                                        show screen suspicion_overlay
                                                                     if hagsus == 2: 
                                                                         jump death 
                                                                     else:
+                                                                        h "\"She would not dirty herself with the imperfect forms of her scions.\""
                                                                         menu:
-                                                                            h "\"She would not dirty herself with the imperfect forms of her scions. You are no aspirant. You are more fit to be her food than to be her child.\""
+                                                                            h "\"You are no aspirant. You are more fit to be her food than to be her child.\""
 
                                                                             "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
                                                                                 menu:
@@ -979,12 +1150,14 @@
                                                                                     "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                                $item_page = True
+                                                                                                $item_page_2 = True
                                                                                                 t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                 jump cargo
                                                                                             
                                                                                     "\"Honestly, they creep me out a little bit.\"":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             jump death
                                                                                         else:
@@ -994,13 +1167,16 @@
                                                                                                 "\"I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward.\"":
                                                                                                     h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                     t "The old woman reaches her frail hand towards you, holding the old decrepit page."
-                                                                                                    $item_page = True
+                                                                                                    $item_page_2 = True
                                                                                                     t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                     jump cargo
                                                                                                 "Step back to gain some distance from her.":
                                                                                                     $hagsus += 1
+                                                                                                    if hagsus >= 1:
+                                                                                                        show screen suspicion_overlay
                                                                                                     if hagsus == 2:
                                                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                        $phag = True
                                                                                                         jump death
                                                                                                     else:
                                                                                                         jump cargo
@@ -1008,6 +1184,8 @@
                                                                                     
                                                                                     "\"Who?\"":
                                                                                         $hagsus += 1
+                                                                                        if hagsus >= 1:
+                                                                                            show screen suspicion_overlay
                                                                                         if hagsus == 2:
                                                                                             jump death
                                                                                         else:
@@ -1020,14 +1198,17 @@
                                                                                                     h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                     
                                                                                                     t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
-                                                                                                    $item_page = True
+                                                                                                    $item_page_2 = True
                                                                                                     t "You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time."
                                                                                                     jump cargo
                                                                                     
                                                                                                 "Step back to gain some distance from her.":
                                                                                                     $hagsus += 1
+                                                                                                    if hagsus >= 1:
+                                                                                                        show screen suspicion_overlay
                                                                                                     if hagsus == 2:
                                                                                                         p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                                        $phag = True
                                                                                                         jump death
                                                                                                     else:
                                                                                                         jump cargo
@@ -1036,6 +1217,7 @@
                                                                                 $hagsus +=1
                                                                                 if hagsus == 2:
                                                                                     p1 "YOU ARE NOT FIT TO CARRY ME."
+                                                                                    $phag = True
                                                                                     jump death
                                                                                 else:
                                                                                     jump cargo
@@ -1044,6 +1226,8 @@
     
                     "\"Okay... Do you seriously not know where everyone went?\"":
                         $hagsus += 1
+                        if hagsus >= 1:
+                            show screen suspicion_overlay
                         if hagsus == 2: 
                             jump death 
                         else:
@@ -1052,6 +1236,8 @@
 
                     "\"You seem to be stuck just as much as I am. Do you know a way out?\"":
                         $hagsus += 1
+                        if hagsus >= 1:
+                            show screen suspicion_overlay
                         if hagsus == 2: 
                             jump death
                         else:

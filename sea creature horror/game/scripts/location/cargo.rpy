@@ -1,21 +1,26 @@
-﻿label cargo:
+﻿label cargoEnter:
+    play music "music/bgm.wav" fadein 3.0
 
-    $cargo_scroll_enabled = True
-
-    show screen cargoRoom
+label cargo:
+    show screen cargoRoom onlayer master
+    $characterTalk = False
+    $showItemPage1 = False
+    $showItemPage2 = False
+    $cargo_buttons_enabled = False
+    show screen cargoRoom onlayer master
+    $hide_inventory = False
+    show screen uiWindow onlayer ui with fade
 
     if item_page == False:
         p1 "YOU NEED HER HOLY TEXT."
-
-    $cargo_buttons_enabled = True
-    
+        
+    $cargo_scroll_enabled = True
     label pauseCargo:
-        window hide 
+        window hide
+        $cargo_buttons_enabled = True
         pause
         jump pauseCargo
-    window auto
-
-    show screen inventory 
+    window auto 
 
 #CARGO SCREENS/IMAGE BUTTONS
 
@@ -24,45 +29,77 @@ screen cargoRoom:
     viewport id "cargoScene":
         area (0, 0, 1920, 1080) #size of screen (leave the same)
         child_size (5497, 1620) #change based on image size
+        add "images/backgrounds/cargo.png" #name of the background image
 
-        if cargo_scroll_enabled:
+        if cargo_scroll_enabled and allow_edge_scroll():
             edgescroll (150, 1400) #how fast the scrolling is (horizontal_speed, vertical_speed)
         else: 
             edgescroll (0,0)
- 
-        add "images/backgrounds/cargo.png" #name of the background image
         
         if cargo_buttons_enabled == True:
             imagebutton: #for dead bodies
                 pos (340,945) #where it appears on the screen
-                auto "images/items/cargo/bodies_%s.png" action Jump("cargoDeadBodies") 
+                auto "images/items/cargo/bodies_%s.png" action SetVariable("hide_inventory", True), Show("uiWindow", transition=fade), Jump("cargoDeadBodies")
             #imagebutton: #for crates
                 #pos (3000,600) #where it appears on the screen
                 #auto "images/items/cargo/crates_%s.png" action Jump("cargoCrates")
-            imagebutton: #for the Hag
-                pos (4080,750) #where it appears on the screen
-                auto "images/sprites/hag_%s.png" action Jump("hagtalk")
             imagebutton: #for the window
                 pos (874,371)
-                auto "images/items/cargo/window_%s.png" action Jump("cargoWindow")    
+                auto "images/items/cargo/window_%s.png" action SetVariable("hide_inventory", True), Show("uiWindow", transition=fade), Jump("cargoWindow")    
             imagebutton: #for the cargo door
                 pos (4700,130)
-                auto "images/items/cargo/door_%s.png" action Jump ("cargoDoor")
+                auto "images/items/cargo/door_%s.png" action SetVariable("hide_inventory", True), Show("uiWindow", transition=fade), Jump ("cargoDoor")
             imagebutton: #for statuette
                 pos (2352,994) #where it appears on the screen
-                auto "images/items/cargo/figurine_%s.png" action Jump("cargoStatuette")
+                auto "images/items/cargo/figurine_%s.png" action SetVariable("hide_inventory", True), Show("uiWindow", transition=fade), Jump("cargoStatuette")
             imagebutton: #for book
                 pos (2937,800) #where it appears on the screen
-                auto "images/items/cargo/book_%s.png" action Jump("cargoBook")
+                auto "images/items/cargo/book_%s.png" action SetVariable("hide_inventory", True), Show("uiWindow", transition=fade), Jump("cargoBook")
             #imagebutton: #for pendant
                 #pos (0,0) #where it appears on the screen
                 #auto "images/items/_%s.png" action Jump("cargoPendant")
             imagebutton: #for poster
                 pos (2375,190) #where it appears on the screen
-                auto "images/items/cargo/poster1_%s.png" action Jump("cargoPoster")
+                auto "images/items/cargo/poster1_%s.png" action SetVariable("hide_inventory", True), Show("uiWindow", transition=fade), Jump("cargoPoster")
             imagebutton: #for poster2
                 pos (1729,226) #where it appears on the screen
-                auto "images/items/cargo/poster2_%s.png" action Jump("cargoPoster") 
+                auto "images/items/cargo/poster2_%s.png" action SetVariable("hide_inventory", True), Show("uiWindow", transition=fade), Jump("cargoPoster") 
+            imagebutton: #for the Hag
+                pos (4080,750) #where it appears on the screen
+                auto "images/sprites/hag_%s.png" action SetVariable("hide_inventory", True), Show("uiWindow", transition=fade), Jump("hagtalk")
+
+    #IMAGES THAT SHOW UP AFTER CLICKING AN ITEM (CLOSE UP)
+    if showCargoBook:
+        add Solid("#00000088")
+
+        # Centered image
+        add "images/items/cargo/book.png":
+            xalign 0.5
+            yalign 0.5
+
+    if showItemPage:
+        add Solid("#00000088")
+
+        # Centered image
+        add "images/items/cargo/page.png":
+            xalign 0.5
+            yalign 0.5
+    
+    if showItemPage1:
+        add Solid("#00000088")
+
+        # Centered image
+        add "images/items/cargo/page1.png":
+            xalign 0.5
+            yalign 0.5
+    
+    if showItemPage2:
+        add Solid("#00000088")
+
+        # Centered image
+        add "images/items/cargo/page2.png":
+            xalign 0.5
+            yalign 0.5
 
 #imagebutton: #make sure the image has normal and _hover 
             #pos (0,0) #where it appears on the screen
@@ -87,26 +124,34 @@ label cargoWindow:
     $cargo_buttons_enabled = False
     hide screen cargoRoom
 
-    #scene window
+    hide windowCargo
+    scene windowCargoCloseup
     menu:
         "Examine outside.":
+            hide windowCargoCloseup
+            scene windowCargo
             "You look out the window."
             jump cargoWindow
         "Step away.":
+            hide windowCargoCloseup
             jump cargo
 
 
 label cargoDoor:
     $cargo_scroll_enabled = False
     $cargo_buttons_enabled = False
-    if item_page == False:
+    if page_combined == False and item_page_1 == False or item_page_2 == False:
         t "You should probably try and gather what you can from this room first."
         jump cargo
-    if item_page == True:
+    if page_combined == False and item_page_1 == True and item_page_2 == True:
+        t "You have what you need, but you should repair the page first."
+        jump cargo
+    if page_combined == True:
         t "An inconspicuous door. Should you enter?"
         menu:
             "Enter.":
-                jump kitchen
+                hide screen cargoRoom
+                jump kitchenEnter
             "Turn away.":
                 jump cargo
 
@@ -120,11 +165,19 @@ label cargoStatuette:
 label cargoBook:
     $cargo_scroll_enabled = False
     $cargo_buttons_enabled = False
+    $showCargoBook = True
     $readbook = True
-    t "The book is open to a torn and yellowed page with few words written on it. You don't have nearly enough time or interest for that matter to read through it."
-    t "The half of the page that remains bound to the rest of the book reads," 
-    t " -iver us, for we yearn to be entangled in your cold emabrace as the children of your new earth."
-    p1 "You need the rest of this."
+    if item_page_1 == False:
+        t "The book is open to a torn and yellowed page with few words written on it. You don't have nearly enough time or interest for that matter to read through it."
+        t "The half of the page that remains bound to the rest of the book reads," 
+        t " -iver us, for we yearn to be entangled in your cold emabrace as the children of your new earth."
+        p1 "You need the rest of this."
+        t "You find yourself tearing off the page and tucking it away." #theo wrote this, replace if aidan writes smth
+        $item_page_1 = True
+        $showCargoBook = False
+    else:
+        t "You've already taken the page out."
+        $showCargoBook = False
     jump cargo
 
 label cargoPendant:

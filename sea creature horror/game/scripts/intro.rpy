@@ -11,8 +11,6 @@
             t "His reaching hand."
             t "The boarding of a boat."
             t "That is all you can glean for now. It may be best to attempt to remember more from your surroundings."
-            play music bgm fadein 1.0
-            jump cargo
+            jump cargoEnter
         "Attempt to gain your bearings.":
-            play music bgm fadein 1.0
-            jump cargo
+            jump cargoEnter
