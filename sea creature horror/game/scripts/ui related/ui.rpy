@@ -14,11 +14,22 @@ screen uiWindow:
     elif settingsClicked == True:
         add "gui/customui/settings_hover.png":
             pos (1755,51) #where it appears on the screen
-            
-    add "gui/customui/brain1.png":
-        pos (1723,895)
+    
+    if item_page == False:
+        add "gui/customui/brain1.png":
+            pos (1723,895)
+    elif item_page == True:
+        add "gui/customui/brain2.png":
+            pos (1723,895)
+    elif item_knife == True:
+        add "gui/customui/brain3.png":
+            pos (1723,895)
+    elif item_lighter == True:
+        add "gui/customui/brain4.png":
+            pos (1723,895)
     if hide_inventory == False:
         use inventoryView
+        
         #if inventory_open == False:
             #add "gui/customui/inventory.png":
                 #pos (1703,175)
