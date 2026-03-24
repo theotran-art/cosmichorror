@@ -34,6 +34,22 @@ USED TWICE
 [[Loss]]
 
 
+:: "Give him the stew" {"position":"600,1500","size":"100,100"}
+(Bad stew)
+
+"The man slowly sips the stew. He meets your gaze witha crude smile, his eyes piercing something behind yours."
+"\"Poorly done...""
+"The man leaps into action"
+-> Begin fight scene
+
+(Good stew)
+
+"The man slowly sips the stew. He meets your gaze witha crude smile, his eyes piercing something behind yours."
+"\"Well done... Be on your way. May you be fit for her legion.""
+"The man reaches out his branch-like arm, presenting a small bronze key."
+(Put key in player inventory)
+
+
 :: "Yes, that's it! I have such a hard time remembering the beginning. Is there any way I can trouble you for that page of yours? {"position":"1700,875","size":"100,100"}
 "Oh dear, but this page is important to me! It was the passage I would read my grandson before bed every night. Of course, since he isn't coming with us, I suppose I could give it to you. But first, I must know if you are truly dedicated to following Her below."
 
@@ -227,6 +243,9 @@ You wonder whether this is their god or one of them, and how such a form could b
 [["\"Are you... eating those bodies?\""]]
 [["\"I'm one of you. I aim to reach Her, and ascend my body.""(+1 sus)]]
 
+(If the player has the stew)
+
+[["Give him the stew"]]
 
 
 :: Click on the Pot {"position":"675,1250","size":"100,100"}
