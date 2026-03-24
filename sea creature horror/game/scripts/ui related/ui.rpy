@@ -42,6 +42,8 @@ screen uiSettings:
     modal True
 
     $cargo_scroll_enabled = False
+    $kitchen_scroll_enabled = False
+    #$moonpool_scroll_enabled = False
 
     add Solid("#00000088")
 

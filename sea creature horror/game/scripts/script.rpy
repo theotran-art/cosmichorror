@@ -24,6 +24,7 @@ define p3 = Character((None), what_color="BF1717")
 image black bckgd = "images/backgrounds/blackbckgd.jpg" 
 define music.bgm = "music/bgm.wav"
 default characterTalk = False
+default locationTracker = "none"
 
 #inventory items
 default settingsClicked = False
@@ -55,7 +56,13 @@ default kitchen_scroll_enabled = True
 default kitchen_buttons_enabled = True
 default cansus = 0
 default pcan = False
-
+default kitchenDoorKey = False
+default kitchenSpices = False
+default kitchenSpicesUsed = False
+#arm states
+default kitchenArm = False
+default kitchenArmCut = False
+default kitchenArmCooked = False
 
 screen character_screen(who, what):
     if not renpy.context()._menu:

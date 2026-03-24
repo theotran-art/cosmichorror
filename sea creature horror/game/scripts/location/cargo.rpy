@@ -2,21 +2,29 @@
     play music "music/bgm.wav" fadein 3.0
 
 label cargo:
-    show screen cargoRoom onlayer master
+
+    #variable reset incase of bugs
     $characterTalk = False
     $showItemPage1 = False
     $showItemPage2 = False
+    $locationTracker = "cargo"
+
+    #screen transitions
+    show screen cargoRoom onlayer master
     $cargo_buttons_enabled = False
     show screen cargoRoom onlayer master
     $hide_inventory = False
     show screen uiWindow onlayer ui with fade
 
+    #persistent parasite quest
     if item_page == False:
         p1 "YOU NEED HER HOLY TEXT."
         
+    #reset sus overlay
     if item_page == True and hagsus >= 1:
         hide screen suspicion_overlay with fade
 
+    #loop for point and click
     $cargo_scroll_enabled = True
     label pauseCargo:
         window hide
