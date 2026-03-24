@@ -14,6 +14,9 @@ label cargo:
     if item_page == False:
         p1 "YOU NEED HER HOLY TEXT."
         
+    if item_page == True and hagsus >= 1:
+        hide screen suspicion_overlay with fade
+
     $cargo_scroll_enabled = True
     label pauseCargo:
         window hide
@@ -130,7 +133,7 @@ label cargoWindow:
         "Examine outside.":
             hide windowCargoCloseup
             scene windowCargo
-            "You look out the window."
+            t "You look out the window."
             jump cargoWindow
         "Step away.":
             hide windowCargoCloseup

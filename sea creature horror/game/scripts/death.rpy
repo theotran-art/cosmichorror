@@ -1,10 +1,18 @@
-﻿image pdeathhag:
-    "images/death/pdeath1.png"
-    pause 2.0
-    "images/death/pdeath2.png"
+﻿#image pdeathhag:
+    #"images/death/pdeath1.png"
+    #pause 2.0
+    #"images/death/pdeath2.png"
 
-screen pdeathhagscreen:
-    add "pdeathhag"
+#screen pdeathhagscreen:
+    #add "pdeathhag"
+
+
+image parasiteboom:
+    "images/death/bloodsplat.png"
+    pause 2.0
+
+screen parasitedeath1:
+    add "parasiteboom"
 
 label death:
     if hagsus == 2 and phag == False:
@@ -18,12 +26,13 @@ label death:
         $hagsus = 0
         jump cargo
     if hagsus == 2 and phag == True:
+        t "After you finish speaking, you feel a sharp pain in your head."
         show black bckgd onlayer master
-        show screen pdeathhagscreen
+        show screen parasitedeath1 with dissolve
         hide cargoRoom
-        t "You feel a sharp pain in your head."
         "You died."
         show cargoRoom onlayer background
+        hide screen parasitedeath1
         hide black bckgd
         hide screen suspicion_overlay
         $hagsus = 0
