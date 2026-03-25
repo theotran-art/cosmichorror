@@ -2,17 +2,18 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-define config.choice_layer = "text"
-define config.say_layer = "text"
 
 init python:
-    config.layers = ['background', 'master', 'ui', 'transient', 'screens', 'text', 'overlay', 'top']
+    config.layers = ['background', 'master', 'transient', 'overlay', 'ui', 'screens', 'text', 'top']
 
     #config.rollback_enabled = False #disable going back
 
+define config.say_layer = "text"
+define config.choice_layer = "screens"
+
 define t = Character((None), what_italic=True) #thoughts
 define h = Character((None), screen='character_screen', what_font="fonts/fonts_hag/Funnel_Display_Lacquer/Lacquer/Lacquer-Regular.ttf", what_size=32) #hag
-define c = Character((None), screen='cannibal_screen', what_size=32) #cannibal
+define c = Character((None), screen='character_screen', what_size=32) #cannibal
 define s = Character((None)) #skeptic
 define p1 = Character((None), what_color="FCC7C7")
 define p2 = Character((None), what_color="B54545")
@@ -25,11 +26,17 @@ image black bckgd = "images/backgrounds/blackbckgd.jpg"
 define music.bgm = "music/bgm.wav"
 default characterTalk = False
 default locationTracker = "none"
+default room_scroll_enabled = True
+default room_buttons_enabled = True
+
+
+
 
 #inventory items
 default settingsClicked = False
 default inventory_open = False
 default hide_inventory = False
+default inventory_visible = True
 default item_page = False
 default showItemPage = False
 default showItemPage1 = False
@@ -62,7 +69,12 @@ default kitchenSpicesUsed = False
 #arm states
 default kitchenArm = False
 default kitchenArmCut = False
+default kitchenArmCutBad = False
 default kitchenArmCooked = False
+
+#moonpool/skeptic variables
+default moonpool_scroll_enabled = True
+default moonpool_buttons_enabled = True
 
 screen character_screen(who, what):
     if not renpy.context()._menu:

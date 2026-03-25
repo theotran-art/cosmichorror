@@ -451,7 +451,7 @@ style main_menu_version:
 ## transcluded (placed) inside it.
 
 screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
-    
+    layer "top"
     style_prefix "game_menu"
 
     if main_menu:

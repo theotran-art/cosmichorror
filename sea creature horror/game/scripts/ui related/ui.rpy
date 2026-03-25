@@ -10,7 +10,7 @@ screen uiWindow:
     if settingsClicked == False:
         imagebutton: #settings
             pos (1755,51) #where it appears on the screen
-            auto "gui/customui/settings_%s.png" action SetVariable("settingsClicked", True), Show("uiSettings")
+            auto "gui/customui/settings_%s.png" action SetVariable("settingsClicked", True), Show("uiSettings", layer="ui")
     elif settingsClicked == True:
         add "gui/customui/settings_hover.png":
             pos (1755,51) #where it appears on the screen
@@ -18,18 +18,17 @@ screen uiWindow:
     if item_page == False:
         add "gui/customui/brain1.png":
             pos (1723,895)
-    elif item_page == True:
+    if item_page == True:
         add "gui/customui/brain2.png":
             pos (1723,895)
-    elif item_knife == True:
+    if item_knife == True:
         add "gui/customui/brain3.png":
             pos (1723,895)
-    elif item_lighter == True:
+    if item_lighter == True:
         add "gui/customui/brain4.png":
             pos (1723,895)
-    if hide_inventory == False:
+    fixed at inventory_fade(not hide_inventory):
         use inventoryView
-        
         #if inventory_open == False:
             #add "gui/customui/inventory.png":
                 #pos (1703,175)
@@ -37,13 +36,14 @@ screen uiWindow:
             #textbutton "{size=28}Inventory":
                 #pos (1737,192)
                 #action Show("inventoryView"), SetVariable("inventory_open", True), SetVariable("cargo_buttons_enabled", False), SetVariable("cargo_scroll_enabled", False)
-
+transform fade_in:
+    alpha 0.0
+    linear 0.3 alpha 1.0
+    
 screen uiSettings:
     modal True
 
-    $cargo_scroll_enabled = False
-    $kitchen_scroll_enabled = False
-    #$moonpool_scroll_enabled = False
+    $room_scroll_enabled = False
 
     add Solid("#00000088")
 

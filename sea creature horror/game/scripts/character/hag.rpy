@@ -1,7 +1,7 @@
 ﻿label hagtalk:
 
-    $cargo_scroll_enabled = False
-    $cargo_buttons_enabled = False
+    $room_buttons_enabled = False
+    $room_scroll_enabled = False
 
     $hide_inventory = True
     $characterTalk = True

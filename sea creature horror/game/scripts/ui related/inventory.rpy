@@ -1,9 +1,13 @@
-﻿screen inventoryView():
-    layer "ui"
+﻿transform inventory_fade(showing):
+    linear 0.25 alpha (1.0 if showing else 0.0)
+
+screen inventoryView():
     tag menu  # prevents stacking with other menus
 
     modal True
 
+    on "show":
+        at fade_in
     fixed:
         xalign 1.0
         yalign 0.0
@@ -37,6 +41,13 @@
             if item_knife == True:
                 textbutton "{size=24}{font=fonts/Sedan_SC/SedanSC-Regular.ttf}Knife" text_hover_color "#b4dee6":
                     action Hide("inventoryView"), SetVariable("inventory_open", False), Jump("examineKnife")
+            #arm
+            if kitchenArm == True:
+                textbutton "{size=24}{font=fonts/Sedan_SC/SedanSC-Regular.ttf}Severed arm" text_hover_color "#b4dee6":
+                    action Hide("inventoryView"), SetVariable("inventory_open", False), Jump("examineArm")
+            elif kitchenArm == True and kitchenArmCooked == True:
+                textbutton "{size=24}{font=fonts/Sedan_SC/SedanSC-Regular.ttf}Arm stew" text_hover_color "#b4dee6":
+                    action Hide("inventoryView"), SetVariable("inventory_open", False), Jump("examineArm")
             #spices
             if kitchenSpices == True:
                 textbutton "{size=24}{font=fonts/Sedan_SC/SedanSC-Regular.ttf}Spices and herbs" text_hover_color "#b4dee6":
@@ -51,26 +62,18 @@
                 #action Hide("inventoryView"), SetVariable("inventory_open", False), SetVariable("cargo_buttons_enabled", True), SetVariable("cargo_scroll_enabled", True)
 
 label examinePage: #THIS IS COMPLETED PAGE
-    if locationTracker == "cargo":
-        $cargo_buttons_enabled = False 
-        $cargo_scroll_enabled = False
-    elif locationTracker == "kitchen":
-        $kitchen_buttons_enabled = False 
-        $kitchen_scroll_enabled = False
+    $room_buttons_enabled = False
+    $room_scroll_enabled = False
     $showItemPage = True
     t "You have a page that reads out the passage:"
     "\"O Mother of the Great Deep, we sever our love to our flesh to offer it to you alone, flaying our imperfect forms as penance for the circumstances of our births.\""
     "\"Accept our emaciated bodies and deliver us, for we yearn to be entangled in your cold embrace as the children of your new earth.\""
     $showItemPage = False
-    if locationTracker == "cargo":
-        jump cargo
-    elif locationTracker == "kitchen":
-        jump kitchen
+    jump expression locationTracker
 
 label examinePage1: 
-    if locationTracker == "cargo":
-        $cargo_buttons_enabled = False 
-        $cargo_scroll_enabled = False
+    $room_buttons_enabled = False
+    $room_scroll_enabled = False
     $showItemPage1 = True
     t "You have a ripped page that reads out the passage:"
     "\"-iver us, for we yearn to be entangled in your cold emabrace as the children of your new earth.\""
@@ -86,8 +89,7 @@ label examinePage1:
                     jump combinePagesFinished
                 $ renpy.pause()
     $showItemPage1 = False
-    if locationTracker == "cargo":
-        jump cargo
+    jump expression locationTracker
 
 label examinePage2: 
     $cargo_buttons_enabled = False 
@@ -108,26 +110,33 @@ label examinePage2:
                     jump combinePagesFinished
                 $ renpy.pause()
     $showItemPage2 = False
-    jump cargo
+    jump expression locationTracker
 
 label examineKnife:
-    if locationTracker == "kitchen":
-        $kitchen_buttons_enabled = False 
-        $kitchen_scroll_enabled = False
+    $room_buttons_enabled = False
+    $room_scroll_enabled = False
     t "You have the knife."
-    if locationTracker == "kitchen":
-        jump kitchen
+    jump expression locationTracker
+
+label examineArm:
+    $room_buttons_enabled = False
+    $room_scroll_enabled = False
+    if kitchenArmCooked == False and kitchenArmCut == False:
+        t "You have a severed arm."
+    elif kitchenArmCut == True:
+        t "You have a severed arm that has been cut into smaller pieces."
+    elif kitchenArmCooked == True:
+        t "You have a pot with arm stew."
+    jump expression locationTracker
 
 label examineSpices:
-    if locationTracker == "kitchen":
-        $kitchen_buttons_enabled = False 
-        $kitchen_scroll_enabled = False
+    $room_buttons_enabled = False
+    $room_scroll_enabled = False
     t "You have a few containers filled with various spices and herbs used for seasoning."
-    if locationTracker == "kitchen":
-        jump kitchen
+    jump expression locationTracker
 
 label examineLighter:
-    $cargo_buttons_enabled = False 
-    $cargo_scroll_enabled = False
+    $room_buttons_enabled = False
+    $room_scroll_enabled = False
     t "You have the lighter."
-    jump cargo
+    jump expression locationTracker

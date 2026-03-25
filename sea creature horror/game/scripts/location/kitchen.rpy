@@ -7,7 +7,7 @@ label kitchen:
     
     #screen transitions
     show screen kitchenRoom onlayer master
-    $kitchen_buttons_enabled = False
+    $room_buttons_enabled = False
     show screen kitchenRoom onlayer master
     $hide_inventory = False
     show screen uiWindow onlayer ui with fade
@@ -50,14 +50,14 @@ screen kitchenRoom:
         area (0, 0, 1920, 1080) #size of screen (leave the same)
         child_size (1920, 1080) #change based on image size
 
-        if kitchen_scroll_enabled:
+        if room_scroll_enabled == True and locationTracker == "kitchen" and allow_edge_scroll():
             edgescroll (150, 1400) #how fast the scrolling is (horizontal_speed, vertical_speed)
         else: 
             edgescroll (0,0)
  
         add "images/backgrounds/kitchen.png" #name of the background image
         
-        #if kitchen_buttons_enabled == True:
+        #if room_buttons_enabled == True and locationTracker == "kitchen":
             #imagebutton: #for 
                 #pos (340,945) #where it appears on the screen
                 #auto "images/items/kitchen/_%s.png" action Hide("inventory"), Jump("kitchenA")
@@ -75,8 +75,8 @@ screen kitchenRoom:
 
 #writing for clickable items
 label kitchenDoor:
-    $kitchen_scroll_enabled = False
-    $kitchen_buttons_enabled = False
+    $room_buttons_enabled = False
+    $room_scroll_enabled = False
     if kitchenDoorKey == False:
         t "It's locked."
         jump kitchen
@@ -89,8 +89,8 @@ label kitchenDoor:
                 jump kitchen
 
 label kitchenCuttingBoard:
-    $kitchen_scroll_enabled = False
-    $kitchen_buttons_enabled = False
+    $room_buttons_enabled = False
+    $room_scroll_enabled = False
     if kitchenArm == False:
         t "A small wooden cutting board with countless knife marks in it. You're not sure who's blood stains the surface, and you're not sure you want to."
         jump kitchen
@@ -98,7 +98,7 @@ label kitchenCuttingBoard:
         t "A cutting board. You can use this to cut the arm into smaller pieces."
         menu:
             "Use the cutting board.":
-                jump mgKitchenArmCut
+                jump mg_KitchenArmCut
     elif kitchenArm == True and kitchenArmCut == True and kitchenArmCooked == False:
         t "You've mutilated the arm plenty. It should be able to be cooked at this point."
         jump kitchen
@@ -107,14 +107,26 @@ label kitchenCuttingBoard:
         jump kitchen
 
 label kitchenPot:
-    $kitchen_scroll_enabled = False
-    $kitchen_buttons_enabled = False
-    t "WIP"
-    jump kitchen
+    $room_buttons_enabled = False
+    $room_scroll_enabled = False
+    if kitchenArm == False:
+        t"A small, tarnished, cast iron pot full of water."
+        jump kitchen
+    elif kitchenArm == True and kitchenArmCut == False:
+        t "A small, tarnished, cast iron pot full of water. You could stew the arm in this, but it's far too large to fit."
+        jump kitchen
+    elif kitchenArm == True and kitchenArmCut == True and kitchenSpices == False:
+        t"A small, tarnished, cast iron pot full of water. You could stew the arm meat in this, but you should probably find something else to add first."
+        jump kitchen
+    elif kitchenArm == True and kitchenArmCut == True and kitchenSpices == True:
+        t "A small, tarnished, cast iron pot full of water. You can make a stew in this with the ingredients you've gathered."
+        menu: 
+            "Cook the arm.":
+                jump mg_kitchen_arm_cook
 
 label kitchenCabinet:
-    $kitchen_scroll_enabled = False
-    $kitchen_buttons_enabled = False
+    $room_buttons_enabled = False
+    $room_scroll_enabled = False
     t "They're full of dead fish. It smells like nothing you've ever experienced. You've never had a gag reflex, but you seem to have found one."
     if kitchenSpices == False:
         t "A small rack of spices and herbs sits on the lowermost shelf."
@@ -128,8 +140,8 @@ label kitchenCabinet:
         jump kitchen
 
 label kitchenBodies:
-    $kitchen_scroll_enabled = False
-    $kitchen_buttons_enabled = False
+    $room_buttons_enabled = False
+    $room_scroll_enabled = False
     t "More bodies. These seem in a far worse shape than the others."
     t "Is he... eating them?"
     jump kitchen
