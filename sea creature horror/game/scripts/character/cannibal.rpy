@@ -18,7 +18,7 @@ label cannibaltalk:
         c "\"Most people would have a little more self-preservation than to sneak up on a stranger like that.\"" 
         menu:            
             c "\"What brings you here, little ghost?\""
-
+            
             "\"I'm... not sure. I can't remember. I just sort of woke up here.\"":
                 label cann_talk_why:
                 c "\"I remember seeing you asleep amongst the cargo. You're in for something special, you just don't know yet.\""
@@ -38,8 +38,8 @@ label cannibaltalk:
                                 $item_knife = True
                                 c "\"Tell you what. You make this morsel here a bit more palateable, and the key is yours.\""
                                 $kitchenArm = True
-                                c "\"The prisoners down here were oh so stressed. Bad for the flesh.\""
-                                menu:                                    
+                                menu:
+                                    c "\"The prisoners down here were oh so stressed. Bad for the flesh.\""
                                     "\"I can certainly try.\"":
                                         jump kitchen
                                     "Attack him.": 
