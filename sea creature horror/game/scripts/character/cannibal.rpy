@@ -16,8 +16,9 @@ label cannibaltalk:
         t "A lithe, gangly man sits above a nigh-unrecognizable pile of bodies."
         c "\"Hey! Snuck up on me a little there...\"" 
         c "\"Most people would have a little more self-preservation than to sneak up on a stranger like that.\"" 
-        c "\"What brings you here, little ghost?\""
         menu:            
+            c "\"What brings you here, little ghost?\""
+
             "\"I'm... not sure. I can't remember. I just sort of woke up here.\"":
                 label cann_talk_why:
                 c "\"I remember seeing you asleep amongst the cargo. You're in for something special, you just don't know yet.\""
@@ -29,6 +30,7 @@ label cannibaltalk:
                         c "\"You hear it's call too, huh? As long as that's what it is, I could be persuaded.\"" 
                         menu:
                             c "\"As long as you don't plan to turn it on me.\""
+
                             "\"I won't. I'm not even sure what I need it for, but I don't plan on hurting you.\"":
                                 c "\"I know what you need it for. What's more important is the key to the door over there.\"" 
                                 c "\"It'll call you there sooner or later.\""
@@ -53,8 +55,9 @@ label cannibaltalk:
             "\"I'm one of you. I aim to reach Her, and ascend my body.\"":
                 $cansus += 1
                 call cansus_check
-                c "\"You shouldn't have to lie to me, little ghost. I am one of them, although they find me... unsavory.\""
                 menu:
+                    c "\"You shouldn't have to lie to me, little ghost. I am one of them, although they find me... unsavory.\""
+                    
                     "\"I wonder why...\"":
                         $cansus += 1
                         call cansus_check

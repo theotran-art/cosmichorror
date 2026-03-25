@@ -10,6 +10,8 @@ init python:
 
 define config.say_layer = "text"
 define config.choice_layer = "screens"
+define config.default_afm_enable = False
+define config.fast_skipping = False
 
 define t = Character((None), what_italic=True) #thoughts
 define h = Character((None), screen='character_screen', what_font="fonts/fonts_hag/Funnel_Display_Lacquer/Lacquer/Lacquer-Regular.ttf", what_size=32) #hag

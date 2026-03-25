@@ -5,6 +5,7 @@ label cargo:
 
     #variable reset incase of bugs
     $characterTalk = False
+    $showItemPage = False
     $showItemPage1 = False
     $showItemPage2 = False
     $locationTracker = "cargo"
@@ -14,7 +15,6 @@ label cargo:
     $room_buttons_enabled = False
     show screen cargoRoom onlayer master
     $hide_inventory = False
-    show screen uiWindow onlayer ui with fade
 
     #persistent parasite quest
     if item_page == False:
