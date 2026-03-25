@@ -24,15 +24,13 @@
                     jump cargo
         
             "\"Well of course! Do you know where everyone went?\"":
-                menu:
-                    h "\"It matters not, dear one! We shall all be her children in her cold embrace. Glory to the One Below!\""
-
+                h "\"It matters not, dear one! We shall all be her children in her cold embrace. Glory to the One Below!\""
+                menu:                    
                     "\"And may she return above!\"" if lookposter == True: #GOOD CHOICE ROUTE PT1
                         h "\"Ahhhhhhhh! You are a true aspirant!\"" 
                         h "\"It brings me great comfort to know I will not be embraced by my lonesome.\"" 
-                        menu:
-                            h "\"Tell me, would you care to join me in a reading of The Cephalonomicon?\""
-
+                        h "\"Tell me, would you care to join me in a reading of The Cephalonomicon?\""
+                        menu:                            
                             "\"Of course.\"": #GOOD CHOICE PT2
                                 t "She begins to read immediately after you accept."
                                 t "She holds one of her arms out to the side, holding a small torn piece of paper in front of her face with the other, reciting,"
@@ -44,9 +42,8 @@
                                 menu:
                                     "Hold your hands together and bow softly.":
                                         h "\"Such a respectful aspirant you are.\""
-                                        menu:
-                                            h "\"Tell me, do you wish to carry this passage with you into The Deep?\""
-
+                                        h "\"Tell me, do you wish to carry this passage with you into The Deep?\""
+                                        menu:                                            
                                             "\"I... think that I need it.\"":
                                                 $hagsus += 1
                                                 if hagsus >= 1:
@@ -62,9 +59,8 @@
                                                 h "\"Oh dear, but this page is important to me!\""
                                                 h "\"It was the passage I would read my grandson before bed every night.\""
                                                 h "\"Of course, since he isn't coming with us, I suppose I could give it to you.\""
-                                                menu:
-                                                    h "\"But first, I must know if you are truly dedicated to following Her below.\""
-                                                
+                                                h "\"But first, I must know if you are truly dedicated to following Her below.\""
+                                                menu:                                                                                                    
                                                     "\"Of course I am! I have wished to be embraced in her ancient {i}arms{/i} for as long as I can remember.\"":
                                                         $hagsus += 1
                                                         if hagsus >= 1:
@@ -73,13 +69,11 @@
                                                             jump death
                                                         else:
                                                             h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth.\""
-                                                            menu: 
-                                                                h "\"Leave me foul vermin!\""
-
+                                                            h "\"Leave me foul vermin!\""
+                                                            menu:                                                                 
                                                                 "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
-                                                                    menu:
-                                                                        h "\"And what do you make of her ascendants?\""
-
+                                                                    h "\"And what do you make of her ascendants?\""
+                                                                    menu:                                                                        
                                                                         "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page."
@@ -156,9 +150,8 @@
                                                                         
 
                                                     "\"Of course I am! I have wished to be embraced in her ancient {i}tendrils{/i} for as long as I can remember.\"": #GOOD CHOICE
-                                                        menu:
-                                                            h "\"And what do you make of her ascendants?\""
-
+                                                        h "\"And what do you make of her ascendants?\""
+                                                        menu:                                                            
                                                             "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
@@ -231,13 +224,11 @@
                                                             jump death
                                                         else:
                                                             h "\"She would not dirty herself with the imperfect forms of her scions.\"" 
-                                                            menu:
-                                                                h "\"You are no aspirant. You are more fit to be her food than to be her child.\""
-
+                                                            h "\"You are no aspirant. You are more fit to be her food than to be her child.\""
+                                                            menu:                                                                
                                                                 "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
-                                                                    menu:
-                                                                        h "\"And what do you make of her ascendants?\""
-
+                                                                    h "\"And what do you make of her ascendants?\""
+                                                                    menu:                                                                
                                                                         "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
@@ -343,16 +334,14 @@
                                 h "\"we sever our love to our flesh to offer it to you alone,\""
                                 h "\"flaying our imperfect forms as penance for the circumstances of our births.\""
                                 h "\"Accept our emaciated bodies and deliver us,\"" 
-                                menu:
-                                    h "\"for we yearn to be entangled in your cold embrace as the children of your new earth.\""
-                                    
+                                h "\"for we yearn to be entangled in your cold embrace as the children of your new earth.\""
+                                menu:                                                                        
                                     "\"Yes, that's it! I have such a hard time remembering the beginning. Is there any way I can trouble you for that page of yours?\"":
                                         h "\"Oh dear, but this page is important to me!\""
                                         h "\"It was the passage I would read my grandson before bed every night.\""
                                         h "\"Of course, since he isn't coming with us, I suppose I could give it to you.\""
-                                        menu:
-                                            h "\"But first, I must know if you are truly dedicated to following Her below.\""
-                                                
+                                        h "\"But first, I must know if you are truly dedicated to following Her below.\""
+                                        menu:                                                                                            
                                             "\"Of course I am! I have wished to be embraced in her ancient {i}arms{/i} for as long as I can remember.\"":
                                                 $hagsus += 1
                                                 if hagsus >= 1:
@@ -361,13 +350,11 @@
                                                     jump death
                                                 else:
                                                     h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth.\""
-                                                    menu:
-                                                        h "\"Leave me foul vermin!\""
-
+                                                    h "\"Leave me foul vermin!\""
+                                                    menu:                                                        
                                                         "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
-                                                            menu:
-                                                                h "\"And what do you make of her ascendants?\""
-
+                                                            h "\"And what do you make of her ascendants?\""
+                                                            menu:                                                                
                                                                 "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                     h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                     t "The old woman reaches her frail hand towards you, holding the old decrepit page."
@@ -443,9 +430,8 @@
                                                                 jump cargo
 
                                             "\"Of course I am! I have wished to be embraced in her ancient {i}tendrils{/i} for as long as I can remember.\"": #GOOD CHOICE
-                                                menu:
-                                                    h "\"And what do you make of her ascendants?\""
-
+                                                h "\"And what do you make of her ascendants?\""
+                                                menu:                                                    
                                                     "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                         h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                         t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
@@ -523,9 +509,8 @@
                                                         h "\"You are no aspirant. You are more fit to be her food than to be her child.\""
 
                                                         "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
-                                                            menu:
-                                                                h "\"And what do you make of her ascendants?\""
-
+                                                            h "\"And what do you make of her ascendants?\""
+                                                            menu:                                                                
                                                                 "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page."
@@ -608,9 +593,8 @@
                                     jump death
                                 else:
                                     h "\"At this time, what could possibly be your priority over our holy rapture?!\"" 
-                                    menu:
-                                        h "\"We must stay here and worship, as ordered by our most holy ascendants!\""
-
+                                    h "\"We must stay here and worship, as ordered by our most holy ascendants!\""
+                                    menu:                                    
                                         "\"Really, I must be going.\"":
                                             $hagsus += 1
                                             if hagsus >= 1:
@@ -635,9 +619,8 @@
                                                     menu:
                                                         "Hold your hands together and bow softly.":
                                                             h "\"Such a respectful aspirant you are.\""
-                                                            menu:
-                                                                h "\"Tell me, do you wish to carry this passage with you into The Deep?\""
-
+                                                            h "\"Tell me, do you wish to carry this passage with you into The Deep?\""
+                                                            menu:                                                                
                                                                 "\"I... think that I need it.\"":
                                                                     $hagsus += 1
                                                                     if hagsus >= 1:
@@ -653,9 +636,8 @@
                                                                     h "\"Oh dear, but this page is important to me!\""
                                                                     h "\"It was the passage I would read my grandson before bed every night.\""
                                                                     h "\"Of course, since he isn't coming with us, I suppose I could give it to you.\""
-                                                                    menu:
-                                                                        h "\"But first, I must know if you are truly dedicated to following Her below.\""
-                                                                    
+                                                                    h "\"But first, I must know if you are truly dedicated to following Her below.\""
+                                                                    menu:                                                                                                                                            
                                                                         "\"Of course I am! I have wished to be embraced in her ancient {i}arms{/i} for as long as I can remember.\"":
                                                                             $hagsus += 1
                                                                             if hagsus >= 1:
@@ -664,13 +646,11 @@
                                                                                 jump death
                                                                             else:
                                                                                 h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth.\""
-                                                                                menu:
-                                                                                    h "\"Leave me foul vermin!\""
-
+                                                                                h "\"Leave me foul vermin!\""
+                                                                                menu:                                                                                    
                                                                                     "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
-                                                                                        menu:
-                                                                                            h "\"And what do you make of her ascendants?\""
-
+                                                                                        h "\"And what do you make of her ascendants?\""
+                                                                                        menu:                                                                                            
                                                                                             "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page."
@@ -747,9 +727,8 @@
                                                                                             
 
                                                                         "\"Of course I am! I have wished to be embraced in her ancient {i}tendrils{/i} for as long as I can remember.\"": #GOOD CHOICE
-                                                                            menu:
-                                                                                h "\"And what do you make of her ascendants?\""
-
+                                                                            h "\"And what do you make of her ascendants?\""
+                                                                            menu:                                                                                
                                                                                 "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                                     h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                     t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
@@ -952,13 +931,11 @@
                                                                         jump death
                                                                     else:
                                                                         h "\"She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth.\""
-                                                                        menu: 
-                                                                            h "\"Leave me foul vermin!\""
-
+                                                                        h "\"Leave me foul vermin!\""
+                                                                        menu:                                                                         
                                                                             "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
-                                                                                menu:
-                                                                                    h "\"And what do you make of her ascendants?\""
-
+                                                                                h "\"And what do you make of her ascendants?\""
+                                                                                menu:                                                                                    
                                                                                     "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                                         h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                         t "The old woman reaches her frail hand towards you, holding the old decrepit page."
@@ -1034,9 +1011,8 @@
                                                                                     jump cargo
 
                                                                 "\"Of course I am! I have wished to be embraced in her ancient {i}tendrils{/i} for as long as I can remember.\"": #GOOD CHOICE
-                                                                    menu:
-                                                                        h "\"And what do you make of her ascendants?\""
-
+                                                                    h "\"And what do you make of her ascendants?\""
+                                                                    menu:                                                                        
                                                                         "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                             h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                             t "The old woman reaches her frail hand towards you, holding the old decrepit page." 
@@ -1110,13 +1086,11 @@
                                                                         jump death 
                                                                     else:
                                                                         h "\"She would not dirty herself with the imperfect forms of her scions.\""
-                                                                        menu:
-                                                                            h "\"You are no aspirant. You are more fit to be her food than to be her child.\""
-
+                                                                        h "\"You are no aspirant. You are more fit to be her food than to be her child.\""
+                                                                        menu:                                                                            
                                                                             "\"I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me.\"":
-                                                                                menu:
-                                                                                    h "\"And what do you make of her ascendants?\""
-
+                                                                                h "\"And what do you make of her ascendants?\""
+                                                                                menu:                                                                                    
                                                                                     "\"They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.\"":
                                                                                                 h "\"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more deserving.\""
                                                                                                 t "The old woman reaches her frail hand towards you, holding the old decrepit page."
