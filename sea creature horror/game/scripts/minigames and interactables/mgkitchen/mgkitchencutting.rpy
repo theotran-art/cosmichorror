@@ -90,21 +90,16 @@ screen mg_kitchen_arm_cut:
         frame:
             background None
             align (0.5,0.4)
-
-            fixed:
-                xysize arm_slider_bar_size
-                at Transform(zoom=0.5)
-
-                add "images/minigames/slider-bar.png"
-
-                add "images/minigames/safe-zone.png":
-                    xpos arm_safe_zone_x
-                    ypos 0
-
-                add "images/minigames/slider.png":
-                    xpos arm_slider_x
-                    ypos 0
-
+            xysize arm_slider_bar_size
+            add "images/minigames/slider-bar.png" at half_size
+            add "images/minigames/safe-zone.png":
+                xpos arm_safe_zone_x
+                ypos 0
+                zoom 0.5
+            add "images/minigames/slider.png":
+                xpos arm_slider_x
+                ypos 0
+                zoom 0.5
             if not arm_stop_slider:
                 timer 0.016 repeat True action Function(arm_slider_update)
 

@@ -68,11 +68,13 @@ default pcan = False
 default kitchenDoorKey = False
 default kitchenSpices = False
 default kitchenSpicesUsed = False
+default canndead = False
 #arm states
 default kitchenArm = False
 default kitchenArmCut = False
 default kitchenArmCutBad = False
 default kitchenArmCooked = False
+default kitchenArmCookedBad = False
 
 #moonpool/skeptic variables
 default moonpool_scroll_enabled = True

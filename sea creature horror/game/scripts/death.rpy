@@ -37,13 +37,17 @@ label death:
         hide screen suspicion_overlay
         $hagsus = 0
         jump cargo
+    if cansus == 2:
+        show black bckgd
+        "cannibal killed u"
+        $cansus = 0
+        hide black bckgd
+        hide screen suspicion_overlay
+        jump kitchen
     if cann_lose == True:
         show black bckgd
         "cannibal killed u"
         $cansus = 0
         hide black bckgd
         hide screen suspicion_overlay
-        $hagsus = 0
         jump kitchen
-
-        

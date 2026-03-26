@@ -6,11 +6,9 @@ label kitchen:
     $locationTracker = "kitchen"
     
     #screen transitions
-    show screen kitchenRoom onlayer master
     $room_buttons_enabled = False
-    show screen kitchenRoom onlayer master
     $hide_inventory = False
-    show screen uiWindow onlayer ui with fade
+    show screen kitchenRoom onlayer master
 
     #persistent parasite quest
     if item_knife == False:
@@ -88,6 +86,21 @@ label kitchenDoor:
             "Turn away.":
                 jump kitchen
 
+label kitchenCabinet:
+    $room_buttons_enabled = False
+    $room_scroll_enabled = False
+    t "They're full of dead fish. It smells like nothing you've ever experienced. You've never had a gag reflex, but you seem to have found one."
+    if kitchenSpices == False:
+        t "A small rack of spices and herbs sits on the lowermost shelf."
+        menu:
+            "Take spices and herbs.":
+                $kitchenSpices = True
+                jump kitchen
+    elif kitchenSpices == True:
+        t "A small rack of spices and herbs sits on the lowermost shelf."
+        t "You've already taken some."
+        jump kitchen
+
 label kitchenCuttingBoard:
     $room_buttons_enabled = False
     $room_scroll_enabled = False
@@ -116,28 +129,13 @@ label kitchenPot:
         t "A small, tarnished, cast iron pot full of water. You could stew the arm in this, but it's far too large to fit."
         jump kitchen
     elif kitchenArm == True and kitchenArmCut == True and kitchenSpices == False:
-        t"A small, tarnished, cast iron pot full of water. You could stew the arm meat in this, but you should probably find something else to add first."
+        t"A small, tarnished, cast iron pot full of water. You could stew the arm meat in this, but you should probably find something else to add first to make it more palateable."
         jump kitchen
     elif kitchenArm == True and kitchenArmCut == True and kitchenSpices == True:
         t "A small, tarnished, cast iron pot full of water. You can make a stew in this with the ingredients you've gathered."
-        menu: 
-            "Cook the arm.":
-                jump mg_kitchen_arm_cook
-
-label kitchenCabinet:
-    $room_buttons_enabled = False
-    $room_scroll_enabled = False
-    t "They're full of dead fish. It smells like nothing you've ever experienced. You've never had a gag reflex, but you seem to have found one."
-    if kitchenSpices == False:
-        t "A small rack of spices and herbs sits on the lowermost shelf."
         menu:
-            "Take spices and herbs.":
-                $kitchenSpices = True
-                jump kitchen
-    elif kitchenSpices == True:
-        t "A small rack of spices and herbs sits on the lowermost shelf."
-        t "You've already taken some."
-        jump kitchen
+            "Cook the arm.":
+                jump mgkitchen_pot
 
 label kitchenBodies:
     $room_buttons_enabled = False

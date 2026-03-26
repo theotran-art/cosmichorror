@@ -1,40 +1,97 @@
 ﻿init python:
-    def dragged_func(drags, drop):
+    def drag_placed(drags, drop):
         if not drop:
             return
 
-        dragged = drags[0]
+        d = drags[0].drag_name
 
-        if dragged.drag_name == "dragpage1" and drop.drag_name == "dragpage2":
-            return True
+        if drop.drag_name == "pot" and d not in store.placed_items:
+            store.placed_items.append(d)
 
-screen mg_kitchen_arm_cook:
+        return True
+
+default draggable = None
+default droppable = None
+default armpieces = 0
+default spices = 0
+
+label mgkitchen_pot:
+
+    call screen mgkitchen_cook
+
+    $ armpieces = len([i for i in placed_items if i in ["arm piece", "arm piece2"]])
+    $ spices = placed_items.count("spices")
+
+    #t "you added [draggable] into [droppable]"
+
+    call mgarm_check
+
+label mgarm_check:
+    #image goodArmStew = ".png"
+    #image badArmStew = ".png"
+
+    if armpieces == 2 and spices == 1 and kitchenArmCutBad == False: #correct
+        t "After putting all the ingredients in, you let it simmer for a while."
+        t "Once the color of the water has turned murky, you find a bowl to serve the soup into."
+        #show goodArmStew
+        t "godod stew"
+        jump kitchen
+    elif armpieces == 2 and spices == 1 and kitchenArmCutBad == True:
+        t "After putting all the ingredients in, you let it simmer for a while."
+        t "Once the color of the water has turned murky, you find a bowl to serve the soup into."
+        #show badArmStew
+        t "badd stew"
+        jump kitchen
+    else:
+        jump mgkitchen_pot
+
+
+screen mgkitchen_cook:
+    #add ".png" #background
+
+    #instructions
+    text "Put all the ingredients into the pot.":
+        pos (70, 800)
+
     draggroup:
-        #hag piece
         drag:
-            xalign 0.5
-            yalign 0.5
-            drag_raise True
-            draggable False
+            drag_name "pot"
+            xpos 550
+            ypos 600
+            #child ".png" #the image of the pot
+            text "POT"
             droppable True
-            drag_name "dragpage2"
-            dragged dragged_func
-            #image "images/items/cargo/page2.png"
-            text "arm" size 50
-        #book piece
-        drag:
-            xpos 0.1
-            ypos 0.1
-            drag_raise True
-            draggable True
-            drag_name "dragpage1"
-            dragged dragged_func
-            dropped Return(True)
-            #image "images/items/cargo/page1.png"
-            text "pot" size 50
-
-label mg_kitchen_arm_cook_finished:
-    hide screen mg_kitchen_arm_cook
-    t "You piece the two sections together."
-    
-    jump kitchen
+            draggable False
+        if "arm piece" not in placed_items:
+            drag:
+                drag_name "arm piece"
+                xpos 300
+                ypos 100
+                #child ".png" #the image of the pot
+                text "arm1"
+                draggable True
+                droppable False
+                dragged drag_placed
+                drag_raise True
+        if "arm piece2" not in placed_items:
+            drag:
+                drag_name "arm piece2"
+                xpos 750
+                ypos 120
+                #child ".png" #the image of the pot
+                text "arm2"
+                draggable True
+                droppable False
+                dragged drag_placed
+                drag_raise True
+        if "spices" not in placed_items:
+            drag:
+                drag_name "spices"
+                xpos 1250
+                ypos 150
+                #child ".png" #the image of the pot
+                text "spices"
+                draggable True
+                droppable False
+                dragged drag_placed
+                drag_raise True

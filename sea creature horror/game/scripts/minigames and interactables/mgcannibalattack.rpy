@@ -140,12 +140,6 @@ screen temp_cann_attack:
     textbutton "Get attacked by the Cannibal":
         action [Hide("temp_cann_attack"), Show("mg_cannibal_attack")]
 
-label cansus_check:
-    if cansus > 0:
-        show screen suspicion_overlay
-    if cansus == 3: #trigger cannibal attack
-        jump mg_canatt
-
 label mg_canatt:
 
     $ kitchen_buttons_enabled = False 
@@ -195,5 +189,8 @@ label mg_canatt:
     jump mg_canatt_win
 
 label mg_canatt_win:
-    "you killed him woah!"
+    $ canndead = True
+    t "Good riddance."
+    $ kitchenDoorKey = True
+    t "You pick up the key from his corpse."
     jump kitchen
