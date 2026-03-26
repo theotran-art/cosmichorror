@@ -27,7 +27,7 @@ label cannibaltalk:
                 p2 "YOU NEED HIS BLADE."
                 menu:
                     "\"How willing would you be to part with that knife of yours?\"":
-                        c "\"You hear it's call too, huh? As long as that's what it is, I could be persuaded.\"" 
+                        c "\"You hear its call too, huh? As long as that's what it is, I could be persuaded.\"" 
                         menu:
                             c "\"As long as you don't plan to turn it on me.\""
 

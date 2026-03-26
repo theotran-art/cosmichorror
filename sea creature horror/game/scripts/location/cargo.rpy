@@ -11,14 +11,15 @@ label cargo:
     $locationTracker = "cargo"
 
     #screen transitions
-    show screen cargoRoom onlayer master
     $room_buttons_enabled = False
-    show screen cargoRoom onlayer master
     $hide_inventory = False
+    show screen cargoRoom onlayer master
 
     #persistent parasite quest
-    if item_page == False:
+    if (item_page_1 == False or item_page_2 == False) and item_page == False:
         p1 "YOU NEED HER HOLY TEXT."
+    elif item_page_1 == True and item_page_2 == True and page_combined == False and item_page == False:
+        p1 "REPAIR THE TEXT."
         
     #reset sus overlay
     if item_page == True and hagsus >= 1:
@@ -112,11 +113,11 @@ screen cargoRoom:
             xalign 0.5
             yalign 0.5
 
-screen windowCargoCloseup:
-    add "windowCargoCloseup.png"
+image windowCargoCloseup:
+    "images/backgrounds/windowCargoCloseup.png"
 
-screen windowCargo:
-    add "windowCargo.png"
+image windowCargo:
+    "images/backgrounds/windowCargo.png"
 
 #imagebutton: #make sure the image has normal and _hover 
             #pos (0,0) #where it appears on the screen
@@ -139,18 +140,19 @@ label cargoCrates:
 label cargoWindow:
     $room_buttons_enabled = False
     $room_scroll_enabled = False
-    hide screen cargoRoom
-
-    hide screen windowCargo
-    show screen windowCargoCloseup onlayer background
+    show windowCargoCloseup onlayer master with fade
     menu:
         "Examine outside.":
-            hide screen windowCargoCloseup
-            show screen windowCargo onlayer background
+            show windowCargo onlayer master with fade
             t "You look out the window."
-            jump cargoWindow
+            menu:
+                "Step away.":
+                    hide windowCargoCloseup
+                    hide windowCargo with fade
+                    jump cargo
         "Step away.":
-            hide screen windowCargoCloseup
+            hide windowCargo
+            hide windowCargoCloseup with fade
             jump cargo
 
 

@@ -4,7 +4,7 @@
 # name of the character.
 
 init python:
-    config.layers = ['background', 'master', 'transient', 'overlay', 'ui', 'screens', 'text', 'top']
+    config.layers = ['background', 'master', 'window', 'transient', 'overlay', 'ui', 'screens', 'text', 'top']
 
     #config.rollback_enabled = False #disable going back
 
@@ -86,7 +86,7 @@ screen character_screen(who, what):
             #yalign 0.65
 
         frame:
-            background "gui/customui/textbox2.png"
+            background Frame("gui/customui/textbox2.png")
             xsize 1800
             ysize 90
             xalign 0.5

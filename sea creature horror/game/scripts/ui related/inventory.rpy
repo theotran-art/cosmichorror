@@ -92,8 +92,8 @@ label examinePage1:
     jump expression locationTracker
 
 label examinePage2: 
-    $cargo_buttons_enabled = False 
-    $cargo_scroll_enabled = False
+    $room_buttons_enabled = False 
+    $room_scroll_enabled = False
     $showItemPage2 = True
     t "You have a ripped page that reads out the passage:"
     "\"O Mother of the Great Deep, we sever our love to our flesh to offer it to you alone, flaying our imperfect forms as penance for the circumstances of our births.\""
