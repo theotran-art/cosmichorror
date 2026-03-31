@@ -10,6 +10,7 @@
 
         return True
 
+default placed_items = []
 default draggable = None
 default droppable = None
 default armpieces = 0
@@ -34,13 +35,17 @@ label mgarm_check:
         t "After putting all the ingredients in, you let it simmer for a while."
         t "Once the color of the water has turned murky, you find a bowl to serve the soup into."
         #show goodArmStew
-        t "godod stew"
+        t "Despite your unfamiliarity of ingredients of this nature, you feel like you did a good job."
+        $ kitchenArmCooked = True
         jump kitchen
     elif armpieces == 2 and spices == 1 and kitchenArmCutBad == True:
         t "After putting all the ingredients in, you let it simmer for a while."
         t "Once the color of the water has turned murky, you find a bowl to serve the soup into."
         #show badArmStew
-        t "badd stew"
+        t "Because of your unfamiliarity of ingredients of this nature, it doesn't look very good. It seems that your sloppy attempts at cutting the arm has made the overall dish look very messy."
+        t "You hope that your efforts will be acceptable to the cultist."
+        $ kitchenArmCooked = True
+        $ kitchenArmCookedBad = True
         jump kitchen
     else:
         jump mgkitchen_pot
