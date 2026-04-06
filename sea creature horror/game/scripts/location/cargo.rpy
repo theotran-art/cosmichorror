@@ -189,7 +189,7 @@ label cargoBook:
     if item_page_1 == False:
         t "The book is open to a torn and yellowed page with few words written on it. You don't have nearly enough time or interest for that matter to read through it."
         t "The half of the page that remains bound to the rest of the book reads," 
-        t " -iver us, for we yearn to be entangled in your cold emabrace as the children of your new earth."
+        t " -iver us, for we yearn to be entangled in your cold embrace as the children of your new earth."
         p1 "You need the rest of this."
         t "You find yourself tearing off the page and tucking it away." #theo wrote this, replace if aidan writes smth
         $item_page_1 = True

@@ -1,4 +1,7 @@
-﻿transform inventory_fade(showing):
+﻿
+
+
+transform inventory_fade(showing): # transition for inventory fade
     linear 0.25 alpha (1.0 if showing else 0.0)
 
 screen inventoryView():
@@ -76,7 +79,7 @@ label examinePage1:
     $room_scroll_enabled = False
     $showItemPage1 = True
     t "You have a ripped page that reads out the passage:"
-    "\"-iver us, for we yearn to be entangled in your cold emabrace as the children of your new earth.\""
+    "\"-iver us, for we yearn to be entangled in your cold embrace as the children of your new earth.\""
     if item_page_2 == True:
         menu:
             "Combine the ripped pages.":
