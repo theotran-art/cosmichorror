@@ -113,7 +113,7 @@ screen mg_cannibal_attack:
             background "#00000088"
             padding (5,5)
             align (0.5, 0.15)
-            text "You missed, and he stabs you. You need to take him down now!" size 30 color "#FF0000"
+            text "You missed, and he kicks you in the stomach. You need to take him down now!" size 30 color "#FF0000"
     elif cann_warning_type == 2:  # persistent for remaining rounds
         frame:
             background "#00000088"

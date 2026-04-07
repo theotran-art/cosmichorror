@@ -1,9 +1,11 @@
 ﻿label kitchenEnter:
+    hide screen cargoRoom
     hide screen suspicion_overlay
 
 label kitchen:
     #variable stuff
     $locationTracker = "kitchen"
+    $characterTalk = False
     
     #screen transitions
     $room_buttons_enabled = False
@@ -46,7 +48,7 @@ screen kitchenRoom:
     #pannable view of room
     viewport id "kitchenScene":
         area (0, 0, 1920, 1080) #size of screen (leave the same)
-        child_size (1920, 1080) #change based on image size
+        child_size (5497, 1620) #change based on image size
 
         if room_scroll_enabled == True and locationTracker == "kitchen" and allow_edge_scroll():
             edgescroll (150, 1400) #how fast the scrolling is (horizontal_speed, vertical_speed)
