@@ -4,6 +4,11 @@
 # name of the character.
 
 init python:
+    if persistent.game_finished_once == True:
+        gui.main_menu_background = "gui/titlepage2.png"
+    else:
+        gui.main_menu_background = "gui/titlepage.png"
+
     config.layers = ['background', 'master', 'window', 'transient', 'overlay', 'ui', 'screens', 'text', 'top']
 
     #config.rollback_enabled = False #disable going back
@@ -30,8 +35,7 @@ default characterTalk = False
 default locationTracker = "none"
 default room_scroll_enabled = True
 default room_buttons_enabled = True
-
-
+default persistent.game_finished_once = False
 
 
 #inventory items
@@ -135,3 +139,7 @@ return
     #"Choice": DONT FORGET COLON
     #"Choice": 
         #Branching path/different dialogue triggered
+
+#CHANGE TITLE SCREEN AT THE END OF THE GAME
+#$ persistent.game_finished_once = True
+#$ renpy.save_persistent()

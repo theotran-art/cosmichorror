@@ -81,15 +81,14 @@ define gui.label_text_size = 36
 define gui.notify_text_size = 24
 
 ## The size of the game's title.
-define gui.title_text_size = 75
+define gui.title_text_size = 200
 
 
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = "gui/main_menu.png"
+define gui.main_menu_background = "gui/titlepage.png"
 define gui.game_menu_background = "gui/game_menu.png"
-
 
 ## Dialogue ####################################################################
 ##
@@ -260,7 +259,9 @@ define gui.notify_ypos = 68
 define gui.choice_spacing = 10 #I EDITED THIS ONE!!!! default is 33
 
 ## Buttons in the navigation section of the main and game menus.
-define gui.navigation_spacing = 6
+define gui.navigation_spacing = 40
+define gui.navigation_spacing_main = 80
+define gui.navigation_spacing_game = 6
 
 ## Controls the amount of spacing between preferences.
 define gui.pref_spacing = 15
