@@ -1,6 +1,7 @@
 ﻿label intro: # The game starts here.
     #scene black image
-
+    $ hide_inventory = True
+    show screen uiWindow onlayer ui with fade
     t "Your head throbs. Your body shakes uncontrollably. You know not where you are or how you got here. Any attempt to rack your brain results in a surge of your already pounding headache."
     
     menu:

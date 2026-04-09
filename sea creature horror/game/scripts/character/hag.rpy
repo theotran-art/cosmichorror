@@ -1,7 +1,7 @@
 ﻿label hagtalk:
 
-    $cargo_scroll_enabled = False
-    $cargo_buttons_enabled = False
+    $room_buttons_enabled = False
+    $room_scroll_enabled = False
 
     $hide_inventory = True
     $characterTalk = True
@@ -346,7 +346,7 @@
                                 menu:
                                     h "\"for we yearn to be entangled in your cold embrace as the children of your new earth.\""
                                     
-                                    "\"Yes, that's it! I have such a hard time remembering the beginning. Is there any way I can trouble you for that page of yours?\"":
+                                    "\"Yes, that's it! Is there any way I can trouble you for that page of yours?\"":
                                         h "\"Oh dear, but this page is important to me!\""
                                         h "\"It was the passage I would read my grandson before bed every night.\""
                                         h "\"Of course, since he isn't coming with us, I suppose I could give it to you.\""
@@ -937,7 +937,7 @@
                                                     menu:
                                                         h "\"for we yearn to be entangled in your cold embrace as the children of your new earth.\""
                                                         
-                                                        "\"Yes, that's it! I have such a hard time remembering the beginning. Is there any way I can trouble you for that page of yours?\"":
+                                                        "\"Yes, that's it! Is there any way I can trouble you for that page of yours?\"":
                                                             h "\"Oh dear, but this page is important to me!\""
                                                             h "\"It was the passage I would read my grandson before bed every night.\""
                                                             h "\"Of course, since he isn't coming with us, I suppose I could give it to you.\""

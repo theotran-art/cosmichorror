@@ -10,7 +10,7 @@ screen uiWindow:
     if settingsClicked == False:
         imagebutton: #settings
             pos (1755,51) #where it appears on the screen
-            auto "gui/customui/settings_%s.png" action SetVariable("settingsClicked", True), Show("uiSettings")
+            auto "gui/customui/settings_%s.png" action SetVariable("settingsClicked", True), Show("uiSettings", layer="ui")
     elif settingsClicked == True:
         add "gui/customui/settings_hover.png":
             pos (1755,51) #where it appears on the screen
@@ -18,18 +18,17 @@ screen uiWindow:
     if item_page == False:
         add "gui/customui/brain1.png":
             pos (1723,895)
-    elif item_page == True:
+    if item_page == True:
         add "gui/customui/brain2.png":
             pos (1723,895)
-    elif item_knife == True:
+    if item_knife == True:
         add "gui/customui/brain3.png":
             pos (1723,895)
-    elif item_lighter == True:
+    if item_lighter == True:
         add "gui/customui/brain4.png":
             pos (1723,895)
-    if hide_inventory == False:
+    fixed at inventory_fade(not hide_inventory):
         use inventoryView
-        
         #if inventory_open == False:
             #add "gui/customui/inventory.png":
                 #pos (1703,175)
@@ -37,38 +36,46 @@ screen uiWindow:
             #textbutton "{size=28}Inventory":
                 #pos (1737,192)
                 #action Show("inventoryView"), SetVariable("inventory_open", True), SetVariable("cargo_buttons_enabled", False), SetVariable("cargo_scroll_enabled", False)
-
+transform fade_in:
+    alpha 0.0
+    linear 0.3 alpha 1.0
+    
 screen uiSettings:
     modal True
 
-    $cargo_scroll_enabled = False
+    $room_scroll_enabled = False
 
-    add Solid("#00000088")
+    add Solid("#00000050")
 
-    textbutton _("History") action ShowMenu("history"):
-        xalign 0.1
-        yalign 0.5
+    hbox:
+        xalign 0.85
+        yalign 0.075
+        spacing 25
+    
+        textbutton _("History") action ShowMenu("history"):
+            text_color "#7eb4bf"
+            text_hover_color "#ffffff"
 
-    if characterTalk == False:
-        textbutton _("Save") action ShowMenu("save"):
-            xalign 0.2
-            yalign 0.5
+        if characterTalk == False:
+            textbutton _("Save") action ShowMenu("save"):
+                text_color "#7eb4bf"
+                text_hover_color "#ffffff"
 
-    textbutton _("Load") action ShowMenu("load"):
-        xalign 0.3
-        yalign 0.5
+        textbutton _("Load") action ShowMenu("load"):
+            text_color "#7eb4bf"
+            text_hover_color "#ffffff"
 
-    textbutton _("Preferences") action ShowMenu("preferences"):
-        xalign 0.4
-        yalign 0.5
+        textbutton _("Preferences") action ShowMenu("preferences"):
+            text_color "#7eb4bf"
+            text_hover_color "#ffffff"
 
-    if characterTalk == False:
-        textbutton "{size=30}Return":
-            xalign 0.5
-            yalign 0.5
-            action SetVariable("settingsClicked", False), Hide("uiSettings"), Return()
-    elif characterTalk == True:
-        textbutton "{size=30}Return":
-            xalign 0.5
-            yalign 0.5
-            action SetVariable("settingsClicked", False), Hide("uiSettings")
+        if characterTalk == False:
+            textbutton "Return":
+                text_color "#7eb4bf"
+                text_hover_color "#ffffff"
+                action SetVariable("settingsClicked", False), Hide("uiSettings")
+        elif characterTalk == True:
+            textbutton "Return":
+                text_color "#7eb4bf"
+                text_hover_color "#ffffff"
+                action SetVariable("settingsClicked", False), Hide("uiSettings")

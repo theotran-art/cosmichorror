@@ -2,17 +2,25 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-define config.choice_layer = "text"
-define config.say_layer = "text"
 
 init python:
-    config.layers = ['background', 'master', 'ui', 'transient', 'screens', 'text', 'overlay', 'top']
+    if persistent.game_finished_once == True:
+        gui.main_menu_background = "gui/titlepage2.png"
+    else:
+        gui.main_menu_background = "gui/titlepage.png"
+
+    config.layers = ['background', 'master', 'window', 'transient', 'overlay', 'ui', 'screens', 'text', 'top']
 
     #config.rollback_enabled = False #disable going back
 
+define config.say_layer = "text"
+define config.choice_layer = "screens"
+define config.default_afm_enable = False
+define config.fast_skipping = False
+
 define t = Character((None), what_italic=True) #thoughts
 define h = Character((None), screen='character_screen', what_font="fonts/fonts_hag/Funnel_Display_Lacquer/Lacquer/Lacquer-Regular.ttf", what_size=32) #hag
-define c = Character((None), screen='cannibal_screen', what_size=32) #cannibal
+define c = Character((None), screen='character_screen', what_font="fonts/blackcraft/Blackcraft.ttf", what_size=36) #cannibal
 define s = Character((None)) #skeptic
 define p1 = Character((None), what_color="FCC7C7")
 define p2 = Character((None), what_color="B54545")
@@ -24,11 +32,17 @@ define p3 = Character((None), what_color="BF1717")
 image black bckgd = "images/backgrounds/blackbckgd.jpg" 
 define music.bgm = "music/bgm.wav"
 default characterTalk = False
+default locationTracker = "none"
+default room_scroll_enabled = True
+default room_buttons_enabled = True
+default persistent.game_finished_once = False
+
 
 #inventory items
 default settingsClicked = False
 default inventory_open = False
 default hide_inventory = False
+default inventory_visible = True
 default item_page = False
 default showItemPage = False
 default showItemPage1 = False
@@ -55,7 +69,20 @@ default kitchen_scroll_enabled = True
 default kitchen_buttons_enabled = True
 default cansus = 0
 default pcan = False
+default kitchenDoorKey = False
+default kitchenSpices = False
+default kitchenSpicesUsed = False
+default canndead = False
+#arm states
+default kitchenArm = False
+default kitchenArmCut = False
+default kitchenArmCutBad = False
+default kitchenArmCooked = False
+default kitchenArmCookedBad = False
 
+#moonpool/skeptic variables
+default moonpool_scroll_enabled = True
+default moonpool_buttons_enabled = True
 
 screen character_screen(who, what):
     if not renpy.context()._menu:
@@ -65,7 +92,7 @@ screen character_screen(who, what):
             #yalign 0.65
 
         frame:
-            background "gui/customui/textbox2.png"
+            background Frame("gui/customui/textbox2.png")
             xsize 1800
             ysize 90
             xalign 0.5
@@ -112,3 +139,7 @@ return
     #"Choice": DONT FORGET COLON
     #"Choice": 
         #Branching path/different dialogue triggered
+
+#CHANGE TITLE SCREEN AT THE END OF THE GAME
+#$ persistent.game_finished_once = True
+#$ renpy.save_persistent()

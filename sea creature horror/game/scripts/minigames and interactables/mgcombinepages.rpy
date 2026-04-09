@@ -37,7 +37,7 @@ label combinePagesFinished:
     $showItemPage2 = False
     $showItemPage = True
     $item_page = True
-    "You piece the two sections together."
+    t "You piece the two sections together."
     $page_combined = True
     $showItemPage = False
     jump cargo
