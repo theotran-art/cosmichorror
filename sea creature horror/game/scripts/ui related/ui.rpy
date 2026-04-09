@@ -47,42 +47,35 @@ screen uiSettings:
 
     add Solid("#00000050")
 
-    textbutton _("History") action ShowMenu("history"):
-        text_color "#7eb4bf"
-        text_hover_color "#ffffff"
-        xalign 0.1
-        yalign 0.5
-
-    if characterTalk == False:
-        textbutton _("Save") action ShowMenu("save"):
+    hbox:
+        xalign 0.85
+        yalign 0.075
+        spacing 25
+    
+        textbutton _("History") action ShowMenu("history"):
             text_color "#7eb4bf"
             text_hover_color "#ffffff"
-            xalign 0.2
-            yalign 0.5
 
-    textbutton _("Load") action ShowMenu("load"):
-        text_color "#7eb4bf"
-        text_hover_color "#ffffff"
-        xalign 0.3
-        yalign 0.5
+        if characterTalk == False:
+            textbutton _("Save") action ShowMenu("save"):
+                text_color "#7eb4bf"
+                text_hover_color "#ffffff"
 
-    textbutton _("Preferences") action ShowMenu("preferences"):
-        text_color "#7eb4bf"
-        text_hover_color "#ffffff"
-        xalign 0.4
-        yalign 0.5
-
-    if characterTalk == False:
-        textbutton "{size=30}Return":
+        textbutton _("Load") action ShowMenu("load"):
             text_color "#7eb4bf"
             text_hover_color "#ffffff"
-            xalign 0.5
-            yalign 0.5
-            action SetVariable("settingsClicked", False), Hide("uiSettings"), #Return()
-    elif characterTalk == True:
-        textbutton "{size=30}Return":
+
+        textbutton _("Preferences") action ShowMenu("preferences"):
             text_color "#7eb4bf"
             text_hover_color "#ffffff"
-            xalign 0.5
-            yalign 0.5
-            action SetVariable("settingsClicked", False), Hide("uiSettings")
+
+        if characterTalk == False:
+            textbutton "Return":
+                text_color "#7eb4bf"
+                text_hover_color "#ffffff"
+                action SetVariable("settingsClicked", False), Hide("uiSettings")
+        elif characterTalk == True:
+            textbutton "Return":
+                text_color "#7eb4bf"
+                text_hover_color "#ffffff"
+                action SetVariable("settingsClicked", False), Hide("uiSettings")
