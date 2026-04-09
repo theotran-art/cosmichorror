@@ -1,0 +1,625 @@
+:: StoryTitle
+IGD Script
+
+
+:: StoryData
+{
+  "ifid": "3485FB10-BB01-4E39-9148-633E89979554",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Start",
+  "zoom": 1
+}
+
+
+:: \ \[EDITED(Routing)\]No thank you. I have other things to worry about. (+1sus) {"position":"1350,475","size":"100,100"}
+""At this time, what could possibly be your priority over our holy rapture?! We must stay here and worship, as ordered by our most holy ascendants!""
+
+[["Really, I must be going"|Step away. (+1 sus)]]
+[[[EDITED(new)] "You're right - I'll stay."]]
+
+
+:: ""/How willing would you be to part with that knife of yours?\\"" {"position":"375,1700","size":"100,100"}
+USED TWICE
+
+"\"You hear it's call too, huh? As long as that's what it is, I could be persuaded. As long as you don't plan to turn it on me."\"
+
+[["\"I won'\t. I'm not even sure what I need it for, but I don't plan on hurting you.\""]]
+
+
+:: "/"I'll get looking right away." {"position":"1400,2225","size":"100,100"}
+"/"Excellent. I would begin searching in the pile of crates over there."
+
+[[Leave]]
+
+
+:: "/"I'll help. What am I looking for? {"position":"1400,2100","size":"100,100"}
+"/"I need at least three more pieces of evidence before we leave. Any kind of documentation or personal accounts mentioning the parasite would be extremely helpful. A specimen is very unlikely but would be most helpful."
+
+[["/"I'll get looking right away."]]
+
+
+
+:: "/"I... I have. I must be infected." {"position":"1550,2225","size":"100,100"}
+"/"Then your only safe course of action is to get off of this boat. Help me, and I will take you personally to get some real medical help. I would begin searching for evidence in the pile of crates over there. I need at least three more pieces of evidence before we leave. Any kind of documentation or personal accounts mentioning the parasite would be extremely helpful. A specimen is very unlikely but would be most helpful."
+
+[["/"Thank you."|Leave]]
+
+
+:: "/"More than I ever have. I am to become an ascendant!" (+1sus) {"position":"1700,1800","size":"100,100"}
+"You see a dramatic shift of moods from the woman."
+
+"/"Excellent." She says calmly."
+
+"/"They've infected you with not only one of their disgusting worms, but their fanatic drivel too."
+
+[["/"You misunderstand. I've had to pretend to be one of them since I awoke. I was onyl being cautious, but it's nice to meet a normal person"(-1sus)]]
+[["/"It's not a worm. It is one of Her children, which I will soon join the ranks of!(+1sus)"|Death]]
+
+
+:: "/"Parasite?"" {"position":"1550,2100","size":"100,100"}
+"/"You haven't felt it? That rogue twitch of a muscle? That voice begging to be returned to its mother? Surely you have. These people here, these cultists... they implant these parasites into anyone they can get a hold of. And once they do - there's no reason not for you to follow them into their twisted vision of an afterlife,. Which is certain death at the hands of a pair of lungs full of water."
+
+[["/"I... I have. I must be infected."]]
+
+
+
+:: "/"Uh... yes? {"position":"1325,1875","size":"100,100"}
+"/"Good. We don't have much time. I am looking for evidence of these lunatics implanting people with parasites that I'm sure you're well aware of now. I have a couple pieces, namely brain tissue from a diceased host. This room is a submarine dock, yes, but also seemed to be some sort of research bay. If you help me look, I can give you my lighter. It will bypass the thumbprint security on the submarine terminal and call it back allowing us to escape."
+
+[["/"I'll help. What am I looking for?]]
+[["/"Parasite?""]]
+[["/"I have no such parasite within me. You're delusional.|"/"More than I ever have. I am to become an ascendant!" (+1sus)]]
+
+
+:: "/"You misunderstand. I've had to pretend to be one of them since I awoke. I was onyl being cautious, but it's nice to meet a normal person"(-1sus) {"position":"1700,2000","size":"100,100"}
+"/"Thank God. Not only a sane person, but a smart one too."
+She sighs.
+"/"We don't have much time. I am looking for evidence of these lunatics implanting people with parasites that I'm sure you're well aware of now. I have a couple pieces, namely brain tissue from a diceased host. This room is a submarine dock, yes, but also seemed to be some sort of research bay. If you help me look, I can give you my lighter. It will bypass the thumbprint security on the submarine terminal and call it back allowing us to escape."
+
+[["/"I'll help. What am I looking for?]]
+[["/"Parasite?""]]
+
+
+:: "Attack the Cannibal" {"position":"500,1950","size":"100,100"}
+(Cannibal Fight minigame)
+
+[[Win]]
+[[Loss]]
+
+
+:: "Give him the stew" {"position":"600,1500","size":"100,100"}
+(Bad stew)
+
+"The man slowly sips the stew. He meets your gaze witha crude smile, his eyes piercing something behind yours."
+"\"Poorly done...""
+"The man leaps into action"
+-> Begin fight scene
+
+(Good stew)
+
+"The man slowly sips the stew. He meets your gaze witha crude smile, his eyes piercing something behind yours."
+"\"Well done... Be on your way. May you be fit for her legion.""
+"The man reaches out his branch-like arm, presenting a small bronze key."
+(Put key in player inventory)
+
+
+:: "Yes, that's it! I have such a hard time remembering the beginning. Is there any way I can trouble you for that page of yours? {"position":"1700,875","size":"100,100"}
+"Oh dear, but this page is important to me! It was the passage I would read my grandson before bed every night. Of course, since he isn't coming with us, I suppose I could give it to you. But first, I must know if you are truly dedicated to following Her below."
+
+[[[EDITED(Routing)] Of course I am! I have wished to be embraced in her ancient arms for as long as I can remember. (+1sus)]]
+[[Of course I am! I have wished to be embraced in her ancient tendrils for as long as I can remember.]]
+[[[EDITED (Routing)] Of course I am! I have wished to be embraced in her ancient fins for as long as I can remember.(+1sus)]]
+
+
+:: "\\"Are you... eating those bodies?\\"" {"position":"450,1400","size":"100,100"}
+"\"What does it look like, little ghost? We all have our vices. Why do you think I aim to become an ascendant? While we wait though, my desires must be satiated. You wouldn't want me to start feasting on the living, would you?\""
+
+"A horrible grin splits the cannibal's face in two. His question seemed rhetorical, yet he still looks to you eagerly. He twirls the knife in his hand."
+
+(Parasite speaking, red text)
+"YOU NEED HIS BLADE"
+
+[[""/How willing would you be to part with that knife of yours?\""]]
+
+
+
+:: "\\"I can certainly try.\\"" {"position":"200,1900","size":"100,100"}
+
+
+
+:: "\\"I won'\\t. I'm not even sure what I need it for, but I don't plan on hurting you.\\"" {"position":"375,1825","size":"100,100"}
+"\"I know what you need it for. What's more important is the key to the door over there. It'll call you there sooner or later.\""
+
+"The cannibal hands you the dull blade."
+(Add knife to player inventory)
+
+"\"Tell you what. You make this morsel here a bit more palateable, and it's yours. The prisoners down here were oh so stressed. Bad for the flesh.\""
+(Add arm to player inventory)
+
+[["\"I can certainly try.\""]] (Leave dialogue)
+[["Attack the Cannibal"]]
+
+
+:: "\\"I wonder why...\\""(+1 sus) {"position":"100,1400","size":"100,100"}
+
+
+
+:: "\\"I'm one of you. I aim to reach Her, and ascend my body.""(+1 sus) {"position":"300,1400","size":"100,100"}
+"\"You shouldn't have to lie to me, little ghost. Unwise to bear false witness to a stranger of my proclivity. Although yes, I am one of them, although they find me... unsavory.""
+
+[["\"I wonder why...\""(+1 sus)]]
+[["/"You're one of them? Did you bring me here?\""|"\"I'm... not sure. I can't remember. I just sort of woke up here.\""]]
+
+
+
+:: "\\"I'm... not sure. I can't remember. I just sort of woke up here.\\"" {"position":"375,1550","size":"100,100"}
+USED TWICE
+"\"I remember seeing you asleep amongst the cargo. You're in for something special, you just don't know yet.\""
+
+"The man quietly giggles to himself."
+
+(Red text, parasite speaking)
+"YOU NEED HIS BLADE"
+
+[[""/How willing would you be to part with that knife of yours?\""]] 
+
+
+:: *Hold your hands together and bow softly. {"position":"1550,875","size":"100,100"}
+"Such a respectful aspirant you are. Tell me, do you wish to carry this passage with you into The Deep?"
+
+[[I... think that I need it. (+1sus)|Okay... do you seriously not know where everyone went? (+1 sus)]]
+[[Would you truly give it to me?|"Yes, that's it! I have such a hard time remembering the beginning. Is there any way I can trouble you for that page of yours?]]
+
+
+:: And may she return above! {"position":"1650,600","size":"100,100"}
+"Ahhhhhhhh! You are a true aspirant! It brings me great comfort to know I will not be embraced by my lonesome. Tell me, would you care to join me in a reading of The Cephalonomicon?"
+
+[[Of Course.]]
+(Only if player has read the book) [[[EDITED(sus level)] Of Course! I have a passage in mind that I can't quite remember. It ends with, "for we yearn to be entangled in your cold emabrace as the children of your new earth.", Or something like that. (-1sus)]]
+[[ [EDITED(Routing)]No thank you. I have other things to worry about. (+1sus)]]
+
+
+:: Attempt to gain your bearings. {"position":"750,500","size":"100,100"}
+(Room fades into view)
+
+((parasite speaking, red text) "YOU NEED HER HOLY TEXT.")
+[[Click on dead bodies]]
+[[Click on paraphenalia]]
+[[Click on crates]]
+[[[EDITED (Typos)] Click on The Hag]] (only if the player does not yet have the page)
+[[Click on the door]]
+
+
+:: Attempt to search your memories once more. {"position":"550,400","size":"100,100"}
+Against all instinct, you rage through your migraine-bordering headache. Single, isolated images drip into your consciousness like water from unserviced faucet.
+
+A masked man.
+His reaching hand.
+The boarding of a boat.
+
+That is all you can glean for now. It may be best to attempt to remember more from your surroundings.
+
+[[Open your eyes. |Attempt to gain your bearings.]]
+
+
+:: Begin Ritual {"position":"950,2100","size":"100,100"}
+"The cold brass of the zippo lighter impresses into your palm. You notice that, as you turn from the woman, all you can focus on is walking. Your head pounds and throbs far too much to control multiple faculties at once.
+
+It becomes more and more difficult to take the next step until...
+
+Your body is not your own. You kneel in the middle of the wooden floor as you watch your hands remove your gathered materials from your pockets."
+
+(Red text, parasite speaking)
+
+"A KNIFE TO CARVE THE CIRCLE.
+
+HOLY WORDS TO BLESS THE SUMMONING.
+
+AND A FLAME TO CLEANSE THE BODY.
+
+LET HER COME.
+
+As soon as you wonder if the woman will attempt to stop you, you hear her footsteps cut short by the grotesque sound of a fleshy explosion and the sound of a headless body hitting the floor.
+
+You do as the parasite commands. Your hands carve a large circle with profane symbolism encompassing it. You strike the lighter and hold the flame near your chest while you read the words upon the page, your lips moving against your will."
+
+"/"O Mother of the Great Deep, we sever our love to our flesh to offer it to you alone, flaying our imperfect forms as penance for the circumstances of our births. Accept our immaciated bodies and deliver us, for we yearn to be entangled in your cold embrace as the children of your new earth."
+
+"For a moment, but only for a moment, both the ship and the water surrounding it are calmed for the first time. As if in answer, the hull begins to creak worse than ever before to a point at which you think it may crack... and it does. the walls burst and collapse in on each other. The structure of the ship is fully compromised, and you fall through the floor.
+
+Your bosy may be your own now, but it does not matter. You did all that the parasite needed you to do."
+(Play ending cutscene.
+
+
+
+:: Click on Diagnosis {"position":"1250,1750","size":"100,100"}
+"Doctor Name: Dr. Alan Richards
+Patient Name: Simon Ellis
+Patient Age: 38
+Patient Sex: Male
+Date: 9/23/--
+Diagnosis: Parasitic Infection
+
+Patient entered urgent care at approximately 4:30 AM with complaints of severe headaches, memory loss, and compulsive/intrusive thoughts. I ran several rudimentary tests on him without anything leading to an explanation for his symptoms, however I did find several bite marks on his arms. After a number of scans, an X-ray revealed a small parasitic organism within his cranial cavity. It was unlike any parasite I had ever studied. I have hereby reached out to several medical research facilities and hospitals in hopes that they will take his case. I am unaware whether or not his condition is fatal, but the deterioration of his personality and ability to compose himself is clear."
+
+(Add Diagnosis to Inventory)
+
+
+:: Click on book {"position":"975,775","size":"100,100"}
+The book is open to a torn and yellowed page with few words written on it. You don't have nearly enough time or interest for that matter to read through it. 
+
+The half of the page that remains bound to the rest of the book reads, " -iver us, for we yearn to be entangled in your cold emabrace as the children of your new earth."
+
+((Red text, parasite speaking) You need the rest of this."
+
+
+:: Click on crates {"position":"625,625","size":"100,100"}
+They're bolted shut. There's no way to tell what might be in them.
+
+
+:: Click on dead bodies {"position":"500,625","size":"100,100"}
+Disgusting. They smell far too awful to even consider getting closer than you already are, much less to consider what happened to them.
+
+
+:: Click on paraphenalia {"position":"850,625","size":"100,100"}
+At a glance, you thought someone had set up a Catholic gift shop in the corner. Upon further inspection, you realize nothing could be further from the truth. There are effigies and symbols the likes of which you have never seen.
+
+[[Click on statuette]]
+[[Click on book]]
+[[Click on pendant]]
+[[Click on poster]]
+
+
+:: Click on pendant {"position":"600,775","size":"100,100"}
+A small silver pendant depicting multiple small tendrils.
+
+Perhaps the god these people follow has tentacles or feelers.
+
+
+:: Click on poster {"position":"725,775","size":"100,100"}
+The worn, tattered poster reads "GLORY TO THE ONE BELOW" along the top. Along the bottom, it reads, "AND MAY SHE RETURN ABOVE".
+
+
+Maybe this is some sort of anachronism or call and response. You shudder to think what kind of being they might be referring to.
+
+
+:: Click on rack {"position":"825,1375","size":"100,100"}
+(Add spices and herbs to inventory.)
+
+
+:: Click on statuette {"position":"850,775","size":"100,100"}
+A small copper statue of what, at first glance, appears to be a robed man. Upon further inspection, the man seems to have a fish-like head and webbed fingers.
+
+You wonder whether this is their god or one of them, and how such a form could be seen as worthy of worship.
+
+
+:: Click on the Cabinets {"position":"825,1250","size":"100,100"}
+(Cabinets open)
+
+"They're full of dead fish. It smells like nothing you've ever experiences. You've never had a gag reflex, but you seem to have found one. A small rack of spices and herbs sits on the lowermost shelf."
+
+[[Click on rack]]
+
+
+:: Click on the Crates {"position":"1250,1625","size":"100,100"}
+(Before Talking to the Skeptic)
+"A pile of crates fills the corner of the room. They smell like salt water and dead fish."
+
+[[Back|Enter the door.]]
+
+(After talking to the skeptic (Hidden objects do not become clickable unless you've spoken to her))
+
+"A pile of crates fills the corner of the room. They smell like salt water and dead fish."
+
+[[Click on the Diagram]]
+[[Click on the Specimen]]
+[[Click on Diagnosis]]
+
+
+:: Click on the Cutting board {"position":"525,1250","size":"100,100"}
+(If the player does not have the arm )
+
+"A small wooden cutting board with countless knife marks in it. You're not sure who's blood stains the surface, and you're not sure you want to."
+
+(If the player has diced the arm but has not cooked it)
+
+"You've mutilated the arm plenty. It should be able to be cooked at this point."
+
+(If the player has the arm but has not yet diced it)
+
+"A cutting board. You can use this to cut the arm into smaller pieces."
+
+(Add diced flesh and bone to inventory)
+-> BEGIN CUTTING BOARD MINIGAME
+
+
+:: Click on the Diagram {"position":"1000,1750","size":"100,100"}
+"A diagram of some sort of worm-like creature. It's like someone was studying it for application as some sort of mind control."
+
+(Add Diagram to Inventory)
+
+
+:: Click on the Door {"position":"1125,1250","size":"100,100"}
+(if player does not yet have the key)
+
+(Inner monologue) "It's locked."
+
+(If the player has the key)
+
+"A locked door, for which you have the key. Enter?"
+
+[[Enter the door.]]
+
+
+:: Click on the Man {"position":"375,1250","size":"100,100"}
+"A lithe, gangly man sits above a nigh-unrecognizable pile of bodies."
+
+"\"Hey! Snuck up on me a little there... most people would have a little more self-preservation than to sneak up on a stranger like that. What brings you here, little ghost?\""
+
+[["\"I'm... not sure. I can't remember. I just sort of woke up here.\""]]
+[["\"Are you... eating those bodies?\""]]
+[["\"I'm one of you. I aim to reach Her, and ascend my body.""(+1 sus)]]
+
+(If the player has the stew)
+
+[["Give him the stew"]]
+
+
+:: Click on the Pot {"position":"675,1250","size":"100,100"}
+(If player does not have the arm)
+
+"A small, tarnished, cast iron pot full of water."
+
+(If player has the arm but has not diced it yet)
+
+"A small, tarnished, cast iron pot full of water. I could stew the arm in this, but it's far too large to fit."
+
+(If player has the arm and has diced it, but does not have the spices.)
+
+"A small, tarnished, cast iron pot full of water. I could stew the arm meat in this, but I should probably find something else to add first."
+
+(If player has both the arm and the spices.)
+
+"A small, tarnished, cast iron pot full of water. I can make a stew in this with the ingredients I've gathered."
+
+->BEGIN COOKING MINIGAME
+
+
+:: Click on the Specimen {"position":"1125,1750","size":"100,100"}
+"A dried specimen of an odd worm-like creature. You've never seen anything like it before."
+
+(Add Specimen to Inventory)
+
+
+:: Click on the Woman {"position":"1400,1625","size":"100,100"}
+(First Time)
+
+"As you approach her, she double takes, seemingly not noticing that you were in the room. She begins to intently study your eyes, contorting her body and tilting her head, possibly to get a better look at... something."
+
+"/"Do you still have control of yourself?" "She blurts out."
+
+[["/"Uh... yes?]]
+[["/"More than I ever have. I am to become an ascendant!" (+1sus)]]
+
+(1-2 pieces of evidence)
+
+"/"These are excellent. I need a little more, but after than we can get out of here."
+
+[[Leave]]
+
+(All evidence gathered)
+
+"/"Great work. We can finally leave."
+(Remove Diagram, Specimen, and Diagnosis from inventory, and add Lighter)
+"/"Head over to the terminal, and we can leave."
+[[Begin Ritual]]
+
+
+
+:: Click on the bodies {"position":"975,1250","size":"100,100"}
+"More bodies. These seem in a far worse shape than the others."
+
+"Is he... eating them?"
+
+
+:: Click on the dock {"position":"1550,1625","size":"100,100"}
+"The water beneath you seems strangely calm. The light from the ceiling lamp above you penetrates the surface for about a foot, but beyond that, you cannot see much of anything. The water fills with a deep, consuming void. It seems to extend onward for eternity."
+
+[[Back|Enter the door.]]
+
+
+:: Click on the door {"position":"750,900","size":"100,100"}
+(If player does not yet have the page)
+
+(Inner monologue) "I should probably try and gather what I can from this room first."
+
+(If the player has the page)
+
+An inconspicuous door. Enter?
+
+[[Enter.]]
+[[Turn away.|Attempt to gain your bearings.]]
+
+
+:: Death {"position":"1900,1800","size":"100,100"}
+
+
+
+:: Enter the door. {"position":"1400,1500","size":"100,100"}
+'As you enter, you see a large rectangular room with a dock to a submarine cut into the floor. Crates of cargo sit packed into every corner with copious loose item scattered about them. An out-of-place yet normal looking woman stands thinking in the corner.
+The floor, unlike the rest of the boat so far, is contructed of wooden planks. The perfect staging ground for a ritual."
+
+
+(Red text, Parasite speaking) "YOU NEED HER LITTLE FLAME."
+
+[[Click on the Woman]]
+[[Click on the dock]]
+[[Click on the Crates]]
+
+
+
+:: Enter. {"position":"750,1100","size":"100,100"}
+(Room fades into view)
+
+((Parasite speaking) "YOU NEED HIS BLADE")
+
+[[Click on the Man]]
+[[Click on the Cutting board]]
+[[Click on the Pot]]
+[[Click on the Cabinets]]
+[[Click on the bodies]]
+[[Click on the Door]]
+
+
+:: Hag - Death Line {"position":"1650,300","size":"100,100"}
+"\"You scheming little traitor. You don't even deserve to lay your heretic eyes upon her...\"" 
+
+
+:: Leave {"position":"1475,2350","size":"100,100"}
+
+
+
+:: Loss {"position":"562.5,2075","size":"100,100"}
+Death
+
+
+:: Of Course. {"position":"1550,750","size":"100,100"}
+She begins to read immediately after you accept.
+-
+She holds one of her arms out to the side, holding a small torn piece of paper in front of her face with the other, reciting,
+
+"O Mother of the Great Deep, we sever our love to our flesh to offer it to you alone, flaying our imperfect forms as penance for the circumstances of our births. Accept our immaciated bodies and deliver us, for we yearn to be entangled in your cold embrace as the children of your new earth."
+
+[[*Hold your hands together and bow softly.]]
+[[What does that passage mean? (+1sus)]]
+[[Slowly inch away as she reads to inspect the room once more. (+1sus)|Attempt to gain your bearings.]]
+
+
+
+:: Of course I am! I have wished to be embraced in her ancient tendrils for as long as I can remember. {"position":"1700,1000","size":"100,100"}
+(Hag)"And what do you make of her ascendants?"
+
+[[[EDITED(Condition)] They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.]]
+[[[EDITED(Routing)] Honestly, they creep me out a little bit. (+1sus)]]
+[[[EDITED(Routing)] Who? (+1sus)]]
+
+
+:: Okay... do you seriously not know where everyone went? (+1 sus) {"position":"1800,450","size":"100,100"}
+"What an unkind little rat you are. Leave me."
+
+[[Leave.|Attempt to gain your bearings.]]
+
+
+:: Start {"position":"650,250","size":"100,100"}
+(Black Screen)
+Your head throbs. Your body shakes uncontrollably. You know not where you are or how you got here. Any attempt to rack your brain results in a surge of your already pounding headache.
+
+[[Attempt to search your memories once more.]]
+[[Attempt to gain your bearings.]]
+
+
+:: Step away. (+1 sus) {"position":"2050,1000","size":"100,100"}
+(Parasite speaking) YOU ARE NOT FIT TO CARRY ME.
+
+(Insert death scene. Getting to this dialogue incurs one sus, and if that doesn't kill the player picking this option will)
+
+
+:: Well of course! Do you know where everyone went? {"position":"1650,450","size":"100,100"}
+"It matters not dear one! We shall all be her children in her cold embrace. Glory to the One Below!"
+
+[[And may she return above!]]
+[[Okay... do you seriously not know where everyone went? (+1 sus)]]
+[[You seem to be stuck just as much as I am. Do you know a way out? |[EDITED(Typo)] What are you talking about? (+1 sus)]]
+
+
+:: What does that passage mean? (+1sus) {"position":"1375,750","size":"100,100"}
+"If you were truly an aspirant, I would have to do no explaining. Leave me."
+
+[[Leave.|Attempt to gain your bearings.]]
+
+
+
+:: Win {"position":"437.5,2075","size":"100,100"}
+(Add key to player inventory)
+
+"Good riddance."
+
+->Return to room
+
+
+:: \[EDITED (Routing)\] Of course I am! I have wished to be embraced in her ancient fins for as long as I can remember.(+1sus) {"position":"1850,800","size":"100,100"}
+""She would not dirty herself with the imperfect forms of her scions. You are no aspirant. You are more fit to be her food than to be her child.''
+
+[["I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me."|Of course I am! I have wished to be embraced in her ancient tendrils for as long as I can remember.]]
+[[Step away. (+1 sus)]]
+
+
+
+:: \[EDITED (Typos)\] Click on The Hag {"position":"1500,350","size":"100,100"}
+An elderly woman seems to be reflecting, meditating, or praying in some sort of way. She pays you no mind until you walk closer to her.
+
+"Ahh! Another young aspirant come to witness the birth of the new earth!"
+
+[[[EDITED(Typo)] What are you talking about? (+1 sus)]]
+[[Well of course! Do you know where everyone went?]]
+[[Leave.|Attempt to gain your bearings.]]
+
+
+:: \[EDITED(Condition)\] They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so. {"position":"1700,1275","size":"100,100"}
+"You are sure to be an ascendant, young one. Here, take the page. I can think of no one more desrving."
+-
+The old woman reaches her frail hand towards you, holding the old decrepit page. You take it from her, and she gives you a smile that is somehow both warm and ice cold at the same time.
+
+(Add page to inventory)
+
+[[Leave|Attempt to gain your bearings.]]
+
+
+:: \[EDITED(Routing)\] Honestly, they creep me out a little bit. (+1sus) {"position":"1850,1075","size":"100,100"}
+""They are our most holy guides you insolent brat! I ought to flay you where you stand!""
+
+You feel like you've never offended someone so harshly. The look on her face is a mixture of sadness and anger.
+
+[["I-I meant it in a way that I fear them. I am humbled to be in their prescence as they guide us forward."|[EDITED(Condition)] They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.]]
+[[Step back to gain some distance from her. (+1sus)|Step away. (+1 sus)]]
+
+
+:: \[EDITED(Routing)\] Of course I am! I have wished to be embraced in her ancient arms for as long as I can remember. (+1sus) {"position":"1850,925","size":"100,100"}
+""She would never sully herself with our imperfect human forms, and a true aspirant would know this from birth. Leave me foul vermin!""
+
+[["I apologize, my head is quite scrambled. I meant no offense ma'am. She means everything to me."|Of course I am! I have wished to be embraced in her ancient tendrils for as long as I can remember.]]
+[[Step away. (+1 sus)]]
+
+
+:: \[EDITED(Routing)\] Who? (+1sus) {"position":"1850,1200","size":"100,100"}
+""There exists no aspirant that is not guided by their ascedant. You are no aspirant, but a vile deciever!""
+
+The mix of emotions on her face makes you think she might get violent.
+
+[["My apologies, ma'am! Of course I know of our most holy guides. We call them by a different name where I come from.|[EDITED(Condition)] They are our most holy guides, and their piscine forms are evidence of Her choosing them to do so.]]
+[[Step back to gain some distance from her. (+1sus)|Step away. (+1 sus)]]
+
+
+:: \[EDITED(Typo)\] What are you talking about? (+1 sus) {"position":"1200,250","size":"100,100"}
+"You clearly are no aspirant. Leave me."
+
+[[Leave.|Attempt to gain your bearings.]]
+
+
+:: \[EDITED(new)\] "You're right - I'll stay." {"position":"1350,600","size":"100,100"}
+""Ahhhh, wonderful! Please, sit with me and let us worship together!""
+
+[[Of Course.]]
+(Only if player has read the book) [[[EDITED(sus level)] Of Course! I have a passage in mind that I can't quite remember. It ends with, "for we yearn to be entangled in your cold emabrace as the children of your new earth.", Or something like that. (-1sus)]]
+
+
+:: \[EDITED(sus level)\] Of Course! I have a passage in mind that I can't quite remember. It ends with, "for we yearn to be entangled in your cold emabrace as the children of your new earth.", Or something like that. (-1sus) {"position":"1700,750","size":"100,100"}
+"I know exactly of which passage you speak!"
+-
+She holds one of her arms out to the side, holding a small torn piece of paper in front of her face with the other, reciting,
+
+"O Mother of the Great Deep, we sever our love to our flesh to offer it to you alone, flaying our imperfect forms as penance for the circumstances of our births. Accept our immaciated bodies and deliver us, for we yearn to be entangled in your cold embrace as the children of your new earth."
+
+[["Yes, that's it! I have such a hard time remembering the beginning. Is there any way I can trouble you for that page of yours?]]
+
