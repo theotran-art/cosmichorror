@@ -31,35 +31,107 @@ screen inventoryView():
         #CARGO
             #page
             if item_page == True: #THIS IS COMPLETED PAGE
-                textbutton "{size=24}{font=fonts/Sedan_SC/SedanSC-Regular.ttf}Page" text_hover_color "#b4dee6":
-                    action Hide("inventoryView"), SetVariable("inventory_open", False), Jump("examinePage")
-            if item_page_1 == True and page_combined == False:
-                textbutton "{size=24}{font=fonts/Sedan_SC/SedanSC-Regular.ttf}Ripped page from book" text_hover_color "#b4dee6":
-                    action Hide("inventoryView"), SetVariable("inventory_open", False), Jump("examinePage1")
-            if item_page_2 == True and page_combined == False:
-                textbutton "{size=24}{font=fonts/Sedan_SC/SedanSC-Regular.ttf}Ripped page from cultist" text_hover_color "#b4dee6":
-                    action Hide("inventoryView"), SetVariable("inventory_open", False), Jump("examinePage2")
+                textbutton "Page":
+                    text_size 24
+                    text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                    text_hover_color "#ffffff"
+                    text_color "#b4dee6"
+
+                    action [
+                        Hide("inventoryView"),
+                        SetVariable("inventory_open", False),
+                        Jump("examinePage")
+                    ]
+            if item_page_1 and not page_combined:
+                textbutton "Ripped page from book":
+                    text_size 24
+                    text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                    text_hover_color "#ffffff"
+                    text_color "#b4dee6"
+
+                    action [
+                        Hide("inventoryView"),
+                        SetVariable("inventory_open", False),
+                        Jump("examinePage1")
+                    ]
+            if item_page_2 and not page_combined:
+                textbutton "Ripped page from cultist":
+                    text_size 24
+                    text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                    text_hover_color "#ffffff"
+                    text_color "#b4dee6"
+
+                    action [
+                        Hide("inventoryView"),
+                        SetVariable("inventory_open", False),
+                        Jump("examinePage2")
+                    ]
         #KITCHEN
             #knife
-            if item_knife == True:
-                textbutton "{size=24}{font=fonts/Sedan_SC/SedanSC-Regular.ttf}Knife" text_hover_color "#b4dee6":
-                    action Hide("inventoryView"), SetVariable("inventory_open", False), Jump("examineKnife")
+            if item_knife:
+                textbutton "Knife":
+                    text_size 24
+                    text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                    text_hover_color "#ffffff"
+                    text_color "#b4dee6"
+
+                    action [
+                        Hide("inventoryView"),
+                        SetVariable("inventory_open", False),
+                        Jump("examineKnife")
+                    ]
             #arm
-            if kitchenArm == True:
-                textbutton "{size=24}{font=fonts/Sedan_SC/SedanSC-Regular.ttf}Severed arm" text_hover_color "#b4dee6":
-                    action Hide("inventoryView"), SetVariable("inventory_open", False), Jump("examineArm")
-            elif kitchenArm == True and kitchenArmCooked == True:
-                textbutton "{size=24}{font=fonts/Sedan_SC/SedanSC-Regular.ttf}Arm stew" text_hover_color "#b4dee6":
-                    action Hide("inventoryView"), SetVariable("inventory_open", False), Jump("examineArm")
+            if kitchenArm and kitchenArmCooked:
+                textbutton "Arm stew":
+                    text_size 24
+                    text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                    text_hover_color "#ffffff"
+                    text_color "#b4dee6"
+
+                    action [
+                        Hide("inventoryView"),
+                        SetVariable("inventory_open", False),
+                        Jump("examineArm")
+                    ]
+            elif kitchenArm:
+                textbutton "Severed arm":
+                    text_size 24
+                    text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                    text_hover_color "#ffffff"
+                    text_color "#b4dee6"
+
+                    action [
+                        Hide("inventoryView"),
+                        SetVariable("inventory_open", False),
+                        Jump("examineArm")
+                    ]
             #spices
-            if kitchenSpices == True:
-                textbutton "{size=24}{font=fonts/Sedan_SC/SedanSC-Regular.ttf}Spices and herbs" text_hover_color "#b4dee6":
-                    action Hide("inventoryView"), SetVariable("inventory_open", False), Jump("examineSpices")
+            if kitchenSpices:
+                textbutton "Spices and herbs":
+                    text_size 24
+                    text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                    text_hover_color "#ffffff"
+                    text_color "#b4dee6"
+
+                    action [
+                        Hide("inventoryView"),
+                        SetVariable("inventory_open", False),
+                        Jump("examineSpices")
+                    ]
         #MOONPOOL
             #lighter
-            if item_lighter == True:
-                textbutton "{size=24}{font=fonts/Sedan_SC/SedanSC-Regular.ttf}Lighter" text_hover_color "#b4dee6":
-                    action Hide("inventoryView"), SetVariable("inventory_open", False), Jump("examineLighter")
+            if item_lighter:
+                textbutton "Lighter":
+                    text_size 24
+                    text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                    text_hover_color "#ffffff"
+                    text_color "#b4dee6"
+
+                    action [
+                        Hide("inventoryView"),
+                        SetVariable("inventory_open", False),
+                        Jump("examineLighter")
+                    ]
             #close inventory
             #textbutton "{size=22}Close":
                 #action Hide("inventoryView"), SetVariable("inventory_open", False), SetVariable("cargo_buttons_enabled", True), SetVariable("cargo_scroll_enabled", True)
