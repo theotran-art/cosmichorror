@@ -70,6 +70,8 @@ transform half_size:
 
 
 screen mg_kitchen_arm_cut:
+    
+    #add "image"
 
     on "show" action Function(arm_reset)
 
