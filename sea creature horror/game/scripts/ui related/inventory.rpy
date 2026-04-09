@@ -47,7 +47,7 @@ screen inventoryView():
 
                 at transform:
                     xysize (90, 90)
-        if item_page_1 and not page_combined:
+        if item_page_1 == True and page_combined == False:
             imagebutton:
                 auto "images/inv_items/page1_%s.png"
                 xalign 0.5
@@ -66,7 +66,7 @@ screen inventoryView():
 
                 at transform:
                     xysize (90, 90)
-        if item_page_2 and not page_combined:
+        if item_page_2 == True and page_combined == False:
             imagebutton:
                 auto "images/inv_items/page2_%s.png"
                 xalign 0.5
@@ -87,7 +87,7 @@ screen inventoryView():
                     xysize (90, 90)
     #KITCHEN
         #knife
-        if item_knife:
+        if item_knife == True:
             imagebutton:
                 auto "images/inv_items/knife_%s.png"
                 xalign 0.5
@@ -107,45 +107,46 @@ screen inventoryView():
                 at transform:
                     xysize (90, 90)
         #arm
-        if kitchenArm and kitchenArmCooked:
+        if kitchenArm == True and kitchenStew == False:
+            if kitchenArmCooked == True:
             #imagebutton:
                 #auto "images/inv_items/_%s.png"
                 #xalign 0.5
 
-            textbutton "Arm stew":
-                text_size 24
-                text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
-                text_hover_color "#ffffff"
-                text_color "#b4dee6"
+                textbutton "Arm stew":
+                    text_size 24
+                    text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                    text_hover_color "#ffffff"
+                    text_color "#b4dee6"
 
-                action [
-                    Hide("inventoryView"),
-                    SetVariable("inventory_open", False),
-                    Jump("examineArm")
-                ]
+                    action [
+                        Hide("inventoryView"),
+                        SetVariable("inventory_open", False),
+                        Jump("examineArm")
+                    ]
 
-                at transform:
-                    xysize (90, 90)
-        elif kitchenArm:
-            #imagebutton:
-                #auto "images/inv_items/_%s.png"
-                #xalign 0.5
-            textbutton "Severed arm":
-                text_size 24
-                text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
-                text_hover_color "#ffffff"
-                text_color "#b4dee6"
+                    at transform:
+                        xysize (90, 90)
+            else:
+                #imagebutton:
+                    #auto "images/inv_items/_%s.png"
+                    #xalign 0.5
+                textbutton "Severed arm":
+                    text_size 24
+                    text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                    text_hover_color "#ffffff"
+                    text_color "#b4dee6"
 
-                action [
-                    Hide("inventoryView"),
-                    SetVariable("inventory_open", False),
-                    Jump("examineArm")
-                ]
+                    action [
+                        Hide("inventoryView"),
+                        SetVariable("inventory_open", False),
+                        Jump("examineArm")
+                    ]
 
-                at transform:
-                    xysize (90, 90)
+                    at transform:
+                        xysize (90, 90)
         #spices
-        if kitchenSpices:
+        if kitchenSpices == True:
             imagebutton:
                 auto "images/inv_items/herb_%s.png"
                 xalign 0.5
@@ -164,9 +165,29 @@ screen inventoryView():
 
                 at transform:
                     xysize (90, 90)
+            #key
+            if kitchenDoorKey == True:
+                #auto "images/inv_items/_%s.png"
+                #xalign 0.5
+
+                textbutton "Key":
+                    text_size 24
+                    text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                    text_hover_color "#ffffff"
+                    text_color "#b4dee6"
+
+                    action [
+                        Hide("inventoryView"),
+                        SetVariable("inventory_open", False),
+                        Jump("examineKey")
+                    ]
+
+                    at transform:
+                        xysize (90, 90)
+
     #MOONPOOL
         #lighter
-        if item_lighter:
+        if item_lighter == True:
             imagebutton:
                 auto "images/inv_items/lighter_%s.png"
                 xalign 0.5
@@ -254,12 +275,12 @@ label examineArm:
     $hide_inventory = True
     $room_buttons_enabled = False
     $room_scroll_enabled = False
-    if kitchenArmCooked == False and kitchenArmCut == False:
-        t "You have a severed arm."
+    if kitchenArmCooked == True:
+        t "You have a bowl of arm stew."
     elif kitchenArmCut == True:
         t "You have a severed arm that has been cut into smaller pieces."
-    elif kitchenArmCooked == True:
-        t "You have a pot with arm stew."
+    elif kitchenArmCooked == False and kitchenArmCut == False:
+        t "You have a severed arm."
     jump expression locationTracker
 
 label examineSpices:
@@ -267,6 +288,13 @@ label examineSpices:
     $room_buttons_enabled = False
     $room_scroll_enabled = False
     t "You have a few containers filled with various spices and herbs used for seasoning."
+    jump expression locationTracker
+
+label examineKey:
+    $hide_inventory = True
+    $room_buttons_enabled = False
+    $room_scroll_enabled = False
+    t "You have a rusty key. It likely opens the door next to the cultist."
     jump expression locationTracker
 
 label examineLighter:

@@ -72,12 +72,15 @@ label cannibaltalk:
                         t "The man slowly sips the stew. He meets your gaze witha crude smile, his eyes piercing something behind yours."
                         c "\"Poorly done...\""
                         t "Suddenly, the man leaps into action."
+                        $kitchenStew = True
                         jump mg_canatt
                     elif kitchenArmCookedBad == False:
                         t "The man slowly sips the stew. He meets your gaze witha crude smile, his eyes piercing something behind yours."
                         c "\"Well done... Be on your way. May you be fit for her legion.\""
                         t "The man reaches out his branch-like arm, presenting a small bronze key."
                         $ kitchenDoorKey = True
+                        $kitchenStew = True
+                        jump kitchen
                 "Attack him.": 
                     jump mg_canatt
                 "Leave.":

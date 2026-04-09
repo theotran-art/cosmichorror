@@ -1,5 +1,6 @@
 ﻿label cargoEnter:
     play music "music/bgm.wav" fadein 3.0
+    jump cargo
 
 label cargo:
 
@@ -37,6 +38,8 @@ label cargo:
 #CARGO SCREENS/IMAGE BUTTONS
 
 screen cargoRoom:
+    tag room
+
     #pannable view of room
     viewport id "cargoScene":
         area (0, 0, 1920, 1080) #size of screen (leave the same)
@@ -189,7 +192,7 @@ label cargoBook:
     if item_page_1 == False:
         t "The book is open to a torn and yellowed page with few words written on it. You don't have nearly enough time or interest for that matter to read through it."
         t "The half of the page that remains bound to the rest of the book reads," 
-        t " -iver us, for we yearn to be entangled in your cold embrace as the children of your new earth."
+        " -iver us, for we yearn to be entangled in your cold embrace as the children of your new earth."
         p1 "You need the rest of this."
         t "You find yourself tearing off the page and tucking it away." #theo wrote this, replace if aidan writes smth
         $item_page_1 = True

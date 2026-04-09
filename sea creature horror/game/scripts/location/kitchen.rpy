@@ -1,6 +1,7 @@
 ﻿label kitchenEnter:
     hide screen cargoRoom
     hide screen suspicion_overlay
+    jump kitchen
 
 label kitchen:
     #variable stuff
@@ -17,17 +18,17 @@ label kitchen:
         p2 "YOU NEED HIS BLADE."
     
     #reset sus overlay
-    #if item_knife == True and hagsus >= 1:
-        #hide screen suspicion_overlay with fade
+    if kitchenDoorKey == True and cansus >= 1:
+        hide screen suspicion_overlay with fade
         
     #loop for point and click
-    #$kitchen_scroll_enabled = True
+    #$room_scroll_enabled = True
     #label pauseKitchen:
         #window hide
-        #$kitchen_buttons_enabled = True
+        #$room_buttons_enabled = True
         #pause
         #jump pauseKitchen
-    #window auto 
+    #window auto  
 
     #TEMP MENU FOR ACESSS
     menu:
@@ -45,6 +46,8 @@ label kitchen:
             jump kitchenDoor
 
 screen kitchenRoom:
+    tag room
+
     #pannable view of room
     viewport id "kitchenScene":
         area (0, 0, 1920, 1080) #size of screen (leave the same)
