@@ -189,7 +189,8 @@ screen inventoryView():
         #textbutton "{size=22}Close":
             #action Hide("inventoryView"), SetVariable("inventory_open", False), SetVariable("cargo_buttons_enabled", True), SetVariable("cargo_scroll_enabled", True)
 
-label examinePage: #THIS IS COMPLETED PAGE
+label examinePage: #THIS IS COMPLETED PAGE\
+    $hide_inventory = True
     $room_buttons_enabled = False
     $room_scroll_enabled = False
     $showItemPage = True
@@ -200,6 +201,7 @@ label examinePage: #THIS IS COMPLETED PAGE
     jump expression locationTracker
 
 label examinePage1: 
+    $hide_inventory = True
     $room_buttons_enabled = False
     $room_scroll_enabled = False
     $showItemPage1 = True
@@ -220,6 +222,7 @@ label examinePage1:
     jump expression locationTracker
 
 label examinePage2: 
+    $hide_inventory = True
     $room_buttons_enabled = False 
     $room_scroll_enabled = False
     $showItemPage2 = True
@@ -241,12 +244,14 @@ label examinePage2:
     jump expression locationTracker
 
 label examineKnife:
+    $hide_inventory = True
     $room_buttons_enabled = False
     $room_scroll_enabled = False
     t "You have the knife."
     jump expression locationTracker
 
 label examineArm:
+    $hide_inventory = True
     $room_buttons_enabled = False
     $room_scroll_enabled = False
     if kitchenArmCooked == False and kitchenArmCut == False:
@@ -258,12 +263,14 @@ label examineArm:
     jump expression locationTracker
 
 label examineSpices:
+    $hide_inventory = True
     $room_buttons_enabled = False
     $room_scroll_enabled = False
     t "You have a few containers filled with various spices and herbs used for seasoning."
     jump expression locationTracker
 
 label examineLighter:
+    $hide_inventory = True
     $room_buttons_enabled = False
     $room_scroll_enabled = False
     t "You have the lighter."
