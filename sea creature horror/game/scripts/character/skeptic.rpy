@@ -21,7 +21,7 @@ label skeptictalk:
                 label skegood:
                     s "\"We don't have much time.\""
                     s "\"I am looking for evidence of these lunatics implanting people with parasites that I'm sure you're well aware of now.\""
-                    s "\"I have a couple pieces, namely brain tissue from a diceased host."
+                    s "\"I have a couple pieces, namely brain tissue from a diceased host.\""
                     s "\"This room is a submarine dock, yes, but also seemed to be some sort of research bay.\""
                     s "\"If you help me look, I can give you my lighter.\""
                     menu:
