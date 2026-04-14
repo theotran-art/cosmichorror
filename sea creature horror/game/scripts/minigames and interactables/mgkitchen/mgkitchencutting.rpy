@@ -71,7 +71,13 @@ transform half_size:
 
 screen mg_kitchen_arm_cut:
     
-    #add "image"
+    add "images/minigames/cuttingboard.png":
+        xalign 0.5
+
+    add "images/minigames/arm_assets/arm_whole.png":
+        yalign 0.85
+        xalign 0.5
+
 
     on "show" action Function(arm_reset)
 
@@ -136,13 +142,30 @@ label mg_KitchenArmCut:
 
     jump mg_KitchenArmCut_finished
 
+screen mg_KitchenArmCut_results:
+    add "images/minigames/cuttingboard.png":
+        xalign 0.5
+
+    if kitchenArmCutBad:
+        add "images/minigames/arm_assets/arm_messy/arm.png":
+            yalign 0.85
+            xalign 0.5
+    else:
+        add "images/minigames/arm_assets/arm_clean/arm.png":
+            yalign 0.85
+            xalign 0.5
+
 label mg_KitchenArmCut_finished:
     $ kitchenArmCut = True
+    show screen mg_KitchenArmCut_results
     t "You finish cutting up the arm."
+    hide screen mg_KitchenArmCut_results with fade
     jump kitchen
 
 label mg_kitchenArmCut_bad:
     $ kitchenArmCut = True
     $ kitchenArmCutBad = True
+    show screen mg_KitchenArmCut_results
     t "It doesn't look very good, but you finish cutting up the arm."
+    hide screen mg_KitchenArmCut_results with fade
     jump kitchen

@@ -20,7 +20,7 @@ label mgkitchen_pot:
     $hide_inventory = True
     call screen mgkitchen_cook
 
-    $ armpieces = len([i for i in placed_items if i in ["arm piece", "arm piece2"]])
+    $ armpieces = len([i for i in placed_items if i in ["arm piece", "arm piece2", "arm piece3", "arm piece4"]])
     $ spices = placed_items.count("spices")
 
     #t "you added [draggable] into [droppable]"
@@ -31,7 +31,7 @@ label mgarm_check:
     #image goodArmStew = ".png"
     #image badArmStew = ".png"
 
-    if armpieces == 2 and spices == 1 and kitchenArmCutBad == False: #correct 
+    if armpieces == 4 and spices == 1 and kitchenArmCutBad == False: #correct 
         show screen mgkitchen_cook_notfinished
         t "After putting all the ingredients in, you let it simmer for a while."
 
@@ -46,7 +46,7 @@ label mgarm_check:
         t "Despite your unfamiliarity of ingredients of this nature, you feel like you did a good job."
         $ kitchenArmCooked = True
         jump kitchen
-    elif armpieces == 2 and spices == 1 and kitchenArmCutBad == True:
+    elif armpieces == 4 and spices == 1 and kitchenArmCutBad == True:
         t "After putting all the ingredients in, you let it simmer for a while."
         t "Once the color of the water has turned murky, you find a bowl to serve the soup into."
         #show badArmStew
@@ -75,31 +75,93 @@ screen mgkitchen_cook:
             droppable True
             draggable False
         if "arm piece" not in placed_items:
-            drag:
-                drag_name "arm piece"
-                xpos 300
-                ypos 200
-                #child ".png" #the image of the pot
-                text "arm1"
-                draggable True
-                droppable False
-                dragged drag_placed
-                drag_raise True
+            if kitchenArmCutBad == True:
+                drag:
+                    drag_name "arm piece"
+                    xpos 20
+                    ypos 200
+                    child "images/minigames/arm_assets/arm_messy/arm_1.png"
+                    draggable True
+                    droppable False
+                    dragged drag_placed
+                    drag_raise True
+            else:
+                drag:
+                    drag_name "arm piece"
+                    xpos 20
+                    ypos 200
+                    child "images/minigames/arm_assets/arm_clean/arm_1.png" 
+                    draggable True
+                    droppable False
+                    dragged drag_placed
+                    drag_raise True
         if "arm piece2" not in placed_items:
-            drag:
-                drag_name "arm piece2"
-                xpos 750
-                ypos 220
-                #child ".png" #the image of the pot
-                text "arm2"
-                draggable True
-                droppable False
-                dragged drag_placed
-                drag_raise True
+            if kitchenArmCutBad == True:
+                drag:
+                    drag_name "arm piece2"
+                    xpos 280
+                    ypos 200
+                    child "images/minigames/arm_assets/arm_messy/arm_2.png"
+                    draggable True
+                    droppable False
+                    dragged drag_placed
+                    drag_raise True
+            else:
+                drag:
+                    drag_name "arm piece2"
+                    xpos 280
+                    ypos 200
+                    child "images/minigames/arm_assets/arm_clean/arm_2.png" 
+                    draggable True
+                    droppable False
+                    dragged drag_placed
+                    drag_raise True
+        if "arm piece3" not in placed_items:
+            if kitchenArmCutBad == True:
+                drag:
+                    drag_name "arm piece3"
+                    xpos 730
+                    ypos 200
+                    child "images/minigames/arm_assets/arm_messy/arm_3.png"
+                    draggable True
+                    droppable False
+                    dragged drag_placed
+                    drag_raise True
+            else:
+                drag:
+                    drag_name "arm piece3"
+                    xpos 730
+                    ypos 200
+                    child "images/minigames/arm_assets/arm_clean/arm_3.png" 
+                    draggable True
+                    droppable False
+                    dragged drag_placed
+                    drag_raise True
+        if "arm piece4" not in placed_items:
+            if kitchenArmCutBad == True:
+                drag:
+                    drag_name "arm piece4"
+                    xpos 1050
+                    ypos 200
+                    child "images/minigames/arm_assets/arm_messy/arm_4.png"
+                    draggable True
+                    droppable False
+                    dragged drag_placed
+                    drag_raise True
+            else:
+                drag:
+                    drag_name "arm piece4"
+                    xpos 1050
+                    ypos 200
+                    child "images/minigames/arm_assets/arm_clean/arm_4.png" 
+                    draggable True
+                    droppable False
+                    dragged drag_placed
+                    drag_raise True
         if "spices" not in placed_items:
             drag:
                 drag_name "spices"
-                xpos 1450
+                xpos 1600
                 ypos 150
                 child "images/minigames/cooking/herb.png" #the image of the pot
                 draggable True
