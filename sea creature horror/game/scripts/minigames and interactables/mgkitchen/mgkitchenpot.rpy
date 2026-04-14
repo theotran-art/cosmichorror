@@ -179,9 +179,9 @@ screen mgkitchen_cook:
 
     text "Put all the ingredients into the pot.":
         xalign 0.5
-        yalign 0.10 
+        yalign 0.13
         font "fonts/fisherman_2/Fisherman-Regular.otf"
-        size 60
+        size 50
 
 screen mgkitchen_cook_notfinished:
     add "images/minigames/cooking/pot/pot (back).png":

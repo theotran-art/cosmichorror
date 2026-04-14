@@ -89,11 +89,12 @@ screen mg_kitchen_arm_cut:
 
     if not arm_cuts:
 
-        frame: 
-            background "#00000088"
-            padding (5,5)
-            align (0.5, 0.1)
-            text "Cut the arm into smaller pieces." size 40 color "#ffffff"
+        text "Cut the arm into smaller pieces.": 
+            xalign 0.5
+            yalign 0.13
+            size 50 
+            color "#ffffff"
+            font "fonts/fisherman_2/Fisherman-Regular.otf"
 
         frame:
             background None

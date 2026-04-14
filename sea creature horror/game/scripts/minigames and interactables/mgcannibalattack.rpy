@@ -86,8 +86,12 @@ screen mg_cannibal_attack:
         frame: 
             background "#00000088"
             padding (5,5)
-            align (0.5, 0.1)
-            text "Defend yourself!" size 40 color "#FF0000"
+            xalign 0.5
+            yalign 0.13
+            text "Defend yourself!":
+                size 50 
+                color "#FF0000"
+                font "fonts/fisherman_2/Fisherman-Regular.otf"
 
         frame:
             background None
@@ -112,14 +116,22 @@ screen mg_cannibal_attack:
         frame:
             background "#00000088"
             padding (5,5)
-            align (0.5, 0.15)
-            text "You missed, and he kicks you in the stomach. You need to take him down now!" size 30 color "#FF0000"
+            xalign 0.5
+            yalign 0.5
+            text "You missed, and he kicks you in the stomach. You need to take him down now!":
+                size 30
+                color "#FF0000"
+                font "fonts/fisherman_2/Fisherman-Regular.otf"
     elif cann_warning_type == 2:  # persistent for remaining rounds
         frame:
             background "#00000088"
             padding (5,5)
-            align (0.5, 0.15)
-            text "You can't afford another mistake." size 30 color "#FF4444"
+            xalign 0.5
+            yalign 0.5
+            text "You can't afford another mistake.":
+                size 30
+                color "#FF0000"
+                font "fonts/fisherman_2/Fisherman-Regular.otf"
         
     if cann_lose:
         timer 0.01 action [Hide("mg_cannibal_attack"), Jump("death")]
