@@ -93,6 +93,9 @@ default pske = False
 default sketalks = 0
 default evidence = 0
 default showItemLighter = False
+default mpDiagnosis = False
+default mpSpecimen = False
+default mpDiagram = False
 
 screen character_screen(who, what):
     if not renpy.context()._menu:

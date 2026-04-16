@@ -87,6 +87,7 @@ label kitchenDoor:
         t "A locked door, for which you have the key. Enter?"
         menu:
             "Enter.":
+                $kitchenDoorKey = False
                 jump moonpoolEnter
             "Turn away.":
                 jump kitchen

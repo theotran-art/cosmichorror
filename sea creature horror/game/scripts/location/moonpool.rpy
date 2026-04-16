@@ -78,26 +78,39 @@ label moonpoolCrates:
     $room_buttons_enabled = False
     $room_scroll_enabled = False
     t "A pile of crates fills the corner of the room. They smell like salt water and dead fish."
+    jump moonpool
 
 label moonpoolDiagram:
     $room_buttons_enabled = False
     $room_scroll_enabled = False
+    if mpDiagram == False:
+        $evidence += 1
+        $mpDiagram = True
     t "A diagram of some sort of worm-like creature. It's like someone was studying it for application as some sort of mind control."
+    jump moonpool
 
 label moonpoolSpecimen:
     $room_buttons_enabled = False
     $room_scroll_enabled = False
+    if mpSpecimen == False:
+        $evidence += 1
+        $mpSpecimen = True
     t "A dried specimen of an odd worm-like creature. You've never seen anything like it before."
+    jump moonpool
 
 label moonpoolDiagnosis:
     $room_buttons_enabled = False
     $room_scroll_enabled = False
+    if mpDiagnosis == False:
+        $evidence += 1
+        $mpDiagnosis = True
     "Doctor Name: Dr. Alan Richards{p}Patient Name: Simon Ellis{p}Patient Age: 38 / Patient Sex: Male{p}Date: 9/23/--{p}Diagnosis: Parasitic Infection"
     "Patient entered urgent care at approximately 4:30 AM with complaints of severe headaches, memory loss, and compulsive/intrusive thoughts."
     "I ran several rudimentary tests on him without anything leading to an explanation for his symptoms, however I did find several bite marks on his arms."
     "After a number of scans, an X-ray revealed a small parasitic organism within his cranial cavity."
     "It was unlike any parasite I had ever studied. I have hereby reached out to several medical research facilities and hospitals in hopes that they will take his case."
     "I am unaware whether or not his condition is fatal, but the deterioration of his personality and ability to compose himself is clear."
+    jump moonpool
     
 
 label moonpoolDock:
@@ -106,6 +119,7 @@ label moonpoolDock:
     t "The water beneath you seems strangely calm." 
     t "The light from the ceiling lamp above you penetrates the surface for about a foot, but beyond that, you cannot see much of anything."
     t "The water fills with a deep, consuming void. It seems to extend onward for eternity."
+    jump moonpool
 
 label moonpoolRitual:
     $room_buttons_enabled = False
@@ -123,3 +137,6 @@ label moonpoolRitual:
     t "For a moment, but only for a moment, both the ship and the water surrounding it are calmed for the first time. As if in answer, the hull begins to creak worse than ever before to a point at which you think it may crack... and it does."
     t "The walls burst and collapse in on each other. The structure of the ship is fully compromised, and you fall through the floor."
     t "Your body may be your own now, but it does not matter. You did all that the parasite needed you to do."
+    #$persistent.game_finished_once = True
+    return
+    
