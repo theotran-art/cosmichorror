@@ -73,6 +73,10 @@ default kitchenDoorKey = False
 default kitchenSpices = False
 default kitchenSpicesUsed = False
 default canndead = False
+default showItemKnife = False
+default showItemArm = False
+default showItemSpices = False
+default showItemKey = False
 #arm states
 default kitchenArm = False
 default kitchenArmCut = False
@@ -88,6 +92,7 @@ default skesus = 0
 default pske = False
 default sketalks = 0
 default evidence = 0
+default showItemLighter = False
 
 screen character_screen(who, what):
     if not renpy.context()._menu:

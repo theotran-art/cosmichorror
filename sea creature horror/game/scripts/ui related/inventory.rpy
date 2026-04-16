@@ -211,17 +211,21 @@ screen inventoryView():
             #action Hide("inventoryView"), SetVariable("inventory_open", False), SetVariable("cargo_buttons_enabled", True), SetVariable("cargo_scroll_enabled", True)
 
 label examinePage: #THIS IS COMPLETED PAGE\
+    show screen inv_items_imgs
     $hide_inventory = True
     $room_buttons_enabled = False
     $room_scroll_enabled = False
     $showItemPage = True
-    t "You have a page that reads out the passage:"
+    t "You have the page." 
+    t "It reads out the passage:"
     "\"O Mother of the Great Deep, we sever our love to our flesh to offer it to you alone, flaying our imperfect forms as penance for the circumstances of our births.\""
     "\"Accept our emaciated bodies and deliver us, for we yearn to be entangled in your cold embrace as the children of your new earth.\""
     $showItemPage = False
+    hide screen inv_items_imgs
     jump expression locationTracker
 
 label examinePage1: 
+    show screen inv_items_imgs
     $hide_inventory = True
     $room_buttons_enabled = False
     $room_scroll_enabled = False
@@ -240,9 +244,11 @@ label examinePage1:
                     jump combinePagesFinished
                 $ renpy.pause()
     $showItemPage1 = False
+    hide screen inv_items_imgs
     jump expression locationTracker
 
 label examinePage2: 
+    show screen inv_items_imgs
     $hide_inventory = True
     $room_buttons_enabled = False 
     $room_scroll_enabled = False
@@ -262,44 +268,65 @@ label examinePage2:
                     jump combinePagesFinished
                 $ renpy.pause()
     $showItemPage2 = False
+    hide screen inv_items_imgs
     jump expression locationTracker
 
 label examineKnife:
+    show screen inv_items_imgs
     $hide_inventory = True
     $room_buttons_enabled = False
     $room_scroll_enabled = False
+    $showItemKnife = True
     t "You have the knife."
+    $showItemKnife = False
+    hide screen inv_items_imgs
     jump expression locationTracker
 
 label examineArm:
+    show screen inv_items_imgs
     $hide_inventory = True
     $room_buttons_enabled = False
     $room_scroll_enabled = False
+    $showItemArm = True
     if kitchenArmCooked == True:
         t "You have a bowl of arm stew."
     elif kitchenArmCut == True:
         t "You have a severed arm that has been cut into smaller pieces."
     elif kitchenArmCooked == False and kitchenArmCut == False:
         t "You have a severed arm."
+    $showItemArm = False
+    hide screen inv_items_imgs
     jump expression locationTracker
 
 label examineSpices:
+    show screen inv_items_imgs
     $hide_inventory = True
     $room_buttons_enabled = False
     $room_scroll_enabled = False
-    t "You have a few containers filled with various spices and herbs used for seasoning."
+    $showItemSpices = True
+    t "You have a sprig of an herb used for seasoning."
+    $showItemSpices = False
+    hide screen inv_items_imgs
     jump expression locationTracker
 
 label examineKey:
+    show screen inv_items_imgs
     $hide_inventory = True
     $room_buttons_enabled = False
     $room_scroll_enabled = False
-    t "You have a rusty key. It likely opens the door next to the cultist."
+    $showItemKey = True
+    t "You have a key. It likely opens the door next to the cultist."
+    $showItemKey = False
+    hide screen inv_items_imgs
     jump expression locationTracker
 
 label examineLighter:
+    show screen inv_items_imgs
     $hide_inventory = True
     $room_buttons_enabled = False
     $room_scroll_enabled = False
+    $showItemLighter = True
     t "You have the lighter."
+    $showItemLighter = False
+    hide screen inv_items_imgs
     jump expression locationTracker

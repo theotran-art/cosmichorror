@@ -92,30 +92,6 @@ screen cargoRoom:
             xalign 0.5
             yalign 0.5
 
-    if showItemPage:
-        add Solid("#00000088")
-
-        # Centered image
-        add "images/items/cargo/page.png":
-            xalign 0.5
-            yalign 0.5
-    
-    if showItemPage1:
-        add Solid("#00000088")
-
-        # Centered image
-        add "images/items/cargo/page1.png":
-            xalign 0.5
-            yalign 0.5
-    
-    if showItemPage2:
-        add Solid("#00000088")
-
-        # Centered image
-        add "images/items/cargo/page2.png":
-            xalign 0.5
-            yalign 0.5
-
 image windowCargoCloseup:
     "images/backgrounds/windowCargoCloseup.png"
 

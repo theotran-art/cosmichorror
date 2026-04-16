@@ -114,21 +114,12 @@ label moonpoolRitual:
     t "You notice that, as you turn from the woman, all you can focus on is walking."
     t "Your head pounds and throbs far too much to control multiple faculties at once."
     t "It becomes more and more difficult to take the next step until..."
-
     t "Your body is not your own. You kneel in the middle of the wooden floor as you watch your hands remove your gathered materials from your pockets."
-    
     p3 "A KNIFE TO CARVE THE CIRCLE.{p}HOLY WORDS TO BLESS THE SUMMONING.{p}AND A FLAME TO CLEANSE THE BODY.{p}LET HER COME."
-
     t "As soon as you wonder if the woman will attempt to stop you, you hear her footsteps cut short by the grotesque sound of a fleshy explosion and the sound of a headless body hitting the floor."
-
     t "You do as the parasite commands. Your hands carve a large circle with profane symbolism encompassing it. You strike the lighter and hold the flame near your chest while you read the words upon the page, your lips moving against your will."
-
     "\"O Mother of the Great Deep, we sever our love to our flesh to offer it to you alone, flaying our imperfect forms as penance for the circumstances of our births.\""
-
     "\"Accept our immaciated bodies and deliver us, for we yearn to be entangled in your cold embrace as the children of your new earth.\""
-
     t "For a moment, but only for a moment, both the ship and the water surrounding it are calmed for the first time. As if in answer, the hull begins to creak worse than ever before to a point at which you think it may crack... and it does."
-
     t "The walls burst and collapse in on each other. The structure of the ship is fully compromised, and you fall through the floor."
-
     t "Your body may be your own now, but it does not matter. You did all that the parasite needed you to do."
