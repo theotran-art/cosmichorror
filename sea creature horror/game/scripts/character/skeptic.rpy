@@ -21,7 +21,7 @@ label skeptictalk:
                 label skegood:
                     s "\"We don't have much time.\""
                     s "\"I am looking for evidence of these lunatics implanting people with parasites that I'm sure you're well aware of now.\""
-                    s "\"I have a couple pieces, namely brain tissue from a diceased host.\""
+                    s "\"I have a couple pieces, namely brain tissue from a deceased host.\""
                     s "\"This room is a submarine dock, yes, but also seemed to be some sort of research bay.\""
                     s "\"If you help me look, I can give you my lighter.\""
                     menu:
@@ -79,6 +79,7 @@ label skeptictalk:
 
                         "\"You misunderstand. I've had to pretend to be one of them since I awoke.\"":
                             $skesus -= 1
+                            call skesus_check
                             "\"I was only being cautious, but it's nice to meet a normal person.\""
                             s "Thank God. Not only a sane person, but a smart one too."
                             $skeswitch = True

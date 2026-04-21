@@ -12,6 +12,12 @@ init python:
     config.layers = ['background', 'master', 'window', 'transient', 'overlay', 'ui', 'screens', 'text', 'top']
 
     #config.rollback_enabled = False #disable going back
+    # Remove right-click from opening the game menu
+    if "mouseup_3" in config.keymap["game_menu"]:
+        config.keymap["game_menu"].remove("mouseup_3")
+    if "K_ESCAPE" not in config.keymap["game_menu"]:
+        config.keymap["game_menu"].append("K_ESCAPE")
+
 
 define config.say_layer = "text"
 define config.choice_layer = "screens"
@@ -29,7 +35,6 @@ define p3 = Character((None), what_color="BF1717")
 
 
 #general things
-image black bckgd = "images/backgrounds/blackbckgd.jpg" 
 define music.bgm = "music/bgm.wav"
 default characterTalk = False
 default locationTracker = "none"
@@ -37,6 +42,8 @@ default room_scroll_enabled = True
 default room_buttons_enabled = True
 default persistent.game_finished_once = False
 
+screen blackbckgd:
+    add Solid("#000")
 
 #inventory items
 default settingsClicked = False
@@ -96,6 +103,9 @@ default showItemLighter = False
 default mpDiagnosis = False
 default mpSpecimen = False
 default mpDiagram = False
+default showItemSpecimen = False
+default showItemDiagram = False
+default showItemDiagnosis = False
 
 screen character_screen(who, what):
     if not renpy.context()._menu:

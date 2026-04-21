@@ -45,6 +45,7 @@ label mgarm_check:
         #show goodArmStew
         t "Despite your unfamiliarity of ingredients of this nature, you feel like you did a good job."
         $ kitchenArmCooked = True
+        $ kitchenSpicesUsed = True
         jump kitchen
     elif armpieces == 4 and spices == 1 and kitchenArmCutBad == True:
         t "After putting all the ingredients in, you let it simmer for a while."
@@ -54,6 +55,7 @@ label mgarm_check:
         t "You hope that your efforts will be acceptable to the cultist."
         $ kitchenArmCooked = True
         $ kitchenArmCookedBad = True
+        $ kitchenSpicesUsed = True
         jump kitchen
     else:
         jump mgkitchen_pot

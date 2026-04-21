@@ -146,7 +146,7 @@ screen inventoryView():
                     at transform:
                         xysize (90, 90)
         #spices
-        if kitchenSpices == True:
+        if kitchenSpices == True and kitchenSpicesUsed == False:
             imagebutton:
                 auto "images/inv_items/herb_%s.png"
                 xalign 0.5
@@ -166,24 +166,24 @@ screen inventoryView():
                 at transform:
                     xysize (90, 90)
             #key
-            if kitchenDoorKey == True:
-                #auto "images/inv_items/_%s.png"
-                #xalign 0.5
+        if kitchenDoorKey == True:
+            #auto "images/inv_items/_%s.png"
+            #xalign 0.5
 
-                textbutton "Key":
-                    text_size 24
-                    text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
-                    text_hover_color "#ffffff"
-                    text_color "#b4dee6"
+            textbutton "Key":
+                text_size 24
+                text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                text_hover_color "#ffffff"
+                text_color "#b4dee6"
 
-                    action [
-                        Hide("inventoryView"),
-                        SetVariable("inventory_open", False),
-                        Jump("examineKey")
-                    ]
+                action [
+                    Hide("inventoryView"),
+                    SetVariable("inventory_open", False),
+                    Jump("examineKey")
+                ]
 
-                    at transform:
-                        xysize (90, 90)
+                at transform:
+                    xysize (90, 90)
 
     #MOONPOOL
         #lighter
@@ -206,6 +206,67 @@ screen inventoryView():
 
                 at transform:
                     xysize (90, 90)
+        #specimen
+        if mpSpecimen == True:
+            #imagebutton:
+                #auto "images/inv_items/specimen_%s.png"
+                #xalign 0.5
+
+            textbutton "Specimen":
+                text_size 24
+                text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                text_hover_color "#ffffff"
+                text_color "#b4dee6"
+
+                action [
+                    Hide("inventoryView"),
+                    SetVariable("inventory_open", False),
+                    Jump("examineSpecimen")
+                ]
+
+                at transform:
+                    xysize (90, 90)
+        #diagram
+        if mpDiagram == True:
+            #imagebutton:
+                #auto "images/inv_items/diagram_%s.png"
+                #xalign 0.5
+
+            textbutton "Diagram":
+                text_size 24
+                text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                text_hover_color "#ffffff"
+                text_color "#b4dee6"
+
+                action [
+                    Hide("inventoryView"),
+                    SetVariable("inventory_open", False),
+                    Jump("examineDiagram")
+                ]
+
+                at transform:
+                    xysize (90, 90)
+        #diagram
+        if mpDiagnosis == True:
+            #imagebutton:
+                #auto "images/inv_items/diagram_%s.png"
+                #xalign 0.5
+
+            textbutton "Diagnosis":
+                text_size 24
+                text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                text_hover_color "#ffffff"
+                text_color "#b4dee6"
+
+                action [
+                    Hide("inventoryView"),
+                    SetVariable("inventory_open", False),
+                    Jump("examineDiagnosis")
+                ]
+
+                at transform:
+                    xysize (90, 90)
+
         #close inventory
         #textbutton "{size=22}Close":
             #action Hide("inventoryView"), SetVariable("inventory_open", False), SetVariable("cargo_buttons_enabled", True), SetVariable("cargo_scroll_enabled", True)
@@ -328,5 +389,45 @@ label examineLighter:
     $showItemLighter = True
     t "You have the lighter."
     $showItemLighter = False
+    hide screen inv_items_imgs
+    jump expression locationTracker
+
+label examineDiagnosis:
+    show screen inv_items_imgs
+    $hide_inventory = True
+    $room_buttons_enabled = False
+    $room_scroll_enabled = False
+    $showItemDiagnosis = True
+    t "You have a piece of paper that has a medical diagnosis."
+    t "It reads:"
+    "Doctor Name: Dr. Alan Richards{p}Patient Name: Simon Ellis{p}Patient Age: 38 / Patient Sex: Male{p}Date: 9/23/--{p}Diagnosis: Parasitic Infection"
+    "Patient entered urgent care at approximately 4:30 AM with complaints of severe headaches, memory loss, and compulsive/intrusive thoughts."
+    "I ran several rudimentary tests on him without anything leading to an explanation for his symptoms, however I did find several bite marks on his arms."
+    "After a number of scans, an X-ray revealed a small parasitic organism within his cranial cavity."
+    "It was unlike any parasite I had ever studied. I have hereby reached out to several medical research facilities and hospitals in hopes that they will take his case."
+    "I am unaware whether or not his condition is fatal, but the deterioration of his personality and ability to compose himself is clear."
+    $showItemDiagnosis = False
+    hide screen inv_items_imgs
+    jump expression locationTracker
+
+label examineSpecimen:
+    show screen inv_items_imgs
+    $hide_inventory = True
+    $room_buttons_enabled = False
+    $room_scroll_enabled = False
+    $showItemSpecimen = True
+    t "You have a dried specimen of an odd worm-like creature. You've never seen anything like it before."
+    $showItemSpecimen = False
+    hide screen inv_items_imgs
+    jump expression locationTracker
+
+label examineDiagram:
+    show screen inv_items_imgs
+    $hide_inventory = True
+    $room_buttons_enabled = False
+    $room_scroll_enabled = False
+    $showItemDiagram = True
+    t "You have a diagram of some sort of worm-like creature. It's like someone was studying it for application as some sort of mind control."
+    $showItemDiagram = False
     hide screen inv_items_imgs
     jump expression locationTracker

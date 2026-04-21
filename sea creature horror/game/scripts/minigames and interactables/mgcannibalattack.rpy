@@ -139,10 +139,6 @@ screen mg_cannibal_attack:
     if cann_defeat:
         timer 0.01 action Jump("mg_canatt_after_round")
 
-screen temp_cann_attack:
-    textbutton "Get attacked by the Cannibal":
-        action [Hide("temp_cann_attack"), Show("mg_cannibal_attack")]
-
 label mg_canatt:
 
     $ room_buttons_enabled = False 
@@ -204,7 +200,10 @@ label mg_canatt_after_round:
 
 label mg_canatt_win:
     $ canndead = True
+    
     t "Good riddance."
-    $ kitchenDoorKey = True
+    
     t "You pick up the key from his corpse."
+    
+    $ kitchenDoorKey = True
     jump kitchen

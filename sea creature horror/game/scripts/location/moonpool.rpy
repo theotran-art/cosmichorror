@@ -1,9 +1,14 @@
 ﻿label moonpoolEnter:
+    #hide kitchen related items
+    $ kitchenSpices = False
+    $ kitchenStew = False
+    $ kitchenArm = False
+
     $locationTracker = "moonpool"
     hide screen kitchenRoom
     hide screen suspicion_overlay
     show screen moonpoolRoom onlayer master
-    t "As you enter, you see a large rectangular room with a dock to a submarine cut into the floor."
+    t "As you enter, you see a large rectangular room with a dock to a moon pool cut into the floor."
     t "Crates of cargo sit packed into every corner with copious loose item scattered about them. An out-of-place yet normal looking woman stands thinking in the corner."
     t "The floor, unlike the rest of the boat so far, is contructed of wooden planks. The perfect staging ground for a ritual."
     jump moonpool
@@ -39,8 +44,14 @@ label moonpool:
     menu:
         "Talk to Skeptic":
             jump skeptictalk
-        "Diagnosis":
+        "Crates" if sketalks == 0:
+            jump moonpoolCrates
+        "Diagnosis" if sketalks == 1:
             jump moonpoolDiagnosis
+        "Specimen" if sketalks == 1:
+            jump moonpoolSpecimen
+        "Diagram" if sketalks == 1:
+            jump moonpoolDiagram
 
 screen moonpoolRoom:
     tag room
@@ -101,6 +112,7 @@ label moonpoolSpecimen:
 label moonpoolDiagnosis:
     $room_buttons_enabled = False
     $room_scroll_enabled = False
+    t "You find a piece of paper that has a medical diagnosis."
     if mpDiagnosis == False:
         $evidence += 1
         $mpDiagnosis = True
@@ -116,6 +128,7 @@ label moonpoolDiagnosis:
 label moonpoolDock:
     $room_buttons_enabled = False
     $room_scroll_enabled = False
+    t "You look into the moon pool."
     t "The water beneath you seems strangely calm." 
     t "The light from the ceiling lamp above you penetrates the surface for about a foot, but beyond that, you cannot see much of anything."
     t "The water fills with a deep, consuming void. It seems to extend onward for eternity."
@@ -126,6 +139,9 @@ label moonpoolRitual:
     $room_scroll_enabled = False
     t "The cold brass of the zippo lighter impresses into your palm."
     t "You notice that, as you turn from the woman, all you can focus on is walking."
+    hide screen suspicion_overlay
+    hide screen moonpoolRoom 
+    show expression Solid("#000") as fade_black onlayer master with fade
     t "Your head pounds and throbs far too much to control multiple faculties at once."
     t "It becomes more and more difficult to take the next step until..."
     t "Your body is not your own. You kneel in the middle of the wooden floor as you watch your hands remove your gathered materials from your pockets."
@@ -138,5 +154,4 @@ label moonpoolRitual:
     t "The walls burst and collapse in on each other. The structure of the ship is fully compromised, and you fall through the floor."
     t "Your body may be your own now, but it does not matter. You did all that the parasite needed you to do."
     #$persistent.game_finished_once = True
-    return
-    
+    $ MainMenu(confirm=False)()

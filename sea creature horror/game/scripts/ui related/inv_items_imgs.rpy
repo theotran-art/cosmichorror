@@ -83,3 +83,27 @@ screen inv_items_imgs:
         add "images/items/moonpool/lighter.png":
             xalign 0.5
             yalign 0.5
+    
+    if showItemSpecimen:
+        add Solid("#00000088")
+
+        # Centered image
+        add "images/items/moonpool/specimen.png":
+            xalign 0.5
+            yalign 0.5
+
+    if showItemDiagram:
+        add Solid("#00000088")
+
+        # Centered image
+        add "images/items/moonpool/diagram.png":
+            xalign 0.5
+            yalign 0.5
+
+    if showItemDiagnosis:
+        add Solid("#00000088")
+
+        # Centered image
+        add "images/items/moonpool/diagnosis.png":
+            xalign 0.5
+            yalign 0.5
