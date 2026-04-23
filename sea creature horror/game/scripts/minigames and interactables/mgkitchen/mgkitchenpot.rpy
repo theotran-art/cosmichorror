@@ -34,28 +34,33 @@ label mgarm_check:
     if armpieces == 4 and spices == 1 and kitchenArmCutBad == False: #correct 
         show screen mgkitchen_cook_notfinished
         t "After putting all the ingredients in, you let it simmer for a while."
-
         show screen mgkitchen_cook_finished with fade
         hide screen mgkitchen_cook_notfinished
-
         t "Once the color of the water has turned murky, you find a bowl to serve the soup into."
-
-        hide screen mgkitchen_cook_finished with fade
-
-        #show goodArmStew
-        t "Despite your unfamiliarity of ingredients of this nature, you feel like you did a good job."
+        hide screen mgkitchen_cook_finished 
         $ kitchenArmCooked = True
         $ kitchenSpicesUsed = True
+        $ showItemArm = True
+        show screen inv_items_imgs with fade
+        t "Despite your unfamiliarity of ingredients of this nature, you feel like you did a good job."
+        t "You hope that your efforts will be acceptable to the cultist."
+        $ showItemArm = False
         jump kitchen
     elif armpieces == 4 and spices == 1 and kitchenArmCutBad == True:
+        show screen mgkitchen_cook_notfinished
         t "After putting all the ingredients in, you let it simmer for a while."
+        show screen mgkitchen_cook_finished with fade
+        hide screen mgkitchen_cook_notfinished
         t "Once the color of the water has turned murky, you find a bowl to serve the soup into."
-        #show badArmStew
-        t "Because of your unfamiliarity of ingredients of this nature, it doesn't look very good. It seems that your sloppy attempts at cutting the arm has made the overall dish look very messy."
-        t "You hope that your efforts will be acceptable to the cultist."
+        hide screen mgkitchen_cook_finished 
         $ kitchenArmCooked = True
         $ kitchenArmCookedBad = True
         $ kitchenSpicesUsed = True
+        $ showItemArm = True
+        show screen inv_items_imgs with fade
+        t "Because of your unfamiliarity of ingredients of this nature, it doesn't look very good. It seems that your sloppy attempts at cutting the arm has made the overall dish look very messy."
+        t "You hope that your efforts will be acceptable to the cultist."
+        $ showItemArm = False
         jump kitchen
     else:
         jump mgkitchen_pot

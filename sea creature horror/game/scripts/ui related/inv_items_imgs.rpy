@@ -43,8 +43,12 @@ screen inv_items_imgs:
         add Solid("#00000088")
 
         # Centered image
-        if kitchenArmCooked == True:
-            add "images/items/.png":
+        if kitchenArmCooked == True and kitchenArmCutBad == False:
+            add "images/minigames/cooking/pot/stew_good.png":
+                xalign 0.5
+                yalign 0.5
+        elif kitchenArmCooked == True and kitchenArmCutBad == True:
+            add "images/minigames/cooking/pot/stew_bad.png":
                 xalign 0.5
                 yalign 0.5
         elif kitchenArmCut == True and kitchenArmCutBad == True:

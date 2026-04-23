@@ -109,15 +109,28 @@ screen inventoryView():
         #arm
         if kitchenArm == True and kitchenStew == False:
             if kitchenArmCooked == True:
-            #imagebutton:
-                #auto "images/inv_items/_%s.png"
-                #xalign 0.5
+                imagebutton:
+                    auto "images/inv_items/stew_%s.png"
+                    xalign 0.5
 
-                textbutton "Arm stew":
-                    text_size 24
-                    text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
-                    text_hover_color "#ffffff"
-                    text_color "#b4dee6"
+                #textbutton "Arm stew":
+                    #text_size 24
+                    #text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                    #text_hover_color "#ffffff"
+                    #text_color "#b4dee6"
+
+                    action [
+                        Hide("inventoryView"),
+                        SetVariable("inventory_open", False),
+                        Jump("examineArm")
+                    ]
+
+                    at transform:
+                        xysize (90, 90)
+            elif kitchenArmCut == True:
+                imagebutton:
+                    auto "images/inv_items/arm_%s.png"
+                    xalign 0.5
 
                     action [
                         Hide("inventoryView"),
@@ -128,14 +141,14 @@ screen inventoryView():
                     at transform:
                         xysize (90, 90)
             else:
-                #imagebutton:
-                    #auto "images/inv_items/_%s.png"
-                    #xalign 0.5
-                textbutton "Severed arm":
-                    text_size 24
-                    text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
-                    text_hover_color "#ffffff"
-                    text_color "#b4dee6"
+                imagebutton:
+                    auto "images/inv_items/arm_%s.png"
+                    xalign 0.5
+                #textbutton "Severed arm":
+                    #text_size 24
+                    #text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                    #text_hover_color "#ffffff"
+                    #text_color "#b4dee6"
 
                     action [
                         Hide("inventoryView"),
@@ -167,14 +180,15 @@ screen inventoryView():
                     xysize (90, 90)
             #key
         if kitchenDoorKey == True:
-            #auto "images/inv_items/_%s.png"
-            #xalign 0.5
+            imagebutton:
+                auto "images/inv_items/key_%s.png"
+                xalign 0.5
 
-            textbutton "Key":
-                text_size 24
-                text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
-                text_hover_color "#ffffff"
-                text_color "#b4dee6"
+            #textbutton "Key":
+                #text_size 24
+                #text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                #text_hover_color "#ffffff"
+                #text_color "#b4dee6"
 
                 action [
                     Hide("inventoryView"),
@@ -208,15 +222,15 @@ screen inventoryView():
                     xysize (90, 90)
         #specimen
         if mpSpecimen == True:
-            #imagebutton:
-                #auto "images/inv_items/specimen_%s.png"
-                #xalign 0.5
+            imagebutton:
+                auto "images/inv_items/specimen_%s.png"
+                xalign 0.5
 
-            textbutton "Specimen":
-                text_size 24
-                text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
-                text_hover_color "#ffffff"
-                text_color "#b4dee6"
+            #textbutton "Specimen":
+                #text_size 24
+                #text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                #text_hover_color "#ffffff"
+                #text_color "#b4dee6"
 
                 action [
                     Hide("inventoryView"),
@@ -228,15 +242,15 @@ screen inventoryView():
                     xysize (90, 90)
         #diagram
         if mpDiagram == True:
-            #imagebutton:
-                #auto "images/inv_items/diagram_%s.png"
-                #xalign 0.5
+            imagebutton:
+                auto "images/inv_items/diagram_%s.png"
+                xalign 0.5
 
-            textbutton "Diagram":
-                text_size 24
-                text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
-                text_hover_color "#ffffff"
-                text_color "#b4dee6"
+            #textbutton "Diagram":
+                #text_size 24
+                #text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                #text_hover_color "#ffffff"
+                #text_color "#b4dee6"
 
                 action [
                     Hide("inventoryView"),
@@ -248,15 +262,15 @@ screen inventoryView():
                     xysize (90, 90)
         #diagram
         if mpDiagnosis == True:
-            #imagebutton:
-                #auto "images/inv_items/diagram_%s.png"
-                #xalign 0.5
+            imagebutton:
+                auto "images/inv_items/diagnosis_%s.png"
+                xalign 0.5
 
-            textbutton "Diagnosis":
-                text_size 24
-                text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
-                text_hover_color "#ffffff"
-                text_color "#b4dee6"
+            #textbutton "Diagnosis":
+                #text_size 24
+                #text_font "fonts/Sedan_SC/SedanSC-Regular.ttf"
+                #text_hover_color "#ffffff"
+                #text_color "#b4dee6"
 
                 action [
                     Hide("inventoryView"),

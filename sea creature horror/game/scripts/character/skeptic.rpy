@@ -33,7 +33,7 @@ label skeptictalk:
                             menu:
                                 s "\"A specimen is very unlikely but would be most helpful.\""
 
-                                "I'll get looking right away.":
+                                "\"I'll get looking right away.\"":
                                     s "Excellent. I would begin searching in the pile of crates over there."
                                     $sketalks = 1
                                     jump moonpool

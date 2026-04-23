@@ -17,8 +17,9 @@ init python:
         config.keymap["game_menu"].remove("mouseup_3")
     if "K_ESCAPE" not in config.keymap["game_menu"]:
         config.keymap["game_menu"].append("K_ESCAPE")
+        
 
-
+define config.has_autosave = False
 define config.say_layer = "text"
 define config.choice_layer = "screens"
 define config.default_afm_enable = False
@@ -152,6 +153,7 @@ init python:
             renpy.music.play(music, channel=newChannel, loop=None,fadein=fadeTime)
 
 label start: 
+    $ _game_menu_screen = "history"
     $ quick_menu = False
     call intro from _call_intro
 return
