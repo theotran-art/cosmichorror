@@ -43,14 +43,19 @@ label moonpool:
     #TEMP MENU FOR ACESSS
     menu:
         "Talk to Skeptic":
+            $ hide_inventory = True
             jump skeptictalk
         "Crates" if sketalks == 0:
+            $ hide_inventory = True
             jump moonpoolCrates
         "Diagnosis" if sketalks == 1:
+            $ hide_inventory = True
             jump moonpoolDiagnosis
         "Specimen" if sketalks == 1:
+            $ hide_inventory = True
             jump moonpoolSpecimen
         "Diagram" if sketalks == 1:
+            $ hide_inventory = True
             jump moonpoolDiagram
 
 screen moonpoolRoom:
@@ -75,13 +80,29 @@ screen moonpoolRoom:
             #add more imgbutt if needed
 
     #IMAGES THAT SHOW UP AFTER CLICKING AN ITEM (CLOSE UP)
-    #if showMoonpoolITEM:
-        #add Solid("#00000088")
+    if showItemSpecimen:
+        add Solid("#00000088")
 
         # Centered image
-        #add "images/items/moonpool/.png":
-            #xalign 0.5
-            #yalign 0.5
+        add "images/items/moonpool/specimen.png":
+            xalign 0.5
+            yalign 0.5
+    
+    if showItemDiagram:
+        add Solid("#00000088")
+
+        # Centered image
+        add "images/items/moonpool/diagram.png":
+            xalign 0.5
+            yalign 0.5
+    
+    if showItemDiagnosis:
+        add Solid("#00000088")
+
+        # Centered image
+        add "images/items/moonpool/diagnosis.png":
+            xalign 0.5
+            yalign 0.5
 
 
 #writing for clickable items
@@ -94,24 +115,29 @@ label moonpoolCrates:
 label moonpoolDiagram:
     $room_buttons_enabled = False
     $room_scroll_enabled = False
+    $showItemDiagram = True
     if mpDiagram == False:
         $evidence += 1
         $mpDiagram = True
     t "A diagram of some sort of worm-like creature. It's like someone was studying it for application as some sort of mind control."
+    $showItemDiagram = False
     jump moonpool
 
 label moonpoolSpecimen:
     $room_buttons_enabled = False
     $room_scroll_enabled = False
+    $showItemSpecimen = True
     if mpSpecimen == False:
         $evidence += 1
         $mpSpecimen = True
     t "A dried specimen of an odd worm-like creature. You've never seen anything like it before."
+    $showItemSpecimen = False
     jump moonpool
 
 label moonpoolDiagnosis:
     $room_buttons_enabled = False
     $room_scroll_enabled = False
+    $showItemDiagnosis = True
     t "You find a piece of paper that has a medical diagnosis."
     if mpDiagnosis == False:
         $evidence += 1
@@ -122,6 +148,7 @@ label moonpoolDiagnosis:
     "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}After a number of scans, an X-ray revealed a small parasitic organism within his cranial cavity.{/font}"
     "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}It was unlike any parasite I had ever studied. I have hereby reached out to several medical research facilities and hospitals in hopes that they will take his case.{/font}"
     "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}I am unaware whether or not his condition is fatal, but the deterioration of his personality and ability to compose himself is clear.{/font}"
+    $showItemDiagnosis = False
     jump moonpool
     
 

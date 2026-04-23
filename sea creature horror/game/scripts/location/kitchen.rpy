@@ -33,16 +33,22 @@ label kitchen:
     #TEMP MENU FOR ACESSS
     menu:
         "Talk to Cannibal":
+            $ hide_inventory = True
             jump cannibaltalk
         "Cutting board":
+            $ hide_inventory = True
             jump kitchenCuttingBoard
         "Pot":
+            $ hide_inventory = True
             jump kitchenPot
         "Cabinets":
+            $ hide_inventory = True
             jump kitchenCabinet
         "Bodies":
+            $ hide_inventory = True
             jump kitchenBodies
         "Door":
+            $ hide_inventory = True
             jump kitchenDoor
 
 screen kitchenRoom:
