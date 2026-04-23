@@ -117,16 +117,17 @@ screen character_screen(who, what):
 
         frame:
             background Frame("gui/customui/textbox2.png")
-            xsize 1800
+            #xsize 1800
             ysize 90
             xalign 0.5
             yalign 0.66
+            padding (80,20)
 
-        text what id "what":
-            layout "nobreak"
-            text_align 0.5
-            xalign 0.5
-            yalign 0.65
+            text what id "what":
+                layout "nobreak"
+                text_align 0.5
+                xalign 0.5
+                yalign 0.35
 
 #sorry reddit told me to put it here
 init python:

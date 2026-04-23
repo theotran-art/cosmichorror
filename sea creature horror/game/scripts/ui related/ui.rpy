@@ -53,29 +53,41 @@ screen uiSettings:
         spacing 25
     
         textbutton _("History") action ShowMenu("history"):
+            text_font "fonts/fisherman_2/Fisherman-Regular.otf"
             text_color "#7eb4bf"
             text_hover_color "#ffffff"
+            text_outlines [(3, "#32464e", 1, 1)]
 
         if characterTalk == False:
             textbutton _("Save") action ShowMenu("save"):
+                text_font "fonts/fisherman_2/Fisherman-Regular.otf"
                 text_color "#7eb4bf"
                 text_hover_color "#ffffff"
+                text_outlines [(3, "#32464e", 1, 1)]
 
         textbutton _("Load") action ShowMenu("load"):
+            text_font "fonts/fisherman_2/Fisherman-Regular.otf"
             text_color "#7eb4bf"
             text_hover_color "#ffffff"
+            text_outlines [(3, "#32464e", 1, 1)]
 
         textbutton _("Preferences") action ShowMenu("preferences"):
+            text_font "fonts/fisherman_2/Fisherman-Regular.otf"
             text_color "#7eb4bf"
             text_hover_color "#ffffff"
+            text_outlines [(3, "#32464e", 1, 1)]
 
         if characterTalk == False:
             textbutton "Return":
+                text_font "fonts/fisherman_2/Fisherman-Regular.otf"
                 text_color "#7eb4bf"
                 text_hover_color "#ffffff"
+                text_outlines [(3, "#32464e", 1, 1)]
                 action SetVariable("settingsClicked", False), Hide("uiSettings")
         elif characterTalk == True:
             textbutton "Return":
+                text_font "fonts/fisherman_2/Fisherman-Regular.otf"
                 text_color "#7eb4bf"
                 text_hover_color "#ffffff"
+                text_outlines [(3, "#32464e", 1, 1)]
                 action SetVariable("settingsClicked", False), Hide("uiSettings")
