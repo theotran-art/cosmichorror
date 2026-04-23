@@ -30,7 +30,8 @@ label mgkitchen_pot:
 label mgarm_check:
     #image goodArmStew = ".png"
     #image badArmStew = ".png"
-
+    $ kitchenStew = True
+    
     if armpieces == 4 and spices == 1 and kitchenArmCutBad == False: #correct 
         show screen mgkitchen_cook_notfinished
         t "After putting all the ingredients in, you let it simmer for a while."

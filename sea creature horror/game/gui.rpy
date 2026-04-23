@@ -208,7 +208,7 @@ define gui.choice_button_height = None
 define gui.choice_button_tile = False
 define gui.choice_button_borders = Borders(150, 50, 150, 50)
 define gui.choice_button_text_font = gui.text_font
-define gui.choice_button_text_size = gui.text_size
+define gui.choice_button_text_size = 30
 define gui.choice_button_text_xalign = 0.5
 define gui.choice_button_text_idle_color = '#888888'
 define gui.choice_button_text_hover_color = "#ffffff"
@@ -256,7 +256,7 @@ define gui.skip_ypos = 15
 define gui.notify_ypos = 68
 
 ## The spacing between menu choices.
-define gui.choice_spacing = 10 #I EDITED THIS ONE!!!! default is 33
+define gui.choice_spacing = -20 #I EDITED THIS ONE!!!! default is 33
 
 ## Buttons in the navigation section of the main and game menus.
 define gui.navigation_spacing = 40

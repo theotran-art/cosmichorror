@@ -128,20 +128,23 @@ label kitchenCuttingBoard:
 label kitchenPot:
     $room_buttons_enabled = False
     $room_scroll_enabled = False
-    if kitchenArm == False:
-        t"A small, tarnished, cast iron pot full of water."
+    if kitchenArm == False and kitchenArmCooked == False:
+        t "A small, tarnished, cast iron pot full of water."
         jump kitchen
-    elif kitchenArm == True and kitchenArmCut == False:
+    elif kitchenArm == True and kitchenArmCut == False and kitchenArmCooked == False:
         t "A small, tarnished, cast iron pot full of water. You could stew the arm in this, but it's far too large to fit."
         jump kitchen
-    elif kitchenArm == True and kitchenArmCut == True and kitchenSpices == False:
+    elif kitchenArm == True and kitchenArmCut == True and kitchenSpices == False and kitchenArmCooked == False:
         t"A small, tarnished, cast iron pot full of water. You could stew the arm meat in this, but you should probably find something else to add first to make it more palateable."
         jump kitchen
-    elif kitchenArm == True and kitchenArmCut == True and kitchenSpices == True:
+    elif kitchenArm == True and kitchenArmCut == True and kitchenSpices == True and kitchenArmCooked == False:
         t "A small, tarnished, cast iron pot full of water. You can make a stew in this with the ingredients you've gathered."
         menu:
             "Cook the arm.":
                 jump mgkitchen_pot
+    elif kitchenArmCooked == True:
+        t "A small, tarnished, cast iron pot full of broth. You already set some aside for the cultist, and you don't particularly want a serving yourself."
+        jump kitchen
 
 label kitchenBodies:
     $room_buttons_enabled = False

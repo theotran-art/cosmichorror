@@ -256,7 +256,7 @@ style choice_vbox:
 style choice_button is button:
     background Frame("gui/button/choice_idle_background.png")
     hover_background Frame("gui/button/choice_hover_background.png")
-    padding (70, 15, 70, 15)
+    padding (80, 30, 80, 30)
     #xminimum 600
     xalign 0.5
     #ysize 100

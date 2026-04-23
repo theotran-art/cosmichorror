@@ -134,7 +134,6 @@ label cargoWindow:
             hide windowCargoCloseup with fade
             jump cargo
 
-
 label cargoDoor:
     $room_buttons_enabled = False
     $room_scroll_enabled = False
@@ -168,7 +167,7 @@ label cargoBook:
     if item_page_1 == False:
         t "The book is open to a torn and yellowed page with few words written on it. You don't have nearly enough time or interest for that matter to read through it."
         t "The half of the page that remains bound to the rest of the book reads," 
-        " -iver us, for we yearn to be entangled in your cold embrace as the children of your new earth."
+        "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}-iver us, for we yearn to be entangled in your cold embrace as the children of your new earth.{/font}"
         p1 "You need the rest of this."
         t "You find yourself tearing off the page and tucking it away." #theo wrote this, replace if aidan writes smth
         $item_page_1 = True
@@ -189,6 +188,6 @@ label cargoPoster:
     $room_buttons_enabled = False
     $room_scroll_enabled = False
     $lookposter = True
-    t "The worn, tattered poster reads \"GLORY TO THE ONE BELOW\" along the top. Along the bottom, it reads, \"AND MAY SHE RETURN ABOVE\"."
+    t "The worn, tattered poster reads {font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}\"GLORY TO THE ONE BELOW\"{/font} along the top. Along the bottom, it reads, {font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}\"AND MAY SHE RETURN ABOVE\"{/font}."
     t "Maybe this is some sort of anachronism or call and response. You shudder to think what kind of being they might be referring to."
     jump cargo

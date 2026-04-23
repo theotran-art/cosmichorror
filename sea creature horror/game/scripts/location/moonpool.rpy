@@ -116,12 +116,12 @@ label moonpoolDiagnosis:
     if mpDiagnosis == False:
         $evidence += 1
         $mpDiagnosis = True
-    "Doctor Name: Dr. Alan Richards{p}Patient Name: Simon Ellis{p}Patient Age: 38 / Patient Sex: Male{p}Date: 9/23/--{p}Diagnosis: Parasitic Infection"
-    "Patient entered urgent care at approximately 4:30 AM with complaints of severe headaches, memory loss, and compulsive/intrusive thoughts."
-    "I ran several rudimentary tests on him without anything leading to an explanation for his symptoms, however I did find several bite marks on his arms."
-    "After a number of scans, an X-ray revealed a small parasitic organism within his cranial cavity."
-    "It was unlike any parasite I had ever studied. I have hereby reached out to several medical research facilities and hospitals in hopes that they will take his case."
-    "I am unaware whether or not his condition is fatal, but the deterioration of his personality and ability to compose himself is clear."
+    "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}Doctor Name: Dr. Alan Richards{p}Patient Name: Simon Ellis{p}Patient Age: 38 / Patient Sex: Male{p}Date: 9/23/--{p}Diagnosis: Parasitic Infection{/font}"
+    "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}Patient entered urgent care at approximately 4:30 AM with complaints of severe headaches, memory loss, and compulsive/intrusive thoughts.{/font}"
+    "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}I ran several rudimentary tests on him without anything leading to an explanation for his symptoms, however I did find several bite marks on his arms.{/font}"
+    "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}After a number of scans, an X-ray revealed a small parasitic organism within his cranial cavity.{/font}"
+    "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}It was unlike any parasite I had ever studied. I have hereby reached out to several medical research facilities and hospitals in hopes that they will take his case.{/font}"
+    "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}I am unaware whether or not his condition is fatal, but the deterioration of his personality and ability to compose himself is clear.{/font}"
     jump moonpool
     
 
@@ -155,4 +155,13 @@ label moonpoolRitual:
     t "The walls burst and collapse in on each other. The structure of the ship is fully compromised, and you fall through the floor."
     t "Your body may be your own now, but it does not matter. You did all that the parasite needed you to do."
     #$persistent.game_finished_once = True
+    show screen ending_cutscene
+    pause 1.0
     $ MainMenu(confirm=False)()
+
+image sinking:
+    "images/death/bloodsplat.png"
+    pause 2.0
+
+screen ending_cutscene:
+    add "sinking"

@@ -293,8 +293,8 @@ label examinePage: #THIS IS COMPLETED PAGE\
     $showItemPage = True
     t "You have the page." 
     t "It reads out the passage:"
-    "\"O Mother of the Great Deep, we sever our love to our flesh to offer it to you alone, flaying our imperfect forms as penance for the circumstances of our births.\""
-    "\"Accept our emaciated bodies and deliver us, for we yearn to be entangled in your cold embrace as the children of your new earth.\""
+    "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}\"O Mother of the Great Deep, we sever our love to our flesh to offer it to you alone, flaying our imperfect forms as penance for the circumstances of our births.\"{/font}"
+    "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}\"Accept our emaciated bodies and deliver us, for we yearn to be entangled in your cold embrace as the children of your new earth.\"{/font}"
     $showItemPage = False
     hide screen inv_items_imgs
     jump expression locationTracker
@@ -306,7 +306,7 @@ label examinePage1:
     $room_scroll_enabled = False
     $showItemPage1 = True
     t "You have a ripped page that reads out the passage:"
-    "\"-iver us, for we yearn to be entangled in your cold embrace as the children of your new earth.\""
+    "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}\"-iver us, for we yearn to be entangled in your cold embrace as the children of your new earth.\"{/font}"
     if item_page_2 == True:
         menu:
             "Combine the ripped pages.":
@@ -329,8 +329,8 @@ label examinePage2:
     $room_scroll_enabled = False
     $showItemPage2 = True
     t "You have a ripped page that reads out the passage:"
-    "\"O Mother of the Great Deep, we sever our love to our flesh to offer it to you alone, flaying our imperfect forms as penance for the circumstances of our births.\""
-    "\"Accept our emaciated bodies and del-\""
+    "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}\"O Mother of the Great Deep, we sever our love to our flesh to offer it to you alone, flaying our imperfect forms as penance for the circumstances of our births.\"{/font}"
+    "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}\"Accept our emaciated bodies and del-\"{/font}"
     if item_page_1 == True:
         menu:
             "Combine the ripped pages.":
@@ -414,12 +414,12 @@ label examineDiagnosis:
     $showItemDiagnosis = True
     t "You have a piece of paper that has a medical diagnosis."
     t "It reads:"
-    "Doctor Name: Dr. Alan Richards{p}Patient Name: Simon Ellis{p}Patient Age: 38 / Patient Sex: Male{p}Date: 9/23/--{p}Diagnosis: Parasitic Infection"
-    "Patient entered urgent care at approximately 4:30 AM with complaints of severe headaches, memory loss, and compulsive/intrusive thoughts."
-    "I ran several rudimentary tests on him without anything leading to an explanation for his symptoms, however I did find several bite marks on his arms."
-    "After a number of scans, an X-ray revealed a small parasitic organism within his cranial cavity."
-    "It was unlike any parasite I had ever studied. I have hereby reached out to several medical research facilities and hospitals in hopes that they will take his case."
-    "I am unaware whether or not his condition is fatal, but the deterioration of his personality and ability to compose himself is clear."
+    "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}Doctor Name: Dr. Alan Richards{p}Patient Name: Simon Ellis{p}Patient Age: 38 / Patient Sex: Male{p}Date: 9/23/--{p}Diagnosis: Parasitic Infection{/font}"
+    "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}Patient entered urgent care at approximately 4:30 AM with complaints of severe headaches, memory loss, and compulsive/intrusive thoughts.{/font}"
+    "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}I ran several rudimentary tests on him without anything leading to an explanation for his symptoms, however I did find several bite marks on his arms.{/font}"
+    "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}After a number of scans, an X-ray revealed a small parasitic organism within his cranial cavity.{/font}"
+    "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}It was unlike any parasite I had ever studied. I have hereby reached out to several medical research facilities and hospitals in hopes that they will take his case.{/font}"
+    "{font=fonts/oceanside_typewriter/Oceanside Typewriter.ttf}I am unaware whether or not his condition is fatal, but the deterioration of his personality and ability to compose himself is clear.{/font}"
     $showItemDiagnosis = False
     hide screen inv_items_imgs
     jump expression locationTracker
