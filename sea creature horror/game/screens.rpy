@@ -257,14 +257,16 @@ style choice_button is button:
     background Frame("gui/button/choice_idle_background.png")
     hover_background Frame("gui/button/choice_hover_background.png")
     padding (80, 30, 80, 30)
-    #xminimum 600
     xalign 0.5
+    ysize 90
+    #xminimum 600
     #ysize 100
     #properties gui.button_properties("choice_button")
 
 style choice_button_text is default:
-    properties gui.text_properties("choice_button")
-
+    #properties gui.text_properties("choice_button")
+    yalign 0.85
+    font "fonts/Labrada/static/Labrada-Bold.ttf"
 
 ## Quick Menu screen ###########################################################
 ##

@@ -25,13 +25,13 @@ define config.choice_layer = "screens"
 define config.default_afm_enable = False
 define config.fast_skipping = False
 
-define t = Character((None), what_italic=True) #thoughts
+define t = Character((None), what_font="fonts/Labrada/Labrada-VariableFont_wght.ttf", what_italic=True) #thoughts
 define h = Character((None), screen='character_screen', what_font="fonts/fonts_hag/Funnel_Display_Lacquer/Lacquer/Lacquer-Regular.ttf", what_size=32) #hag
 define c = Character((None), screen='character_screen', what_font="fonts/blackcraft/Blackcraft.ttf", what_size=36) #cannibal
 define s = Character((None), screen='character_screen', what_font="fonts/subway_haze/Subway_Haze_1.1.ttf", what_size=36) #skeptic
-define p1 = Character((None), what_color="FCC7C7")
-define p2 = Character((None), what_color="B54545")
-define p3 = Character((None), what_color="BF1717")
+define p1 = Character((None), what_color="FCC7C7", what_font="fonts/Labrada/Labrada-VariableFont_wght.ttf")
+define p2 = Character((None), what_color="B54545", what_font="fonts/Labrada/Labrada-VariableFont_wght.ttf")
+define p3 = Character((None), what_color="BF1717", what_font="fonts/Labrada/Labrada-VariableFont_wght.ttf")
 
 
 
