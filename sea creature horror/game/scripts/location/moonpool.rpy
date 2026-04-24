@@ -183,12 +183,35 @@ label moonpoolRitual:
     t "Your body may be your own now, but it does not matter. You did all that the parasite needed you to do."
     #$persistent.game_finished_once = True
     show screen ending_cutscene
-    pause 1.0
+    pause 10.0
+    show expression Solid("#000") as fade_black onlayer master with fade
+    show screen end
+    pause 4.0
     $ MainMenu(confirm=False)()
 
 image sinking:
-    "images/death/bloodsplat.png"
+    "images/death/cutscene/end1.png"
+    pause 2.0
+    "images/death/cutscene/end2.png"
+    pause 1.0
+    "images/death/cutscene/end3.png"
+    pause 0.5
+    "images/death/cutscene/end4.png"
+    pause 0.5
+    "images/death/cutscene/end5.png"
+    pause 0.5
+    "images/death/cutscene/end6.png"
+    pause 0.5
+    "images/death/cutscene/end7.png"
     pause 2.0
 
 screen ending_cutscene:
     add "sinking"
+
+screen end:
+    text "The end. Thank you for playing!":
+        xalign 0.5
+        yalign 0.5
+        size 100
+        color "#ffffff"
+        outlines [(3, "#32464e", 1, 1)]

@@ -95,6 +95,7 @@ label skeptictalk:
             jump moonpoolRitual
         elif evidence == 2:
             s "\"These are excellent. I need a little more, but after than we can get out of here.\""
+            jump moonpool
         elif evidence == 1:
             s "\"This is excellent. I need a little more, but after than we can get out of here.\""
             jump moonpool
