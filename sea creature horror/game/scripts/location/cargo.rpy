@@ -124,6 +124,7 @@ label cargoWindow:
         "Examine outside.":
             show windowCargo onlayer master with fade
             t "You look out the window."
+            t "You see an endless exapanse of ocean broken up by floating icebergs. The water looks deep and cold, and the depths unsettle you."
             menu:
                 "Step away.":
                     hide windowCargoCloseup

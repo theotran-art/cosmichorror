@@ -328,6 +328,9 @@ style quick_button_text:
 
 screen navigation():
 
+    on "show" action SetVariable("room_buttons_enabled", False), SetVariable("room_scroll_enabled", False)
+    on "hide" action SetVariable("room_buttons_enabled", True), SetVariable("room_scroll_enabled", True)
+
     if main_menu:
         hbox:
             style_prefix "navigation"

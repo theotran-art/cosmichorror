@@ -30,7 +30,6 @@ label mgkitchen_pot:
 label mgarm_check:
     #image goodArmStew = ".png"
     #image badArmStew = ".png"
-    $ kitchenStew = True
     
     if armpieces == 4 and spices == 1 and kitchenArmCutBad == False: #correct 
         show screen mgkitchen_cook_notfinished
@@ -42,6 +41,7 @@ label mgarm_check:
         $ kitchenArmCooked = True
         $ kitchenSpicesUsed = True
         $ showItemArm = True
+        $ renpy.restart_interaction()
         show screen inv_items_imgs with fade
         t "Despite your unfamiliarity of ingredients of this nature, you feel like you did a good job."
         t "You hope that your efforts will be acceptable to the cultist."
@@ -58,6 +58,7 @@ label mgarm_check:
         $ kitchenArmCookedBad = True
         $ kitchenSpicesUsed = True
         $ showItemArm = True
+        $ renpy.restart_interaction()
         show screen inv_items_imgs with fade
         t "Because of your unfamiliarity of ingredients of this nature, it doesn't look very good. It seems that your sloppy attempts at cutting the arm has made the overall dish look very messy."
         t "You hope that your efforts will be acceptable to the cultist."

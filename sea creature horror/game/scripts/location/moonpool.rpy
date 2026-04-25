@@ -1,7 +1,7 @@
 ﻿label moonpoolEnter:
     #hide kitchen related items
     $ kitchenSpices = False
-    $ kitchenStew = False
+    $ kitchenStew = True
     $ kitchenArm = False
 
     $locationTracker = "moonpool"
@@ -21,7 +21,7 @@ label moonpool:
     #screen transitions
     $room_buttons_enabled = False
     $hide_inventory = False
-    #show screen moonpoolRoom onlayer master
+    show screen moonpoolRoom onlayer master
 
     #persistent parasite quest
     if item_lighter == False:
@@ -32,31 +32,31 @@ label moonpool:
         hide screen suspicion_overlay with fade
         
     #loop for point and click
-    #$room_scroll_enabled = True
-    #label pauseMoonpool:
-        #window hide
-        #$room_buttons_enabled = True
-        #pause
-        #jump pauseMoonpool
-    #window auto  
+    $room_scroll_enabled = True
+    label pauseMoonpool:
+        window hide
+        $room_buttons_enabled = True
+        pause
+        jump pauseMoonpool
+    window auto  
 
     #TEMP MENU FOR ACESSS
-    menu:
-        "Talk to Skeptic":
-            $ hide_inventory = True
-            jump skeptictalk
-        "Crates" if sketalks == 0:
-            $ hide_inventory = True
-            jump moonpoolCrates
-        "Diagnosis" if sketalks == 1:
-            $ hide_inventory = True
-            jump moonpoolDiagnosis
-        "Specimen" if sketalks == 1:
-            $ hide_inventory = True
-            jump moonpoolSpecimen
-        "Diagram" if sketalks == 1:
-            $ hide_inventory = True
-            jump moonpoolDiagram
+    #menu:
+        #"Talk to Skeptic":
+            #$ hide_inventory = True
+            #jump skeptictalk
+        #"Crates" if sketalks == 0:
+            #$ hide_inventory = True
+            #jump moonpoolCrates
+        #"Diagnosis" if sketalks == 1:
+            #$ hide_inventory = True
+            #jump moonpoolDiagnosis
+        #"Specimen" if sketalks == 1:
+            #$ hide_inventory = True
+            #jump moonpoolSpecimen
+        #"Diagram" if sketalks == 1:
+            #$ hide_inventory = True
+            #jump moonpoolDiagram
 
 screen moonpoolRoom:
     tag room
@@ -73,11 +73,61 @@ screen moonpoolRoom:
  
         add "images/backgrounds/moonpool.png" #name of the background image
         
-        #if room_buttons_enabled == True and locationTracker == "moonpool":
+        add "images/sprites/skeptic.png":
+            pos (100,700)
+        if room_buttons_enabled == True and locationTracker == "moonpool":
             #imagebutton: #for 
                 #pos (340,945) #where it appears on the screen
                 #auto "images/items/moonpool/_%s.png" action Hide("inventory"), Jump("moonpoolA")
             #add more imgbutt if needed
+
+            #temp buttons
+
+            textbutton "Cultist": #skeptic
+                text_size 80
+                text_color "#ffffff"
+                text_outlines [(3, "#1e4961", 2, 2)]
+                text_hover_color "#68a0be"
+                pos (350,700) #where it appears on the screen
+                action SetVariable("hide_inventory", True), Jump("skeptictalk")
+            textbutton "Moon Pool": #moonpool
+                text_size 80
+                text_color "#ffffff"
+                text_outlines [(3, "#1e4961", 2, 2)]
+                text_hover_color "#68a0be"
+                pos (1050,1200) #where it appears on the screen
+                action SetVariable("hide_inventory", True), Jump("moonpoolDock")
+            if sketalks == 0:
+                textbutton "Crates": #crates
+                    text_size 80
+                    text_color "#ffffff"
+                    text_outlines [(3, "#1e4961", 2, 2)]
+                    text_hover_color "#68a0be"
+                    pos (1440,750) #where it appears on the screen
+                    action SetVariable("hide_inventory", True), Jump("moonpoolCrates")
+            if sketalks == 1:
+                textbutton "Diagnosis": #Diagnosis
+                    text_size 80
+                    text_color "#ffffff"
+                    text_outlines [(3, "#1e4961", 2, 2)]
+                    text_hover_color "#68a0be"
+                    pos (5000,945) #where it appears on the screen
+                    action SetVariable("hide_inventory", True), Jump("moonpoolDiagnosis")
+                textbutton "Specimen": #Specimen
+                    text_size 80
+                    text_color "#ffffff"
+                    text_outlines [(3, "#1e4961", 2, 2)]
+                    text_hover_color "#68a0be"
+                    pos (1300,230) #where it appears on the screen
+                    action SetVariable("hide_inventory", True), Jump("moonpoolSpecimen")
+                textbutton "Diagram": #Diagram
+                    text_size 80
+                    text_color "#ffffff"
+                    text_outlines [(3, "#1e4961", 2, 2)]
+                    text_hover_color "#68a0be"
+                    pos (4000,500) #where it appears on the screen
+                    action SetVariable("hide_inventory", True), Jump("moonpoolDiagram")
+
 
     #IMAGES THAT SHOW UP AFTER CLICKING AN ITEM (CLOSE UP)
     if showItemSpecimen:

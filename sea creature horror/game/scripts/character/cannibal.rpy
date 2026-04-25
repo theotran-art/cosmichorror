@@ -4,8 +4,8 @@
 #call cansus_check
 
 label cannibaltalk:
-    $kitchen_buttons_enabled = False 
-    $kitchen_scroll_enabled = False
+    $room_buttons_enabled = False 
+    $room_scroll_enabled = False
 
     $hide_inventory = True
     $characterTalk = True

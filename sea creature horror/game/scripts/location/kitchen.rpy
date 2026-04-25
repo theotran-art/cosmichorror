@@ -22,34 +22,34 @@ label kitchen:
         hide screen suspicion_overlay with fade
         
     #loop for point and click
-    #$room_scroll_enabled = True
-    #label pauseKitchen:
-        #window hide
-        #$room_buttons_enabled = True
-        #pause
-        #jump pauseKitchen
-    #window auto  
+    $room_scroll_enabled = True
+    label pauseKitchen:
+        window hide
+        $room_buttons_enabled = True
+        pause
+        jump pauseKitchen
+    window auto  
 
     #TEMP MENU FOR ACESSS
-    menu:
-        "Talk to Cannibal":
-            $ hide_inventory = True
-            jump cannibaltalk
-        "Cutting board":
-            $ hide_inventory = True
-            jump kitchenCuttingBoard
-        "Pot":
-            $ hide_inventory = True
-            jump kitchenPot
-        "Cabinets":
-            $ hide_inventory = True
-            jump kitchenCabinet
-        "Bodies":
-            $ hide_inventory = True
-            jump kitchenBodies
-        "Door":
-            $ hide_inventory = True
-            jump kitchenDoor
+    #menu:
+        #"Talk to Cannibal":
+            #$ hide_inventory = True
+            #jump cannibaltalk
+        #"Cutting board":
+            #$ hide_inventory = True
+            #jump kitchenCuttingBoard
+        #"Pot":
+            #$ hide_inventory = True
+            #jump kitchenPot
+        #"Cabinets":
+            #$ hide_inventory = True
+            #jump kitchenCabinet
+        #"Bodies":
+            #$ hide_inventory = True
+            #jump kitchenBodies
+        #"Door":
+            #$ hide_inventory = True
+            #jump kitchenDoor
 
 screen kitchenRoom:
     tag room
@@ -66,11 +66,58 @@ screen kitchenRoom:
  
         add "images/backgrounds/kitchen.png" #name of the background image
         
-        #if room_buttons_enabled == True and locationTracker == "kitchen":
+        add "images/sprites/cannibal.png":
+                pos (4000,800)
+                
+        if room_buttons_enabled == True and locationTracker == "kitchen":
             #imagebutton: #for 
                 #pos (340,945) #where it appears on the screen
                 #auto "images/items/kitchen/_%s.png" action Hide("inventory"), Jump("kitchenA")
             #add more imgbutt if needed
+
+            #temp textbuttons
+            textbutton "Cultist": #cannibal
+                text_size 80
+                text_color "#ffffff"
+                text_outlines [(3, "#1e4961", 2, 2)]
+                text_hover_color "#68a0be"
+                pos (4000,800) #where it appears on the screen
+                action SetVariable("hide_inventory", True), Jump("cannibaltalk")
+            textbutton "Cutting Board": #cutting board
+                text_size 80
+                text_color "#ffffff"
+                text_outlines [(3, "#1e4961", 2, 2)]
+                text_hover_color "#68a0be"
+                pos (1440,750) #where it appears on the screen
+                action SetVariable("hide_inventory", True), Jump("kitchenCuttingBoard")
+            textbutton "Pot": #pot
+                text_size 80
+                text_color "#ffffff"
+                text_outlines [(3, "#1e4961", 2, 2)]
+                text_hover_color "#68a0be"
+                pos (2000,945) #where it appears on the screen
+                action SetVariable("hide_inventory", True), Jump("kitchenPot")
+            textbutton "Cabinets": #cabinets
+                text_size 80
+                text_color "#ffffff"
+                text_outlines [(3, "#1e4961", 2, 2)]
+                text_hover_color "#68a0be"
+                pos (1300,230) #where it appears on the screen
+                action SetVariable("hide_inventory", True), Jump("kitchenCabinet")
+            textbutton "Bodies": #bodies
+                text_size 80
+                text_color "#ffffff"
+                text_outlines [(3, "#1e4961", 2, 2)]
+                text_hover_color "#68a0be"
+                pos (3500,1000) #where it appears on the screen
+                action SetVariable("hide_inventory", True), Jump("kitchenBodies")
+            textbutton "Door": #door
+                text_size 80
+                text_color "#ffffff"
+                text_outlines [(3, "#1e4961", 2, 2)]
+                text_hover_color "#68a0be"
+                pos (4200,500) #where it appears on the screen
+                action SetVariable("hide_inventory", True), Jump("kitchenDoor")
 
     #IMAGES THAT SHOW UP AFTER CLICKING AN ITEM (CLOSE UP)
     #if showKitchenITEM:

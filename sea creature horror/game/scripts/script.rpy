@@ -11,7 +11,7 @@ init python:
 
     config.layers = ['background', 'master', 'window', 'transient', 'overlay', 'ui', 'screens', 'text', 'top']
 
-    #config.rollback_enabled = False #disable going back
+    config.rollback_enabled = False #disable going back
     # Remove right-click from opening the game menu
     if "mouseup_3" in config.keymap["game_menu"]:
         config.keymap["game_menu"].remove("mouseup_3")

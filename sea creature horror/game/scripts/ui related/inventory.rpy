@@ -108,7 +108,7 @@ screen inventoryView():
                     xysize (90, 90)
         #arm
         if kitchenArm == True and kitchenStew == False:
-            if kitchenArmCooked == True:
+            if kitchenArmCut == True and kitchenArmCooked == True:
                 imagebutton:
                     auto "images/inv_items/stew_%s.png"
                     xalign 0.5
@@ -127,9 +127,9 @@ screen inventoryView():
 
                     at transform:
                         xysize (90, 90)
-            elif kitchenArmCut == True:
+            elif kitchenArmCut == True and kitchenArmCooked == False:
                 imagebutton:
-                    auto "images/inv_items/arm_%s.png"
+                    auto "images/inv_items/armcut_%s.png"
                     xalign 0.5
 
                     action [
