@@ -259,6 +259,8 @@ style choice_button is button:
     padding (80, 30, 80, 30)
     xalign 0.5
     ysize 90
+    activate_sound ("music/click.wav")
+    hover_sound ("music/hover.wav")
     #xminimum 600
     #ysize 100
     #properties gui.button_properties("choice_button")
@@ -328,8 +330,22 @@ style quick_button_text:
 
 screen navigation():
 
-    on "show" action SetVariable("room_buttons_enabled", False), SetVariable("room_scroll_enabled", False)
-    on "hide" action SetVariable("room_buttons_enabled", True), SetVariable("room_scroll_enabled", True)
+    tag menu
+    modal True
+
+    add Solid("#0000")
+
+    
+    on "show" action [
+        SetVariable("room_buttons_enabled", False),
+        SetVariable("room_scroll_enabled", False)
+    ]
+
+    if hide_inventory == False:
+        on "hide" action [
+            SetVariable("room_buttons_enabled", True),
+            SetVariable("room_scroll_enabled", True)
+        ]
 
     if main_menu:
         hbox:
@@ -447,6 +463,9 @@ screen main_menu():
 
     ## This ensures that any other menu screen is replaced.
     tag menu
+    modal True
+
+    add Solid("#0000")
 
     if persistent.game_finished_once:
         add "gui/titlepage2.png"
@@ -459,6 +478,7 @@ screen main_menu():
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
+    
     use navigation
 
     if gui.show_name:
@@ -524,6 +544,11 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
     layer "top"
     style_prefix "game_menu"
 
+    add Solid("#00000077")
+
+    tag menu
+    modal True
+
     if main_menu:
         add gui.main_menu_background 
     else:
@@ -578,7 +603,10 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
                     transclude
 
-    use navigation
+    ## Prevents main menu navigation buttons from appearing
+    ## on top of game_menu screens (About, Save, Preferences, etc.)
+    if not main_menu:
+        use navigation
 
     textbutton _("Return"):
         style "return_button"
@@ -676,6 +704,8 @@ screen about():
 
             text _("{a=https://blasiad.myportfolio.com/}Aidan Blasi{/a} (Scriptwriting + Audio),\n{a=https://www.willowwispart.com/}Kieran Powell{/a} (Character Designs + Sprites),\n{a=https://lillianrunk.wixsite.com/lilyrunk}Lily Runk{/a} (Backgrounds + UI),\n{a=https://www.theotran.art/}Theo Tran{/a} (Programming),\n{a=https://www.artstation.com/crypticclaws}Asya Williams{/a} (Items/Props + Creature Design)\n")
 
+            text _("{a=https://freesound.org/s/422836/}g_ui_button_hover_1.wav by GameDevC License: Attribution 4.0{/a}")
+            
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
