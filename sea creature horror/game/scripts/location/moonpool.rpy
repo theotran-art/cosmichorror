@@ -231,7 +231,7 @@ label moonpoolRitual:
     t "For a moment, but only for a moment, both the ship and the water surrounding it are calmed for the first time. As if in answer, the hull begins to creak worse than ever before to a point at which you think it may crack... and it does."
     t "The walls burst and collapse in on each other. The structure of the ship is fully compromised, and you fall through the floor."
     t "Your body may be your own now, but it does not matter. You did all that the parasite needed you to do."
-    #$persistent.game_finished_once = True
+    $persistent.game_finished_once = True
     show screen ending_cutscene
     pause 10.0
     show expression Solid("#000") as fade_black onlayer master with fade
