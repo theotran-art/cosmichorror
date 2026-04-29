@@ -34,7 +34,7 @@ label skeptictalk:
                                 s "\"A specimen is very unlikely but would be most helpful.\""
 
                                 "\"I'll get looking right away.\"":
-                                    s "Excellent. I would begin searching in the pile of crates over there."
+                                    s "\"Excellent. I would begin searching in the pile of crates over there.\""
                                     $sketalks = 1
                                     jump moonpool
                         "\"Parasite?\"":
@@ -61,13 +61,13 @@ label skeptictalk:
 
                         "\"I have no such parasite within me. You're delusional.\"" if skeswitch == False:
                             $skesus += 1
-                            call skesus_check
+                            call skesus_check from _call_skesus_check
                             jump skebad
 
 
             "\"More than I ever have. I am to become an ascendant!\"":
                 $skesus += 1
-                call skesus_check
+                call skesus_check from _call_skesus_check_1
 
                 jump skebad
 
@@ -79,15 +79,15 @@ label skeptictalk:
 
                         "\"You misunderstand. I've had to pretend to be one of them since I awoke.\"":
                             $skesus -= 1
-                            call skesus_check
+                            call skesus_check from _call_skesus_check_2
                             "\"I was only being cautious, but it's nice to meet a normal person.\""
-                            s "Thank God. Not only a sane person, but a smart one too."
+                            s "\"Thank God. Not only a sane person, but a smart one too.\""
                             $skeswitch = True
                             jump skegood
 
                         "\"It's not a worm. It is one of Her children, which I will soon join the ranks of!\"":
                             $skesus += 1
-                            call skesus_check
+                            call skesus_check from _call_skesus_check_3
     elif sketalks == 1:
         if evidence == 3:
             s "\"Great work. We can finally leave.\""

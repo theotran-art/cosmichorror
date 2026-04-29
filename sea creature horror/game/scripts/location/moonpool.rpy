@@ -233,7 +233,7 @@ label moonpoolRitual:
     t "Your body may be your own now, but it does not matter. You did all that the parasite needed you to do."
     $persistent.game_finished_once = True
     show screen ending_cutscene
-    pause 10.0
+    pause 7.0
     show expression Solid("#000") as fade_black onlayer master with fade
     show screen end
     pause 4.0
@@ -253,7 +253,7 @@ image sinking:
     "images/death/cutscene/end6.png"
     pause 0.5
     "images/death/cutscene/end7.png"
-    pause 2.0
+    pause 1.0
 
 screen ending_cutscene:
     add "sinking"

@@ -55,17 +55,17 @@ label cannibaltalk:
                     jump cann_talk_knife
                 "\"I'm one of you. I aim to reach Her, and ascend my body.\"":
                     $cansus += 1
-                    call cansus_check
+                    call cansus_check from _call_cansus_check
                     menu:
                         c "\"You shouldn't have to lie to me, little ghost. I am one of them, although they find me... unsavory.\""
                         
                         "\"I wonder why...\"":
                             $cansus += 1
-                            call cansus_check
+                            call cansus_check from _call_cansus_check_1
                             #unfinished
                         "\"You're one of them? Did you bring me here?\"":
                             jump cann_talk_why
-        elif kitchenArm == True:
+        elif kitchenArm == True and kitchenDoorKey == False:
             menu:
                 "Give him the stew." if kitchenArmCooked == True: 
                     if kitchenArmCookedBad == True:
@@ -87,7 +87,9 @@ label cannibaltalk:
                     jump kitchen
     elif canndead == True:
         t "The cultist's dead body is still on the ground."
-        jump kitchen                
+        jump kitchen  
+    if kitchenDoorKey == True:
+            t "You already have the key."              
 
 label cansus_check:
     if cansus > 0:

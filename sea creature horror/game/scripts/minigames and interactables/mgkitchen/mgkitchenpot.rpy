@@ -25,7 +25,7 @@ label mgkitchen_pot:
 
     #t "you added [draggable] into [droppable]"
 
-    call mgarm_check
+    call mgarm_check from _call_mgarm_check
 
 label mgarm_check:
     #image goodArmStew = ".png"
